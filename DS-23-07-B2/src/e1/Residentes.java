@@ -3,12 +3,14 @@ package e1;
 import java.util.EmptyStackException;
 
 public class Residentes extends IntegranteHowarts {
-    enum tipo  {
-            Estudiantes ,Fantasmas
+    enum tipo {
+        Estudiantes, Fantasmas
     }
-    enum casa  {
-        Gryffindor ,Revneclaw,Hufflepuff,Slytherin
+
+    enum casa {
+        Gryffindor, Revneclaw, Hufflepuff, Slytherin
     }
+
     private final tipo Tipo;
     private final casa Casa;
 
@@ -18,25 +20,16 @@ public class Residentes extends IntegranteHowarts {
         Casa = casa;
     }
 
-    public float Recompensa(){
-        if (this.Casa== casa.Slytherin  && this.Tipo==tipo.Estudiantes ){
-            return this.getHorrocruxes()*90*2;
-        }
-        else if ( this.Tipo==tipo.Estudiantes ){
-            return this.getHorrocruxes()*90;
-        }
-        else if (this.Casa== casa.Slytherin  && this.Tipo==tipo.Fantasmas ){
-            return this.getHorrocruxes()*80*2;
-        }
-        else if (this.Tipo==tipo.Fantasmas){
-            return this.getHorrocruxes()*80;
+    public float Recompensa() {
+        if (this.Casa == casa.Slytherin && this.Tipo == tipo.Estudiantes) {
+            return this.getHorrocruxes() * 90 * 2;
+        } else if (this.Tipo == tipo.Estudiantes) {
+            return this.getHorrocruxes() * 90;
+        } else if (this.Casa == casa.Slytherin && this.Tipo == tipo.Fantasmas) {
+            return this.getHorrocruxes() * 80 * 2;
+        } else if (this.Tipo == tipo.Fantasmas) {
+            return this.getHorrocruxes() * 80;
         }
         return 0;
-    }
-
-    public static void main(String[] args) {
-        Residentes potter= new Residentes("Harry",18,"Potter",10,tipo.Estudiantes,casa.Hufflepuff);
-        float i=potter.Recompensa();
-        System.out.println("i = " + i);
     }
 }

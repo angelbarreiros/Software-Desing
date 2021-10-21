@@ -37,6 +37,7 @@ public abstract class IntegranteHowarts {
     public int getHorrocruxes() {
         return horrocruxes;
     }
+    public abstract float Recompensa();
 
     public IntegranteHowarts(String nombre, int edad, String apellidos, int horrocruxes) {
         Nombre = nombre;
@@ -45,3 +46,4 @@ public abstract class IntegranteHowarts {
         this.horrocruxes = horrocruxes;
     }
 }
+
