@@ -32,4 +32,14 @@ public class Residentes extends IntegranteHowarts {
         }
         return 0;
     }
+
+    @Override
+    public String toString() {
+        return getNombre()+""+getApellidos()+" "+getEdad()+" "+getHorrocruxes()+" "+Tipo+" "+Casa;
+    }
+
+    public static void main(String[] args) {
+        Residentes r1 = new  Residentes("Angel ",18,"Otero",10,tipo.Estudiantes,casa.Hufflepuff);
+        System.out.println("r1.toString() = " + r1);
+    }
 }

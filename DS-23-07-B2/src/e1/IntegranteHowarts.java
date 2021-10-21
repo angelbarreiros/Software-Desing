@@ -45,5 +45,6 @@ public abstract class IntegranteHowarts {
         Apellidos = apellidos;
         this.horrocruxes = horrocruxes;
     }
+
 }
 
