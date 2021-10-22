@@ -10,6 +10,11 @@ public abstract class Personal extends IntegranteHowarts {
     public Personal(String nombre, int edad, String apellidos, int horrocruxes, tipo tipo) {
         super(nombre, edad, apellidos, horrocruxes);
         Tipo = tipo;
+
+    }
+
+    public tipo getTipo() {
+        return Tipo;
     }
 
     public  abstract float  Recompensa();
