@@ -7,8 +7,8 @@ public abstract class Personal extends IntegranteHowarts {
         }
     private final Personal.tipo Tipo;
 
-    public Personal(String nombre, int edad, String apellidos, int horrocruxes, tipo tipo) {
-        super(nombre, edad, apellidos, horrocruxes);
+    public Personal(String nombre, String apellidos, int edad, int horrocruxes, tipo tipo) {
+        super(nombre, apellidos, edad, horrocruxes);
         Tipo = tipo;
 
     }
@@ -19,5 +19,6 @@ public abstract class Personal extends IntegranteHowarts {
 
     public  abstract float  Recompensa();
 
+    public  abstract float Salario();
 
 }

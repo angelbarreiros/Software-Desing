@@ -2,12 +2,12 @@ package e1;
 
 public class Docente  extends  Personal{
     enum asignatura {
-        Historioa,Transformaciones,Defensa,Herbologia,Pociones
+        Historia,Transformaciones,Defensa,Herbologia,Pociones
     }
     private final Docente.asignatura Asignatura;
 
-    public Docente(String nombre, int edad, String apellidos, int horrocruxes, tipo tipo, asignatura asignatura) {
-        super(nombre, edad, apellidos, horrocruxes, tipo);
+    public Docente(String nombre, String apellidos, int edad, int horrocruxes, tipo tipo, asignatura asignatura) {
+        super(nombre, apellidos, edad,horrocruxes, tipo);
         Asignatura = asignatura;
     }
 
@@ -21,6 +21,17 @@ public class Docente  extends  Personal{
         else{
             return  getHorrocruxes()*50;
         }
+    }
+
+    @Override
+    public float Salario() {
+        return switch (Asignatura) {
+            case Defensa -> 500;
+            case Transformaciones -> 400;
+            case Pociones -> 350;
+            case Herbologia -> 250;
+            case Historia -> 200;
+        };
     }
 
 }

@@ -2,9 +2,9 @@ package e1;
 
 public abstract class IntegranteHowarts {
     private String Nombre;
-    private int edad;
     private String Apellidos;
-     private int  horrocruxes;
+    private int edad;
+    private int  horrocruxes;
 
     public void setNombre(String nombre) {
         this.Nombre = nombre;
@@ -39,10 +39,10 @@ public abstract class IntegranteHowarts {
     }
     public abstract float Recompensa();
 
-    public IntegranteHowarts(String nombre, int edad, String apellidos, int horrocruxes) {
+    public IntegranteHowarts(String nombre, String apellidos, int edad, int horrocruxes) {
         Nombre = nombre;
-        this.edad = edad;
         Apellidos = apellidos;
+        this.edad = edad;
         this.horrocruxes = horrocruxes;
     }
 

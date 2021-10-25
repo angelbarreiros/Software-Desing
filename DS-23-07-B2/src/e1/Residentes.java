@@ -14,8 +14,8 @@ public class Residentes extends IntegranteHowarts {
     private final tipo Tipo;
     private final casa Casa;
 
-    public Residentes(String nombre, int edad, String apellidos, int horrocruxes, tipo tipo, casa casa) {
-        super(nombre, edad, apellidos, horrocruxes);
+    public Residentes(String nombre, String apellidos, int edad, int horrocruxes, tipo tipo, casa casa) {
+        super(nombre, apellidos, edad, horrocruxes);
         Tipo = tipo;
         Casa = casa;
     }
@@ -39,7 +39,7 @@ public class Residentes extends IntegranteHowarts {
     }
 
     public static void main(String[] args) {
-        Residentes r1 = new  Residentes("Angel ",18,"Otero",10,tipo.Estudiantes,casa.Hufflepuff);
+        Residentes r1 = new  Residentes("Angel ","Otero",18,10,tipo.Estudiantes,casa.Hufflepuff);
         System.out.println("r1.toString() = " + r1);
     }
 }
