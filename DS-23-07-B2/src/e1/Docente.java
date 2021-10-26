@@ -1,6 +1,7 @@
 package e1;
 
 public class Docente  extends  Personal{
+
     enum asignatura {
         Historia,Transformaciones,Defensa,Herbologia,Pociones
     }
@@ -9,6 +10,7 @@ public class Docente  extends  Personal{
     public Docente(String nombre, String apellidos, int edad, int horrocruxes, tipo tipo, asignatura asignatura) {
         super(nombre, apellidos, edad,horrocruxes, tipo);
         Asignatura = asignatura;
+
     }
 
     public asignatura getAsignatura() {
