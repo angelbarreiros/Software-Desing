@@ -14,7 +14,7 @@ class IntegranteHowartsTest {
         @Test
         @org.junit.jupiter.api.Test
         void testBasic() {
-                Docente teacher = new Docente("pedro", "kekw", 12, 10, Personal.tipo.Docente, Docente.asignatura.Defensa);
+                Docente teacher = new Docente("pedro", "kekw", 12, 10, Docente.asignatura.Defensa);
                 assertEquals(125f, teacher.Recompensa(),delta);
                 assertEquals("pedro",teacher.getNombre());
                 assertEquals(Personal.tipo.Docente,teacher.getTipo());

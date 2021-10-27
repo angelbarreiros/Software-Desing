@@ -1,9 +1,15 @@
 package e1;
 
 public class Conserje extends Personal{
-    public Conserje(String nombre, int edad, String apellidos, int horrocruxes, tipo tipo) {
-        super(nombre, apellidos, edad, horrocruxes, tipo);
+    @Override
+    public void setTipo(tipo tipo) {
+        super.setTipo(Personal.tipo.Conserje);
+    }
 
+    private boolean nocturnidad;
+    public Conserje(String nombre, int edad, String apellidos, int horrocruxes, boolean nocturnidad) {
+        super(nombre, apellidos, edad, horrocruxes);
+        this.nocturnidad = nocturnidad;
     }
 
     public float Recompensa(){
@@ -13,7 +19,16 @@ public class Conserje extends Personal{
 
     @Override
     public float Salario() {
-        return 0;
+        if(nocturnidad){
+            return 170 + 10;
+        }else{
+            return 170;
+        }
+    }
+
+    @Override
+    public String toString() {
+        return getNombre() + " " + getApellidos() + " (Conserje , " ;
     }
 
 }
