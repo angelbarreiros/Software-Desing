@@ -1,9 +1,14 @@
 package e1;
 
 public class Conserje extends Personal{
-    boolean nocturnidad;
-    public Conserje(String nombre, int edad, String apellidos, int horrocruxes, tipo tipo, boolean nocturnidad) {
-        super(nombre, apellidos, edad, horrocruxes, tipo);
+    @Override
+    public void setTipo(tipo tipo) {
+        super.setTipo(Personal.tipo.Conserje);
+    }
+
+    private boolean nocturnidad;
+    public Conserje(String nombre, int edad, String apellidos, int horrocruxes, boolean nocturnidad) {
+        super(nombre, apellidos, edad, horrocruxes);
         this.nocturnidad = nocturnidad;
     }
 
@@ -19,6 +24,11 @@ public class Conserje extends Personal{
         }else{
             return 170;
         }
+    }
+
+    @Override
+    public String toString() {
+        return getNombre() + " " + getApellidos() + " (Conserje , " ;
     }
 
 }

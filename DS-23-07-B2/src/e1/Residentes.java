@@ -29,10 +29,9 @@ public class Residentes extends IntegranteHowarts {
             return this.getHorrocruxes() * 90;
         } else if (this.Casa == casa.Slytherin && this.Tipo == tipo.Fantasmas) {
             return this.getHorrocruxes() * 80 * 2;
-        } else if (this.Tipo == tipo.Fantasmas) {
+        } else{
             return this.getHorrocruxes() * 80;
         }
-        return 0;
     }
 
     @Override
