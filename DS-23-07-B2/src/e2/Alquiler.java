@@ -15,7 +15,7 @@ public class Alquiler extends Vivienda{
     @Override
     public String PrecioTotal(int People, int Years) {
         if (People>=1){
-            return (((getMonthPrize() + getGarageNumber() * getGaragePrize())))/People + "/mes";
+            return (((getMonthPrize() + getGarageNumber() * getGaragePrize()))) + "/mes";
         }
         else throw new IllegalArgumentException();
     }
@@ -23,7 +23,7 @@ public class Alquiler extends Vivienda{
     @Override
     public String PrecioAjustadoANecesidad(int Garages, int People, int Years) {
         if (Garages <= getGarageNumber() && People>=1) {
-            return ((getMonthPrize() + Garages * getGaragePrize()))/People + "/mes";
+            return ((getMonthPrize() + Garages * getGaragePrize())) + "/mes";
         }
         else{
             throw new IllegalArgumentException();

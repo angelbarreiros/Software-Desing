@@ -1,15 +1,15 @@
 package e2;
 
 public class Compra extends Vivienda{
-    private final int prize;
+    private final int Totalprize;
 
     public Compra(TIPO tipo, int referenceNumber, int prize, int garageNumber, int garagePrize, int postalCode, int size, String location, int prize1) {
         super(tipo, referenceNumber, prize, garageNumber, garagePrize, postalCode, size, location);
-        this.prize = prize1;
+        this.Totalprize = prize1;
     }
 
     public int getPrize() {
-        return prize;
+        return Totalprize;
     }
 
     @Override
