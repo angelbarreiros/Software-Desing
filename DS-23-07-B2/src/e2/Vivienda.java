@@ -8,7 +8,7 @@ public abstract class Vivienda {
 
     private final Vivienda.TIPO tipo;
 
-    private int ReferenceNumber;
+    private  int  ReferenceNumber;
     private int GarageNumber;
     private int GaragePrize;
     private int PostalCode;
@@ -55,11 +55,12 @@ public abstract class Vivienda {
     }
 
 
-    public abstract String PrecioTotal(int People, int Years) ;
+    public abstract String PrecioTotal(int People, int Years);
 
-    public abstract String PrecioAjustadoANecesidad(int Garages, int People, int Years) ;
-}
+    public abstract String PrecioAjustadoANecesidad(int Garages, int People, int Years);
+
 
     public static void main(String[] args) {
-        Compra casa = new Compra()
+        Compra casa = new Compra(381762633,4,20000,15660,500,"A Coruña",1000000);
     }
+}
