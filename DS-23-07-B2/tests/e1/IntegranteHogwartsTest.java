@@ -8,7 +8,7 @@ import org.junit.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class IntegranteHowartsTest {
+class IntegranteHogwartsTest {
         private final float delta = 0.0001f;
 
         @Test

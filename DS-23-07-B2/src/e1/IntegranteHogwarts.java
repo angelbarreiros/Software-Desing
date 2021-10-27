@@ -2,7 +2,7 @@ package e1;
 
 import java.util.ArrayList;
 
-public abstract class IntegranteHowarts extends Colegio {
+public abstract class IntegranteHogwarts extends Colegio {
     private String Nombre;
     private String Apellidos;
     private int edad;
@@ -40,11 +40,14 @@ public abstract class IntegranteHowarts extends Colegio {
         return horrocruxes;
     }
 
-    public IntegranteHowarts(String nombre, String apellidos, int edad, int horrocruxes) {
+    public IntegranteHogwarts(String nombre, String apellidos, int edad, int horrocruxes) {
         Nombre = nombre;
         Apellidos = apellidos;
         this.edad = edad;
         this.horrocruxes = horrocruxes;
+    }
+    public String printHorrocruxes() {
+        return ", " + getHorrocruxes() + "): ";
     }
 
 }

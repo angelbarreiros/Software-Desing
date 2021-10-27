@@ -1,8 +1,6 @@
 package e1;
 
-import java.util.EmptyStackException;
-
-public class Residentes extends IntegranteHowarts {
+public class Residentes extends IntegranteHogwarts {
 
     enum tipo {
         Estudiantes, Fantasmas
@@ -36,7 +34,7 @@ public class Residentes extends IntegranteHowarts {
 
     @Override
     public String toString() {
-        return getNombre()+""+getApellidos()+" "+getEdad()+" "+getHorrocruxes()+" "+Tipo+" "+Casa;
+        return getNombre() + " " + getApellidos() + " (" + this.Tipo +" de " + this.Casa;
     }
 
     public static void main(String[] args) {
