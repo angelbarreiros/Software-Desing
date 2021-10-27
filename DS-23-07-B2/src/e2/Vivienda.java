@@ -4,9 +4,10 @@ import java.time.Year;
 import java.util.Objects;
 
 public class Vivienda {
+    public enum TIPO {ALQUILAR, COMPRAR, COMPARTIR}
     private final Vivienda.TIPO tipo;
 
-    private enum TIPO {ALQUILAR, COMPRAR, COMPARTIR}
+
 
     private int ReferenceNumber;
     private int Prize;
