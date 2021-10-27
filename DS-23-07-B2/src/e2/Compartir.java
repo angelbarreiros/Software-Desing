@@ -3,8 +3,8 @@ package e2;
 public class Compartir extends Vivienda {
     private int MonthSharedPrize;
 
-    public Compartir(TIPO tipo, int referenceNumber, int prize, int garageNumber, int garagePrize, int postalCode, int size, String location, int monthSharePrize) {
-        super(tipo, referenceNumber, prize, garageNumber, garagePrize, postalCode, size, location);
+    public Compartir(int referenceNumber, int garageNumber, int garagePrize, int postalCode, int size, String location, int monthSharePrize) {
+        super(TIPO.COMPARTIR, referenceNumber,  garageNumber, garagePrize, postalCode, size, location);
         MonthSharedPrize = monthSharePrize;
     }
 

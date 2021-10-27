@@ -8,7 +8,6 @@ public abstract class Vivienda {
 
     private final Vivienda.TIPO tipo;
 
-
     private int ReferenceNumber;
     private int GarageNumber;
     private int GaragePrize;
@@ -16,7 +15,7 @@ public abstract class Vivienda {
     private int Size;
     private String location;
 
-    public Vivienda(TIPO tipo, int referenceNumber, int prize, int garageNumber, int garagePrize, int postalCode, int size, String location) {
+    public Vivienda(TIPO tipo, int referenceNumber, int garageNumber, int garagePrize, int postalCode, int size, String location) {
         this.tipo = tipo;
         ReferenceNumber = referenceNumber;
         GarageNumber = garageNumber;
@@ -60,3 +59,7 @@ public abstract class Vivienda {
 
     public abstract String PrecioAjustadoANecesidad(int Garages, int People, int Years) ;
 }
+
+    public static void main(String[] args) {
+        Compra casa = new Compra()
+    }

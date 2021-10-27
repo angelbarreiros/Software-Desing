@@ -3,9 +3,9 @@ package e2;
 public class Compra extends Vivienda{
     private final int Totalprize;
 
-    public Compra(TIPO tipo, int referenceNumber, int prize, int garageNumber, int garagePrize, int postalCode, int size, String location, int prize1) {
-        super(tipo, referenceNumber, prize, garageNumber, garagePrize, postalCode, size, location);
-        this.Totalprize = prize1;
+    public Compra( int referenceNumber,  int garageNumber, int garagePrize, int postalCode, int size, String location, int totalprize) {
+        super(TIPO.COMPRAR, referenceNumber, garageNumber, garagePrize, postalCode, size, location);
+        this.Totalprize = totalprize;
     }
 
     public int getPrize() {
