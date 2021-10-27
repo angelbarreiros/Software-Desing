@@ -1,6 +1,8 @@
 package e1;
 
-public abstract class IntegranteHowarts {
+import java.util.ArrayList;
+
+public abstract class IntegranteHowarts extends Colegio {
     private String Nombre;
     private String Apellidos;
     private int edad;
@@ -37,7 +39,6 @@ public abstract class IntegranteHowarts {
     public int getHorrocruxes() {
         return horrocruxes;
     }
-    public abstract float Recompensa();
 
     public IntegranteHowarts(String nombre, String apellidos, int edad, int horrocruxes) {
         Nombre = nombre;

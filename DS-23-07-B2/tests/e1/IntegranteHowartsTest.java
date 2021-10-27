@@ -1,4 +1,8 @@
 package e1;
+import e1.Residentes;
+import e1.Personal;
+import  e1.Docente;
+import org.junit.Assert;
 import org.junit.Test;
 
 
@@ -9,8 +13,8 @@ class IntegranteHowartsTest {
 
         @Test
         @org.junit.jupiter.api.Test
-        public void testBasic() {
-                Docente teacher = new Docente("pedro", "kekw",13,  10, Personal.tipo.Docente, Docente.asignatura.Defensa);
+        void testBasic() {
+                Docente teacher = new Docente("pedro", "kekw", 12, 10, Personal.tipo.Docente, Docente.asignatura.Defensa);
                 assertEquals(125f, teacher.Recompensa(),delta);
                 assertEquals("pedro",teacher.getNombre());
                 assertEquals(Personal.tipo.Docente,teacher.getTipo());

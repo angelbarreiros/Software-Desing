@@ -1,10 +1,8 @@
 package e1;
 
 public class Guardabosques extends Personal{
-    private boolean nocturnidad;
-    public Guardabosques(String nombre, String apellidos, int edad, int horrocruxes, tipo tipo, boolean nocturnidad) {
-        super(nombre, apellidos, edad, horrocruxes, tipo);
-        this.nocturnidad = nocturnidad;
+    public Guardabosques(String nombre, int edad, String apellidos, int horrocruxes, tipo tipo) {
+        super(nombre, apellidos ,edad, horrocruxes, tipo);
     }
 
     @Override
@@ -14,8 +12,6 @@ public class Guardabosques extends Personal{
 
     @Override
     public float Salario() {
-        if (nocturnidad){
-            return 170 + 10;
-        }else{return 170;}
+        return 0;
     }
 }

@@ -11,6 +11,7 @@ public abstract class Personal extends IntegranteHowarts {
         super(nombre, apellidos, edad, horrocruxes);
         Tipo = tipo;
 
+
     }
 
     public tipo getTipo() {

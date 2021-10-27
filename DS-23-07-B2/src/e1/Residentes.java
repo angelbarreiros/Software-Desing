@@ -3,6 +3,7 @@ package e1;
 import java.util.EmptyStackException;
 
 public class Residentes extends IntegranteHowarts {
+
     enum tipo {
         Estudiantes, Fantasmas
     }
@@ -18,6 +19,7 @@ public class Residentes extends IntegranteHowarts {
         super(nombre, apellidos, edad, horrocruxes);
         Tipo = tipo;
         Casa = casa;
+
     }
 
     public float Recompensa() {
