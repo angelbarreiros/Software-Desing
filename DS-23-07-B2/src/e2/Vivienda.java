@@ -8,12 +8,12 @@ public abstract class Vivienda {
 
     private final Vivienda.TIPO tipo;
 
-    private  int  ReferenceNumber;
-    private int GarageNumber;
-    private int GaragePrize;
-    private int PostalCode;
-    private int Size;
-    private String location;
+    private final  int  ReferenceNumber;
+    private final int GarageNumber;
+    private final int GaragePrize;
+    private final int PostalCode;
+    private  final int Size;
+    private final String location;
 
     public Vivienda(TIPO tipo, int referenceNumber, int garageNumber, int garagePrize, int postalCode, int size, String location) {
         this.tipo = tipo;

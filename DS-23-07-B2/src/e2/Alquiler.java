@@ -1,7 +1,7 @@
 package e2;
 
 public class Alquiler extends Vivienda{
-    private int MonthPrize;
+    private final int MonthPrize;
 
     public Alquiler(int referenceNumber, int garageNumber, int garagePrize, int postalCode, int size, String location, int monthPrize) {
         super(TIPO.ALQUILAR, referenceNumber, garageNumber, garagePrize, postalCode, size, location);
