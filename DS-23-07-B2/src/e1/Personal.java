@@ -1,6 +1,6 @@
 package e1;
 
-public abstract class Personal extends IntegranteHowarts {
+public abstract class Personal extends IntegranteHogwarts {
 
 
     enum tipo {
@@ -21,9 +21,6 @@ public abstract class Personal extends IntegranteHowarts {
         return Tipo;
     }
 
-    public String printHorrocruxes() {
-        return ", " + getHorrocruxes() + "): ";
-    }
 
     public  abstract float  Recompensa();
 

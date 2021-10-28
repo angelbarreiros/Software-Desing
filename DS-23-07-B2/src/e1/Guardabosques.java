@@ -7,7 +7,7 @@ public class Guardabosques extends Personal{
     }
 
     private boolean nocturnidad;
-    public Guardabosques(String nombre, int edad, String apellidos, int horrocruxes, boolean nocturnidad) {
+    public Guardabosques(String nombre, String apellidos, int edad, int horrocruxes, boolean nocturnidad) {
         super(nombre, apellidos ,edad, horrocruxes);
         this.nocturnidad = nocturnidad;
     }
@@ -20,15 +20,15 @@ public class Guardabosques extends Personal{
     @Override
     public float Salario() {
         if(nocturnidad){
-            return 150 + 10;
+            return 170 + 10;
         }else{
-            return 150;
+            return 170;
         }
     }
 
     @Override
     public String toString() {
-        return getNombre() + " " + getApellidos() + " (Guardabosques , ";
+        return getNombre() + " " + getApellidos() + " (Guardabosques";
     }
 
 }
