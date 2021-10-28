@@ -6,7 +6,7 @@ public class Guardabosques extends Personal{
         super.setTipo(Personal.tipo.Guardabosques);
     }
 
-    private boolean nocturnidad;
+    private final boolean nocturnidad;
     public Guardabosques(String nombre, String apellidos, int edad, int horrocruxes, boolean nocturnidad) {
         super(nombre, apellidos ,edad, horrocruxes);
         this.nocturnidad = nocturnidad;

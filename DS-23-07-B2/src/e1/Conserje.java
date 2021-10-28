@@ -6,7 +6,7 @@ public class Conserje extends Personal{
         super.setTipo(Personal.tipo.Conserje);
     }
 
-    private boolean nocturnidad;
+    private final boolean nocturnidad;
     public Conserje(String nombre, String apellidos, int edad, int horrocruxes, boolean nocturnidad) {
         super(nombre, apellidos, edad, horrocruxes);
         this.nocturnidad = nocturnidad;
