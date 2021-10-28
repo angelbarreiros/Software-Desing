@@ -10,8 +10,6 @@ public class Idealista {
 
     @Override
     public String toString() {
-        return " " +
-                  Lista +
-                ' ';
+        return Lista.toString();
     }
 }

@@ -92,7 +92,7 @@ public class Vivienda  extends Idealista implements Comparable<Vivienda> {
                 ", PostalCode=" + PostalCode +
                 ", Size=" + Size +
                 ", location='" + location + '\'' +
-                '}';
+                "}\n";
     }
 
     @Override

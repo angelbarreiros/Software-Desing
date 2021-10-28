@@ -25,12 +25,10 @@ class AlquilerTest {
     }
     void TestBasic() {
         ComparePrize prize = new ComparePrize();
-        ArrayList<Vivienda> lista= new ArrayList<>();
-        Vivienda casa = new Vivienda(Vivienda.TIPO.COMPRAR,1231312,4,200,400,15660,180,"A CORUÑA");
-        Vivienda piso =new Vivienda(Vivienda.TIPO.COMPRAR,123123124,4,200,200,15660,80,"Oleiros");
-        lista.add(piso);
-        lista.add(casa);
-        Collections.sort(lista,prize);
+       Idealista idealista=new Idealista();
+        Vivienda casa= new Vivienda(Vivienda.TIPO.COMPRAR,1231321,4,200,300,15446,90,"A coruña");
+        idealista.add(casa);
+        assertEquals("[Vivienda{tipo=COMPRAR, ReferenceNumber=1231321, GarageNumber=4, GaragePrize=200, MonthPrize=300, PostalCode=15444, Size=90, location='A coruña'}]",idealista.toString());
 
     }
 }
