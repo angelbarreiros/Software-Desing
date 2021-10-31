@@ -5,7 +5,7 @@ import java.util.Objects;
 public class Vivienda  extends Idealista implements Comparable<Vivienda> {
 
 
-    public enum TIPO {ALQUILAR, COMPRAR, COMPARTIR}
+    public enum TIPO {ALQUILAR  , COMPARTIR,COMPRAR}
 
     private final Vivienda.TIPO tipo;
 
@@ -60,26 +60,6 @@ public class Vivienda  extends Idealista implements Comparable<Vivienda> {
         return MonthPrize;
     }
 
-    public int PrecioTotal(int People) {
-        if (getTipo() == TIPO.ALQUILAR) {
-            return getPrize() + getGaragePrize() * getGarageNumber();
-        } else if (getTipo() == TIPO.COMPARTIR && People >= 1) {
-            return (getPrize() + getGaragePrize() * getGarageNumber()) / People;
-        } else if (getTipo() == TIPO.COMPRAR) {
-            return (getPrize() + getGaragePrize() * getGarageNumber()) * 12 * 30;
-        } else throw new IllegalArgumentException();
-    }
-
-
-    public int PrecioAjustadoANecesidad(int Garages, int People) {
-        if (getTipo() == TIPO.ALQUILAR) {
-            return getPrize() + getGaragePrize() * Garages;
-        } else if (this.tipo == TIPO.COMPARTIR && People >= 1) {
-            return (MonthPrize + getGaragePrize() * Garages) / People;
-        } else if (this.tipo == TIPO.COMPRAR) {
-            return (MonthPrize + getGaragePrize() * Garages) * 12 * 30;
-        } else throw new IllegalArgumentException();
-    }
 
     @Override
     public String toString() {
