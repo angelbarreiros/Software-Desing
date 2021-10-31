@@ -7,13 +7,14 @@ import java.util.Objects;
 
 
 public class Idealista {
-    private Comparator<Vivienda> comparator =null;
-    ArrayList<Vivienda> list =new ArrayList<>();
+    private Comparator<Vivienda> comparator = null;
+    ArrayList<Vivienda> list = new ArrayList<>();
+
     public void setComparator(Comparator<Vivienda> comparator) {
         this.comparator = comparator;
     }
 
-    public void add(Vivienda v){
+    public void add(Vivienda v) {
         list.add(v);
     }
 
@@ -23,15 +24,6 @@ public class Idealista {
 
     @Override
     public String toString() {
-        return  list.toString();
+        return list.toString();
     }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Idealista idealista = (Idealista) o;
-        return Objects.equals(comparator, idealista.comparator) && Objects.equals(list, idealista.list);
-    }
-
 }

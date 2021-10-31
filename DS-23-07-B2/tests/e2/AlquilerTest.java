@@ -40,8 +40,8 @@ class AlquilerTest {
         Vivienda casa2=new Vivienda(Vivienda.TIPO.COMPRAR,1,3,3,5,Boolean.FALSE,Boolean.FALSE,200,2000,15172,2000f,"Oleiros");
         Vivienda casa3=new Vivienda(Vivienda.TIPO.COMPRAR,1,3,3,5,Boolean.FALSE,Boolean.FALSE,200,2000,15172,2000f,"Oleiro");
         assertEquals(casa1.hashCode(),casa2.hashCode());
-        assertNotEquals(casa3,casa2);
-        assertNotEquals(casa1,casa3);
+        assertNotEquals(casa3.hashCode(),casa2.hashCode());
+        assertNotEquals(casa1.hashCode(),casa3.hashCode());
 
     }
     @org.junit.jupiter.api.Test
@@ -82,9 +82,9 @@ class AlquilerTest {
         Vivienda casa=new Vivienda(Vivienda.TIPO.COMPRAR,3,3,3,5,Boolean.FALSE,Boolean.FALSE,200,2000,15172,2000f,"Oleiros");
         Vivienda piso=new Vivienda(Vivienda.TIPO.COMPARTIR,2,1,1,3,Boolean.TRUE,Boolean.TRUE,150,800,15660,90f,"Cambre");
         Vivienda chalet=new Vivienda(Vivienda.TIPO.ALQUILAR,1,4,5,8,Boolean.TRUE,Boolean.TRUE,400,5000,15008,5000f,"A Zapateira");
-        idealista.add(casa);
-        idealista.add(piso);
         idealista.add(chalet);
+        idealista.add(piso);
+        idealista.add(casa);
         Collections.sort(idealista.list,idealista.getComparator());
         assertEquals(chalet,idealista.list.get(0));
         assertEquals(piso,idealista.list.get(1));
@@ -247,18 +247,18 @@ class AlquilerTest {
     @org.junit.jupiter.api.Test
     void testLocation(){
         Idealista idealista =new Idealista();
-        ComparePostalCode postal = new ComparePostalCode();
+        CompareLocation location= new CompareLocation();
         Vivienda casa=new Vivienda(Vivienda.TIPO.COMPRAR,3,3,3,5,Boolean.FALSE,Boolean.FALSE,200,2000,15172,2000f,"Oleiros");
         Vivienda piso=new Vivienda(Vivienda.TIPO.COMPARTIR,2,1,1,3,Boolean.TRUE,Boolean.TRUE,150,800,15660,90f,"Cambre");
-        Vivienda chalet=new Vivienda(Vivienda.TIPO.ALQUILAR,1,4,5,8,Boolean.TRUE,Boolean.TRUE,400,5000,15008,5000f,"Zapateira");
+        Vivienda chalet=new Vivienda(Vivienda.TIPO.ALQUILAR,1,4,5,8,Boolean.TRUE,Boolean.TRUE,400,5000,15008,5000f,"A Zapateira");
         idealista.add(chalet);
         idealista.add(piso);
         idealista.add(casa);
-        idealista.setComparator(postal);
+        idealista.setComparator(location);
         Collections.sort(idealista.list,idealista.getComparator());
         assertEquals(chalet,idealista.list.get(0));
-        assertEquals(casa,idealista.list.get(1));
-        assertEquals(piso,idealista.list.get(2));
+        assertEquals(piso,idealista.list.get(1));
+        assertEquals(casa,idealista.list.get(2));
 
     }
     @org.junit.jupiter.api.Test

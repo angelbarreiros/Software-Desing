@@ -2,6 +2,7 @@ package e2;
 
 import java.util.Comparator;
 
+
 public class CompareType implements Comparator<Vivienda> {
     @Override
     public int compare(Vivienda o1, Vivienda o2) {
