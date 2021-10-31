@@ -1,12 +1,14 @@
 package e2;
 
+import org.junit.jupiter.api.Test;
 
 import java.util.Collections;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class AlquilerTest {
-    @org.junit.jupiter.api.Test
+class IdealistaTest {
+
+   @Test
     void testBasic() {
         Vivienda casa=new Vivienda(Vivienda.TIPO.COMPRAR,1,3,3,5,Boolean.FALSE,Boolean.FALSE,200,2000,15172,2000f,"Oleiros");
         assertEquals(Vivienda.TIPO.COMPRAR,casa.getType());
@@ -22,19 +24,20 @@ class AlquilerTest {
         assertEquals(2000f,casa.getSize());
         assertEquals("Oleiros",casa.getLocation());
     }
-    @org.junit.jupiter.api.Test
+
+    @Test
     void testEquals(){ // REFERENCE NUMBER IS NOT TAKE INTO CONSIDERATION
         Vivienda casa1=new Vivienda(Vivienda.TIPO.COMPRAR,1,3,3,5,Boolean.FALSE,Boolean.FALSE,200,2000,15172,2000f,"Oleiros");
         Vivienda casa2=new Vivienda(Vivienda.TIPO.COMPRAR,1,3,3,5,Boolean.FALSE,Boolean.FALSE,200,2000,15172,2000f,"Oleiros");
         assertEquals(casa1,casa2);
     }
-    @org.junit.jupiter.api.Test
+    @Test
     void testNotEquals(){ // REFERENCE NUMBER IS NOT TAKE INTO CONSIDERATION
         Vivienda casa1=new Vivienda(Vivienda.TIPO.COMPRAR,1,3,3,5,Boolean.FALSE,Boolean.FALSE,200,2000,15172,2000f,"Oleiros");
         Vivienda casa2=new Vivienda(Vivienda.TIPO.COMPRAR,1,3,3,5,Boolean.FALSE,Boolean.FALSE,200,2000,15172,2000f,"Oleiro");
         assertNotEquals(casa1,casa2);
     }
-    @org.junit.jupiter.api.Test
+    @Test
     void testHashcode(){
         Vivienda casa1=new Vivienda(Vivienda.TIPO.COMPRAR,1,3,3,5,Boolean.FALSE,Boolean.FALSE,200,2000,15172,2000f,"Oleiros");
         Vivienda casa2=new Vivienda(Vivienda.TIPO.COMPRAR,1,3,3,5,Boolean.FALSE,Boolean.FALSE,200,2000,15172,2000f,"Oleiros");
@@ -44,7 +47,7 @@ class AlquilerTest {
         assertNotEquals(casa1.hashCode(),casa3.hashCode());
 
     }
-    @org.junit.jupiter.api.Test
+    @Test
     void testContain(){
         Idealista idealista=new Idealista();
         Vivienda casa1=new Vivienda(Vivienda.TIPO.COMPRAR,1,3,3,5,Boolean.FALSE,Boolean.FALSE,200,2000,15172,2000f,"Oleiros");
@@ -52,7 +55,7 @@ class AlquilerTest {
         assertTrue(idealista.list.contains(casa1));
 
     }
-    @org.junit.jupiter.api.Test
+    @Test
     void testToString(){
         Vivienda casa1=new Vivienda(Vivienda.TIPO.COMPRAR,1,3,3,5,Boolean.FALSE,Boolean.FALSE,200,2000,15172,2000f,"Oleiros");
         Vivienda piso=new Vivienda(Vivienda.TIPO.COMPARTIR,2,1,1,3,Boolean.TRUE,Boolean.TRUE,150,800,15660,90f,"Cambre");
@@ -62,7 +65,7 @@ class AlquilerTest {
         assertEquals("[Vivienda{tipo=COMPRAR, ReferenceNumber=1, GarageNumber=3, BathNumbers=3, RoomsNumber=5, ReadyToTakeUp=false, Elevator=false, GaragePrize=200, MonthPrize=2000, PostalCode=15172, Size=2000.0, location='Oleiros'}, Vivienda{tipo=COMPARTIR, ReferenceNumber=2, GarageNumber=1, BathNumbers=1, RoomsNumber=3, ReadyToTakeUp=true, Elevator=true, GaragePrize=150, MonthPrize=800, PostalCode=15660, Size=90.0, location='Cambre'}]",idealista.toString());
         assertEquals("Vivienda{tipo=COMPRAR, ReferenceNumber=1, GarageNumber=3, BathNumbers=3, RoomsNumber=5, ReadyToTakeUp=false, Elevator=false, GaragePrize=200, MonthPrize=2000, PostalCode=15172, Size=2000.0, location='Oleiros'}",casa1.toString());
     }
-    @org.junit.jupiter.api.Test
+    @Test
     void testAddOrder(){
         Idealista idealista =new Idealista();
         Vivienda casa=new Vivienda(Vivienda.TIPO.COMPRAR,3,3,3,5,Boolean.FALSE,Boolean.FALSE,200,2000,15172,2000f,"Oleiros");
@@ -76,7 +79,7 @@ class AlquilerTest {
         assertEquals(chalet,idealista.list.get(2));
 
     }
-    @org.junit.jupiter.api.Test
+    @Test
     void testNaturalOrder(){
         Idealista idealista =new Idealista();
         Vivienda casa=new Vivienda(Vivienda.TIPO.COMPRAR,3,3,3,5,Boolean.FALSE,Boolean.FALSE,200,2000,15172,2000f,"Oleiros");
@@ -91,7 +94,7 @@ class AlquilerTest {
         assertEquals(casa,idealista.list.get(2));
 
     }
-    @org.junit.jupiter.api.Test
+    @Test
     void testCompareTotalPrize(){
         Idealista idealista =new Idealista();
         CompareTotalPrize total = new CompareTotalPrize();
@@ -108,7 +111,7 @@ class AlquilerTest {
         assertEquals(chalet,idealista.list.get(2));
 
     }
-    @org.junit.jupiter.api.Test
+    @Test
     void testCompareBathNumber(){
         Idealista idealista =new Idealista();
         CompareBathNumber bath=new CompareBathNumber();
@@ -125,7 +128,7 @@ class AlquilerTest {
         assertEquals(chalet,idealista.list.get(2));
 
     }
-    @org.junit.jupiter.api.Test
+    @Test
     void testCompareGarageNumber(){
         Idealista idealista =new Idealista();
         CompareGarageNumber nGrage=new CompareGarageNumber();
@@ -142,7 +145,7 @@ class AlquilerTest {
         assertEquals(chalet,idealista.list.get(2));
 
     }
-    @org.junit.jupiter.api.Test
+    @Test
     void testRoomsNumber(){
         Idealista idealista =new Idealista();
         CompareRoomsNumber room=new CompareRoomsNumber();
@@ -159,7 +162,7 @@ class AlquilerTest {
         assertEquals(chalet,idealista.list.get(2));
 
     }
-    @org.junit.jupiter.api.Test
+    @Test
     void testReadyToTakeUp(){
         Idealista idealista =new Idealista();
         CompareReadyToTakeUp ready=new CompareReadyToTakeUp();
@@ -176,7 +179,7 @@ class AlquilerTest {
         assertEquals(chalet,idealista.list.get(2));
 
     }
-    @org.junit.jupiter.api.Test
+    @Test
     void testElevator(){
         Idealista idealista =new Idealista();
         CompareElevator elevator=new CompareElevator();
@@ -193,7 +196,7 @@ class AlquilerTest {
         assertEquals(chalet,idealista.list.get(2));
 
     }
-    @org.junit.jupiter.api.Test
+    @Test
     void testGaragePrice(){
         Idealista idealista =new Idealista();
         CompareGaragePrize garage= new CompareGaragePrize();
@@ -210,7 +213,7 @@ class AlquilerTest {
         assertEquals(chalet,idealista.list.get(2));
 
     }
-    @org.junit.jupiter.api.Test
+    @Test
     void testPrize(){
         Idealista idealista =new Idealista();
         ComparePrize prize=new ComparePrize();
@@ -227,7 +230,7 @@ class AlquilerTest {
         assertEquals(chalet,idealista.list.get(2));
 
     }
-    @org.junit.jupiter.api.Test
+    @Test
     void testPostalCode(){
         Idealista idealista =new Idealista();
         ComparePostalCode postal = new ComparePostalCode();
@@ -244,7 +247,7 @@ class AlquilerTest {
         assertEquals(piso,idealista.list.get(2));
 
     }
-    @org.junit.jupiter.api.Test
+    @Test
     void testLocation(){
         Idealista idealista =new Idealista();
         CompareLocation location= new CompareLocation();
@@ -261,7 +264,7 @@ class AlquilerTest {
         assertEquals(casa,idealista.list.get(2));
 
     }
-    @org.junit.jupiter.api.Test
+    @Test
     void testType(){
         Idealista idealista =new Idealista();
         CompareType type = new CompareType();
@@ -278,7 +281,7 @@ class AlquilerTest {
         assertEquals(casa,idealista.list.get(2));
 
     }
-    @org.junit.jupiter.api.Test
+    @Test
     void testSize(){
         Idealista idealista =new Idealista();
         CompareSize size=new CompareSize();

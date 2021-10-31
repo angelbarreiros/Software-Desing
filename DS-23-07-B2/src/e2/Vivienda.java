@@ -5,20 +5,20 @@ import java.util.Objects;
 public class Vivienda  extends Idealista implements Comparable<Vivienda> {
 
 
-    public enum TIPO {ALQUILAR  , COMPARTIR,COMPRAR}
+    public enum TIPO {ALQUILAR,COMPARTIR,COMPRAR}
 
     private final Vivienda.TIPO type;
 
     private final int ReferenceNumber;
     private final int GarageNumber;
     private final int BathNumbers;
-    private  final int RoomsNumber;
-    private final Boolean ReadyToTakeUp;
-    private final Boolean Elevator;
+    private final int RoomsNumber;
     private final int GaragePrize;
     private final int MonthPrize;
     private final int PostalCode;
     private final float Size;
+    private final Boolean ReadyToTakeUp;
+    private final Boolean Elevator;
     private final String location;
 
     public Vivienda(TIPO tipo, int referenceNumber, int garageNumber, int bathNumbers, int roomsNumber, Boolean readyToTakeUp,
