@@ -7,29 +7,50 @@ public class Vivienda  extends Idealista implements Comparable<Vivienda> {
 
     public enum TIPO {ALQUILAR  , COMPARTIR,COMPRAR}
 
-    private final Vivienda.TIPO tipo;
+    private final Vivienda.TIPO type;
 
     private final int ReferenceNumber;
     private final int GarageNumber;
+    private final int BathNumbers;
+    private  final int RoomsNumber;
+    private final Boolean ReadyToTakeUp;
+    private final Boolean Elevator;
     private final int GaragePrize;
     private final int MonthPrize;
     private final int PostalCode;
-    private final int Size;
+    private final float Size;
     private final String location;
 
-    public Vivienda(TIPO tipo, int referenceNumber, int garageNumber, int garagePrize, int prize, int postalCode, int size, String location) {
-        this.tipo = tipo;
+    public Vivienda(TIPO tipo, int referenceNumber, int garageNumber, int bathNumbers, int roomsNumber, Boolean readyToTakeUp,
+    Boolean elevator, int garagePrize, int monthPrize, int postalCode, float size, String location) {
+        this.type = tipo;
         ReferenceNumber = referenceNumber;
         GarageNumber = garageNumber;
+        BathNumbers = bathNumbers;
+        RoomsNumber = roomsNumber;
+        ReadyToTakeUp = readyToTakeUp;
+        Elevator = elevator;
         GaragePrize = garagePrize;
-        this.MonthPrize = prize;
+        MonthPrize = monthPrize;
         PostalCode = postalCode;
         Size = size;
         this.location = location;
     }
 
-    public TIPO getTipo() {
-        return tipo;
+    public int getRoomsNumber() {
+        return RoomsNumber;
+    }
+
+    public Boolean getReadyToTakeUp() {
+        return ReadyToTakeUp;
+    }
+
+    public Boolean getElevator() {
+        return Elevator;
+    }
+
+    public TIPO getType() {
+        return type;
     }
 
     public int getReferenceNumber() {
@@ -48,7 +69,7 @@ public class Vivienda  extends Idealista implements Comparable<Vivienda> {
         return PostalCode;
     }
 
-    public int getSize() {
+    public float getSize() {
         return Size;
     }
 
@@ -60,19 +81,27 @@ public class Vivienda  extends Idealista implements Comparable<Vivienda> {
         return MonthPrize;
     }
 
+    public int getBathNumbers() {
+        return BathNumbers;
+    }
+
 
     @Override
     public String toString() {
         return "Vivienda{" +
-                "tipo=" + tipo +
+                "tipo=" + type +
                 ", ReferenceNumber=" + ReferenceNumber +
                 ", GarageNumber=" + GarageNumber +
+                ", BathNumbers=" + BathNumbers +
+                ", RoomsNumber=" + RoomsNumber +
+                ", ReadyToTakeUp=" + ReadyToTakeUp +
+                ", Elevator=" + Elevator +
                 ", GaragePrize=" + GaragePrize +
                 ", MonthPrize=" + MonthPrize +
                 ", PostalCode=" + PostalCode +
                 ", Size=" + Size +
                 ", location='" + location + '\'' +
-                "}\n";
+                '}';
     }
 
     @Override
@@ -80,12 +109,12 @@ public class Vivienda  extends Idealista implements Comparable<Vivienda> {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Vivienda vivienda = (Vivienda) o;
-        return GarageNumber == vivienda.GarageNumber && GaragePrize == vivienda.GaragePrize && MonthPrize == vivienda.MonthPrize && PostalCode == vivienda.PostalCode && Size == vivienda.Size && tipo == vivienda.tipo && Objects.equals(location, vivienda.location);
+        return GarageNumber == vivienda.GarageNumber && BathNumbers == vivienda.BathNumbers && RoomsNumber == vivienda.RoomsNumber && GaragePrize == vivienda.GaragePrize && MonthPrize == vivienda.MonthPrize && PostalCode == vivienda.PostalCode && Float.compare(vivienda.Size, Size) == 0 && type == vivienda.type && Objects.equals(ReadyToTakeUp, vivienda.ReadyToTakeUp) && Objects.equals(Elevator, vivienda.Elevator) && Objects.equals(location, vivienda.location);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(tipo, GarageNumber, GaragePrize, MonthPrize, PostalCode, Size, location);
+        return Objects.hash(type, GarageNumber, BathNumbers, RoomsNumber, ReadyToTakeUp, Elevator, GaragePrize, MonthPrize, PostalCode, Size, location);
     }
 
     public int compareTo(Vivienda o) {
