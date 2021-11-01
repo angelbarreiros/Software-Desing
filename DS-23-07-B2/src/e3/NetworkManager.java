@@ -1,5 +1,5 @@
 package e3;
-
+/*
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -30,4 +30,4 @@ public interface NetworkManager implements Map<String,Network> {
         return Tlist;
     }
 
-}
+}*/
