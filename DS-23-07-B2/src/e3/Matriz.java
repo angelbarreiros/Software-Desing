@@ -6,7 +6,11 @@ public class Matriz implements  NetworkManager{
     final int colum=128;
     final int fila=128;
     private final String[][] matriz = new String[fila][colum];
-
+    private final TopicOfInterest topicOfInteresta= new TopicOfInterest(TopicOfInterest.TOPIC.a);
+    private final TopicOfInterest topicOfInterestb= new TopicOfInterest(TopicOfInterest.TOPIC.b);
+    private final TopicOfInterest topicOfInterestd= new TopicOfInterest(TopicOfInterest.TOPIC.d);
+    private final  TopicOfInterest topicOfIntereste= new TopicOfInterest(TopicOfInterest.TOPIC.e);
+    private final TopicOfInterest topicOfInterestc= new TopicOfInterest(TopicOfInterest.TOPIC.c);
     @Override
     public void addUser(String user, List<TopicOfInterest> topicOfInterest) {
         int i=0;
@@ -39,7 +43,7 @@ public class Matriz implements  NetworkManager{
         }
         int i=0;
         while(matriz[j][i]!=null){
-            if (i==5){
+            if (i==colum-1){
                 revisar =true;
                 break;
             }
@@ -119,11 +123,6 @@ public class Matriz implements  NetworkManager{
     @Override
     public List<TopicOfInterest> getInterest() {
         List<TopicOfInterest> topic=new ArrayList<>();
-        TopicOfInterest topicOfInteresta= new TopicOfInterest(TopicOfInterest.TOPIC.a);
-        TopicOfInterest topicOfInterestb= new TopicOfInterest(TopicOfInterest.TOPIC.b);
-        TopicOfInterest topicOfInterestd= new TopicOfInterest(TopicOfInterest.TOPIC.d);
-        TopicOfInterest topicOfIntereste= new TopicOfInterest(TopicOfInterest.TOPIC.e);
-        TopicOfInterest topicOfInterestc= new TopicOfInterest(TopicOfInterest.TOPIC.c);
         for (int i = 0; i < fila; i++) {
             for (int j = 1; j < colum; j++) {
                 if (matriz[i][j] != null) {
@@ -145,11 +144,7 @@ public class Matriz implements  NetworkManager{
     @Override
     public List<TopicOfInterest> getInterestUser(String user) {
         List<TopicOfInterest> topic=new ArrayList<>();
-        TopicOfInterest topicOfInteresta= new TopicOfInterest(TopicOfInterest.TOPIC.a);
-        TopicOfInterest topicOfInterestb= new TopicOfInterest(TopicOfInterest.TOPIC.b);
-        TopicOfInterest topicOfInterestd= new TopicOfInterest(TopicOfInterest.TOPIC.d);
-        TopicOfInterest topicOfIntereste= new TopicOfInterest(TopicOfInterest.TOPIC.e);
-        TopicOfInterest topicOfInterestc= new TopicOfInterest(TopicOfInterest.TOPIC.c);
+
 
         int j=0;
         boolean revisar=false;
@@ -177,5 +172,34 @@ public class Matriz implements  NetworkManager{
 
         }
         return topic;
+    }
+
+    public static void main(String[] args) {
+        Matriz matriz1=new Matriz();
+        List<TopicOfInterest> lista;
+        List<String> stringList ;
+        TopicOfInterest topicOfInteresta=new TopicOfInterest(TopicOfInterest.TOPIC.a);
+        TopicOfInterest topicOfInterestb=new TopicOfInterest(TopicOfInterest.TOPIC.b);
+        TopicOfInterest topicOfInterestc=new TopicOfInterest(TopicOfInterest.TOPIC.c);
+        TopicOfInterest topicOfInterestd=new TopicOfInterest(TopicOfInterest.TOPIC.d);
+        TopicOfInterest topicOfIntereste=new TopicOfInterest(TopicOfInterest.TOPIC.e);
+        matriz1.addUser("jorge",null);
+        matriz1.addUser("angek",null);
+        matriz1.addUser("angek",null);
+        matriz1.addUser("angek",null);matriz1.addUser("angek",null);matriz1.addUser("angek",null);matriz1.addUser("angek",null);matriz1.addUser("angek",null);matriz1.addUser("angek",null);matriz1.addUser("angek",null);matriz1.addUser("angek",null);matriz1.addUser("angek",null);matriz1.addUser("angek",null);matriz1.addUser("angek",null);matriz1.addUser("angek",null);matriz1.addUser("angek",null);matriz1.addUser("angek",null);matriz1.addUser("angek",null);matriz1.addUser("angek",null);matriz1.addUser("angek",null);matriz1.addUser("angek",null);matriz1.addUser("angek",null);matriz1.addUser("angek",null);matriz1.addUser("angek",null);matriz1.addUser("angek",null);matriz1.addUser("angek",null);matriz1.addUser("angek",null);matriz1.addUser("angek",null);matriz1.addUser("angek",null);matriz1.addUser("angek",null);matriz1.addUser("angek",null);matriz1.addUser("angek",null);matriz1.addUser("angek",null);matriz1.addUser("angek",null);matriz1.addUser("angek",null);matriz1.addUser("angek",null);matriz1.addUser("angek",null);matriz1.addUser("angek",null);matriz1.addUser("angek",null);matriz1.addUser("angek",null);matriz1.addUser("angek",null);matriz1.addUser("angek",null);matriz1.addUser("angek",null);matriz1.addUser("angek",null);matriz1.addUser("angek",null);matriz1.addUser("angek",null);matriz1.addUser("angek",null);matriz1.addUser("angek",null);matriz1.addUser("angek",null);matriz1.addUser("angek",null);matriz1.addUser("angek",null);matriz1.addUser("angek",null);matriz1.addUser("angek",null);matriz1.addUser("angek",null);matriz1.addUser("angek",null);matriz1.addUser("angek",null);matriz1.addUser("angek",null);matriz1.addUser("angek",null);matriz1.addUser("angek",null);matriz1.addUser("angek",null);matriz1.addUser("angek",null);matriz1.addUser("angek",null);matriz1.addUser("angek",null);matriz1.addUser("angek",null);matriz1.addUser("angek",null);matriz1.addUser("angek",null);matriz1.addUser("angek",null);matriz1.addUser("angek",null);
+        matriz1.addInterest("jorge",topicOfInteresta);
+        matriz1.addInterest("jorge",topicOfInteresta);
+        matriz1.addInterest("jorge",topicOfInterestc);
+        matriz1.addInterest("jorge",topicOfInteresta);
+        matriz1.addInterest("jorge",topicOfInterestc);matriz1.addInterest("jorge",topicOfInterestc);matriz1.addInterest("jorge",topicOfInterestc);matriz1.addInterest("jorge",topicOfInterestc);matriz1.addInterest("jorge",topicOfInterestc);matriz1.addInterest("jorge",topicOfInterestc);matriz1.addInterest("jorge",topicOfInterestc);matriz1.addInterest("jorge",topicOfInterestc);matriz1.addInterest("jorge",topicOfInterestc);matriz1.addInterest("jorge",topicOfInterestc);matriz1.addInterest("jorge",topicOfInterestc);matriz1.addInterest("jorge",topicOfInterestc);matriz1.addInterest("jorge",topicOfInterestc);matriz1.addInterest("jorge",topicOfInterestc);matriz1.addInterest("jorge",topicOfInterestc);matriz1.addInterest("jorge",topicOfInterestc);matriz1.addInterest("jorge",topicOfInterestc);matriz1.addInterest("jorge",topicOfInterestc);matriz1.addInterest("jorge",topicOfInterestc);matriz1.addInterest("jorge",topicOfInterestc);matriz1.addInterest("jorge",topicOfInterestc);matriz1.addInterest("jorge",topicOfInterestc);matriz1.addInterest("jorge",topicOfInterestc);matriz1.addInterest("jorge",topicOfInterestc);matriz1.addInterest("jorge",topicOfInterestc);matriz1.addInterest("jorge",topicOfInterestc);matriz1.addInterest("jorge",topicOfInterestc);matriz1.addInterest("jorge",topicOfInterestc);matriz1.addInterest("jorge",topicOfInterestc);matriz1.addInterest("jorge",topicOfInterestc);matriz1.addInterest("jorge",topicOfInterestc);matriz1.addInterest("jorge",topicOfInterestc);matriz1.addInterest("jorge",topicOfInterestc);matriz1.addInterest("jorge",topicOfInterestc);matriz1.addInterest("jorge",topicOfInterestc);matriz1.addInterest("jorge",topicOfInterestc);matriz1.addInterest("jorge",topicOfInterestc);matriz1.addInterest("jorge",topicOfInterestc);matriz1.addInterest("jorge",topicOfInterestc);matriz1.addInterest("jorge",topicOfInterestc);matriz1.addInterest("jorge",topicOfInterestc);matriz1.addInterest("jorge",topicOfInterestc);matriz1.addInterest("jorge",topicOfInterestc);matriz1.addInterest("jorge",topicOfInterestc);matriz1.addInterest("jorge",topicOfInterestc);matriz1.addInterest("jorge",topicOfInterestc);matriz1.addInterest("jorge",topicOfInterestc);matriz1.addInterest("jorge",topicOfInterestc);matriz1.addInterest("jorge",topicOfInterestc);matriz1.addInterest("jorge",topicOfInterestc);matriz1.addInterest("jorge",topicOfInterestc);matriz1.addInterest("jorge",topicOfInterestc);matriz1.addInterest("jorge",topicOfInterestc);matriz1.addInterest("jorge",topicOfInterestc);matriz1.addInterest("jorge",topicOfInterestc);
+        matriz1.addInterest("jorge",topicOfInteresta);
+        for (int i=0;i<200;i++){
+            matriz1.removeUser("angek");
+        }
+        matriz1.removeUser("jorge");
+        lista=matriz1.getInterestUser("jorge");
+        stringList=matriz1.getUsers();
+        System.out.println("topicOfIntereste = " + stringList);
+        System.out.println("lista = " + lista);
     }
 }
