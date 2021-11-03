@@ -2,7 +2,6 @@ package e3;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 public class Matriz implements  NetworkManager{
     private final String[][] matriz = new String[128][6];
 
@@ -67,6 +66,7 @@ public class Matriz implements  NetworkManager{
     public void removeInterest(String user, TopicOfInterest topicOfInterest) {
         int j=0;
         int x=0;
+        int z=1;
         boolean revisar=false,revisar2=false;
         for (int i=0;i<128;i++){
             if (matriz[i][0]!=null){
@@ -80,9 +80,10 @@ public class Matriz implements  NetworkManager{
         }
         if (revisar){
             for (int y=1;y<6;y++){
+                z++;
                 if (matriz[j][y]!=null){
                     if(matriz[j][y].equals(topicOfInterest.toString())){
-                        x=y;
+                        x=z;                                        //CAMBIE LA Z POR LA Y , A VER SI SIGUE FUNCIONANDO
                         revisar2=true;
                         break;
                     }
@@ -118,26 +119,12 @@ public class Matriz implements  NetworkManager{
             for (int j = 1; j < 6; j++) {
                 if (matriz[i][j] != null) {
                     switch (matriz[i][j]) {
-                        case "a" -> {
-
-                            topic.add(topicOfInteresta);
-                        }
-                        case "b" -> {
-
-                            topic.add(topicOfInterestb);
-                        }
-                        case "c" -> {
-
-                            topic.add(topicOfInterestc);
-                        }
-                        case "d" -> {
-
-                            topic.add(topicOfInterestd);
-                        }
-                        case "e" -> {
-
-                            topic.add(topicOfIntereste);
-                        }
+                        case "a" -> topic.add(topicOfInteresta);
+                        case "b" -> topic.add(topicOfInterestb);
+                        case "c" -> topic.add(topicOfInterestc);
+                        case "d" -> topic.add(topicOfInterestd);
+                        case "e" -> topic.add(topicOfIntereste);
+                        default -> throw new IllegalStateException("Unexpected value: " + matriz[i][j]);
                     }
                 }
             }
@@ -170,26 +157,11 @@ public class Matriz implements  NetworkManager{
             for (int i = 1; i < 6; i++) {
                 if (matriz[j][i] != null) {
                     switch (matriz[j][i]) {
-                        case "a" -> {
-
-                            topic.add(topicOfInteresta);
-                        }
-                        case "b" -> {
-
-                            topic.add(topicOfInterestb);
-                        }
-                        case "c" -> {
-
-                            topic.add(topicOfInterestc);
-                        }
-                        case "d" -> {
-
-                            topic.add(topicOfInterestd);
-                        }
-                        case "e" -> {
-
-                            topic.add(topicOfIntereste);
-                        }
+                        case "a" -> topic.add(topicOfInteresta);
+                        case "b" -> topic.add(topicOfInterestb);
+                        case "c" -> topic.add(topicOfInterestc);
+                        case "d" -> topic.add(topicOfInterestd);
+                        case "e" -> topic.add(topicOfIntereste);
                     }
                 }
             }
@@ -197,29 +169,4 @@ public class Matriz implements  NetworkManager{
         }
         return topic;
     }
-
-
-
-
-    public static void main(String[] args) {
-        Matriz matriz1=new Matriz();
-        List<String> lista;
-        TopicOfInterest topica=new TopicOfInterest(TopicOfInterest.TOPIC.a);
-        TopicOfInterest topicc=new TopicOfInterest(TopicOfInterest.TOPIC.c);
-        TopicOfInterest topicd=new TopicOfInterest(TopicOfInterest.TOPIC.d);
-        TopicOfInterest topice=new TopicOfInterest(TopicOfInterest.TOPIC.e);
-        TopicOfInterest topicb=new TopicOfInterest(TopicOfInterest.TOPIC.b);
-        matriz1.addUser("pepe",null);
-        matriz1.addUser("angel",null);
-        matriz1.addUser("maria",null);
-        matriz1.addUser("jesus",null);
-        matriz1.addUser("leo",null);
-        matriz1.addUser("jorge",null);
-
-        matriz1.removeUser("jorge");
-        lista=matriz1.getUsers();
-
-        System.out.println("topic = " + lista);
-    }
-
 }
