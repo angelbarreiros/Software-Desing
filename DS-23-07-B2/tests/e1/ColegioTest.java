@@ -9,33 +9,8 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class ColegioTest {
 
-    private ArrayList<Personal> arrayPersonal =new ArrayList<>();
-    private ArrayList<Residentes> arrayResidentes=new ArrayList<>();
-    private String strRecompensa = "Paquito 38 (Docente de Defensa, 16):  600.0\n" +
-            "Julio Suarez (Docente de Pociones, 26):  1300.0\n" +
-            "Laureano Rosales (Docente de Historia, 18):  900.0\n" +
-            "Laura Mendez (Docente de Transformaciones, 30):  1500.0\n" +
-            "Nuria Casado (Docente de Herbologia, 30):  1500.0\n" +
-            "Luis Casas (Guardabosques, 65):  4875.0\n" +
-            "Andres Lopez (Guardabosques, 65):  4875.0\n" +
-            "Roberto Loureiro (Conserje, 23):  1495.0\n" +
-            "Carlota Sueiro (Conserje, 23):  1495.0\n" +
-            "Joseluis Rodriguez Zapatero (estudiante de Slytherin, 6):  1080.0 galeones\n" +
-            "Joseluis Rodriguez Zapatero (estudiante de Hufflepuff, 6):  540.0 galeones\n" +
-            "Josemanuel Dieguez (fantasma de Slytherin, 8):  1280.0 galeones\n" +
-            "Josemanuel Dieguez (fantasma de Gryffindor, 8):  640.0 galeones\n" +
-            "La recompensa total del Colegio Hogwarts es de 22080.0 galeones\n";
-
-    private String strSalario = "Paquito 38 (Docente de Defensa, 16):  500.0 galeones\n" +
-            "Julio Suarez (Docente de Pociones, 26):  350.0 galeones\n" +
-            "Laureano Rosales (Docente de Historia, 18):  200.0 galeones\n" +
-            "Laura Mendez (Docente de Transformaciones, 30):  400.0 galeones\n" +
-            "Nuria Casado (Docente de Herbologia, 30):  250.0 galeones\n" +
-            "Luis Casas (Guardabosques, 65):  180.0 galeones\n" +
-            "Andres Lopez (Guardabosques, 65):  170.0 galeones\n" +
-            "Roberto Loureiro (Conserje, 23):  160.0 galeones\n" +
-            "Carlota Sueiro (Conserje, 23):  150.0 galeones\n" +
-            "El gasto de Hogwarts en personal es de 2360.0 galeones\n";
+    private final ArrayList<Personal> arrayPersonal =new ArrayList<>();
+    private final  ArrayList<Residentes> arrayResidentes=new ArrayList<>();
 
     @BeforeEach
     void setUp() {
@@ -56,11 +31,39 @@ class ColegioTest {
 
     @Test
     void imprimirRecompensa() {
+        String strRecompensa = """
+                Paquito 38 (Docente de Defensa, 16):  600.0
+                Julio Suarez (Docente de Pociones, 26):  1300.0
+                Laureano Rosales (Docente de Historia, 18):  900.0
+                Laura Mendez (Docente de Transformaciones, 30):  1500.0
+                Nuria Casado (Docente de Herbologia, 30):  1500.0
+                Luis Casas (Guardabosques, 65):  4875.0
+                Andres Lopez (Guardabosques, 65):  4875.0
+                Roberto Loureiro (Conserje, 23):  1495.0
+                Carlota Sueiro (Conserje, 23):  1495.0
+                Joseluis Rodriguez Zapatero (estudiante de Slytherin, 6):  1080.0 galeones
+                Joseluis Rodriguez Zapatero (estudiante de Hufflepuff, 6):  540.0 galeones
+                Josemanuel Dieguez (fantasma de Slytherin, 8):  1280.0 galeones
+                Josemanuel Dieguez (fantasma de Gryffindor, 8):  640.0 galeones
+                La recompensa total del Colegio Hogwarts es de 22080.0 galeones
+                """;
         assertEquals(strRecompensa, Colegio.imprimirRecompensa(arrayPersonal, arrayResidentes));
     }
 
     @Test
     void imprimirSalarios() {
+        String strSalario = """
+                Paquito 38 (Docente de Defensa, 16):  500.0 galeones
+                Julio Suarez (Docente de Pociones, 26):  350.0 galeones
+                Laureano Rosales (Docente de Historia, 18):  200.0 galeones
+                Laura Mendez (Docente de Transformaciones, 30):  400.0 galeones
+                Nuria Casado (Docente de Herbologia, 30):  250.0 galeones
+                Luis Casas (Guardabosques, 65):  180.0 galeones
+                Andres Lopez (Guardabosques, 65):  170.0 galeones
+                Roberto Loureiro (Conserje, 23):  160.0 galeones
+                Carlota Sueiro (Conserje, 23):  150.0 galeones
+                El gasto de Hogwarts en personal es de 2360.0 galeones
+                """;
         assertEquals(strSalario, Colegio.imprimirSalarios(arrayPersonal));
     }
 }
