@@ -3,15 +3,24 @@ package e3;
 import java.util.ArrayList;
 import java.util.List;
 public class Matriz implements  NetworkManager{
-    private final String[][] matriz = new String[128][6];
+    final int colum=128;
+    final int fila=128;
+    private final String[][] matriz = new String[fila][colum];
 
     @Override
     public void addUser(String user, List<TopicOfInterest> topicOfInterest) {
         int i=0;
+        boolean revisar=false;
         while(matriz[i][0]!=null){
+            if (i==fila-1){
+                revisar=true;
+                break;
+            }
             i++;
         }
-        matriz[i][0]=user;
+        if(!revisar){
+            matriz[i][0]=user;
+        }
 
     }
 
@@ -19,7 +28,7 @@ public class Matriz implements  NetworkManager{
     public void addInterest(String user, TopicOfInterest topicofinterest) {
         boolean revisar=false;
         int j=0;
-        for (int i=0;i<128;i++){
+        for (int i=0;i<fila;i++){
             if (matriz[i][0]!=null){
                 if(matriz[i][0].equals(user)){
                     j=i;
@@ -45,7 +54,7 @@ public class Matriz implements  NetworkManager{
     public void removeUser(String user) {
         int j=0;
         boolean revisar=false;
-        for (int i=0;i<128;i++){
+        for (int i=0;i<fila;i++){
             if (matriz[i][0]!=null){
                 if(matriz[i][0].equals(user)) {
                     j = i;
@@ -55,7 +64,7 @@ public class Matriz implements  NetworkManager{
             }
         }
         if (revisar){
-            for (int i=0;i<6;i++){
+            for (int i=0;i<colum;i++){
                 matriz[j][i]=null;
             }
         }
@@ -68,7 +77,7 @@ public class Matriz implements  NetworkManager{
         int x=0;
         int z=1;
         boolean revisar=false,revisar2=false;
-        for (int i=0;i<128;i++){
+        for (int i=0;i<fila;i++){
             if (matriz[i][0]!=null){
                 if(matriz[i][0].equals(user)){
                     j=i;
@@ -79,7 +88,7 @@ public class Matriz implements  NetworkManager{
             }
         }
         if (revisar){
-            for (int y=1;y<6;y++){
+            for (int y=1;y<colum;y++){
                 z++;
                 if (matriz[j][y]!=null){
                     if(matriz[j][y].equals(topicOfInterest.toString())){
@@ -99,7 +108,7 @@ public class Matriz implements  NetworkManager{
     @Override
     public List<String> getUsers(){
         List<String> usuarios=new ArrayList<>();
-        for (int i =0;i<128;i++){
+        for (int i =0;i<fila;i++){
             if (matriz[i][0]!=null){
                 usuarios.add(matriz[i][0]);
             }
@@ -115,8 +124,8 @@ public class Matriz implements  NetworkManager{
         TopicOfInterest topicOfInterestd= new TopicOfInterest(TopicOfInterest.TOPIC.d);
         TopicOfInterest topicOfIntereste= new TopicOfInterest(TopicOfInterest.TOPIC.e);
         TopicOfInterest topicOfInterestc= new TopicOfInterest(TopicOfInterest.TOPIC.c);
-        for (int i = 0; i < 128; i++) {
-            for (int j = 1; j < 6; j++) {
+        for (int i = 0; i < fila; i++) {
+            for (int j = 1; j < colum; j++) {
                 if (matriz[i][j] != null) {
                     switch (matriz[i][j]) {
                         case "a" -> topic.add(topicOfInteresta);
@@ -144,7 +153,7 @@ public class Matriz implements  NetworkManager{
 
         int j=0;
         boolean revisar=false;
-        for (int i=0;i<128;i++){
+        for (int i=0;i<fila;i++){
             if (matriz[i][0]!=null){
                 if(matriz[i][0].equals(user)) {
                     j = i;
@@ -154,7 +163,7 @@ public class Matriz implements  NetworkManager{
             }
         }
         if (revisar){
-            for (int i = 1; i < 6; i++) {
+            for (int i = 1; i < colum; i++) {
                 if (matriz[j][i] != null) {
                     switch (matriz[j][i]) {
                         case "a" -> topic.add(topicOfInteresta);
