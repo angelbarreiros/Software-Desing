@@ -1,10 +1,6 @@
 package e1;
 
 public class Conserje extends Personal{
-    @Override
-    public void setTipo(tipo tipo) {
-        super.setTipo(Personal.tipo.Conserje);
-    }
 
     private final boolean nocturnidad;
     public Conserje(String nombre, String apellidos, int edad, int horrocruxes, boolean nocturnidad) {

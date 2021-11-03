@@ -1,10 +1,6 @@
 package e1;
 
 public class Docente  extends  Personal{
-    @Override
-    public void setTipo(tipo tipo) {
-        super.setTipo(Personal.tipo.Docente);
-    }
 
     enum asignatura {
         Historia,Transformaciones,Defensa,Herbologia,Pociones
@@ -17,9 +13,6 @@ public class Docente  extends  Personal{
 
     }
 
-    public asignatura getAsignatura() {
-        return Asignatura;
-    }
     public float Recompensa(){
         if (this.Asignatura==asignatura.Defensa){
             return  getHorrocruxes()*50*0.75f;
