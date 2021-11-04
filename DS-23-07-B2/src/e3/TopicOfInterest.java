@@ -1,21 +1,22 @@
 package e3;
 
 public class TopicOfInterest {
-    enum TOPIC {a,b,c,d,e}
-    public TopicOfInterest.TOPIC interest;
+    String topic;
 
-    public TopicOfInterest(TOPIC interest) {
-        this.interest = interest;
+    public String getTopic() {
+        return topic;
     }
 
-    public void setInterest(TOPIC interest) {
-        this.interest = interest;
+    public void setTopic(String topic) {
+        this.topic = topic;
+    }
+
+    public TopicOfInterest(String topic) {
+        this.topic = topic;
     }
 
     @Override
     public String toString() {
-        return interest.toString();
+        return  topic;
     }
-
-
 }

@@ -3,14 +3,11 @@ package e3;
 import java.util.ArrayList;
 import java.util.List;
 public class Matriz implements  NetworkManager{
-    final int colum=128;
-    final int fila=128;
+    final int colum=1000;
+    final int fila=1000;
     private final String[][] matriz = new String[fila][colum];
-    private final TopicOfInterest topicOfInteresta= new TopicOfInterest(TopicOfInterest.TOPIC.a);
-    private final TopicOfInterest topicOfInterestb= new TopicOfInterest(TopicOfInterest.TOPIC.b);
-    private final TopicOfInterest topicOfInterestd= new TopicOfInterest(TopicOfInterest.TOPIC.d);
-    private final  TopicOfInterest topicOfIntereste= new TopicOfInterest(TopicOfInterest.TOPIC.e);
-    private final TopicOfInterest topicOfInterestc= new TopicOfInterest(TopicOfInterest.TOPIC.c);
+
+
     @Override
     public void addUser(String user, List<TopicOfInterest> topicOfInterest) {
         int i=0, z = 0, y=0;
@@ -130,18 +127,13 @@ public class Matriz implements  NetworkManager{
 
     @Override
     public List<TopicOfInterest> getInterest() {
+
         List<TopicOfInterest> topic=new ArrayList<>();
         for (int i = 0; i < fila; i++) {
             for (int j = 1; j < colum; j++) {
                 if (matriz[i][j] != null) {
-                    switch (matriz[i][j]) {
-                        case "a" -> topic.add(topicOfInteresta);
-                        case "b" -> topic.add(topicOfInterestb);
-                        case "c" -> topic.add(topicOfInterestc);
-                        case "d" -> topic.add(topicOfInterestd);
-                        case "e" -> topic.add(topicOfIntereste);
-                        default -> throw new IllegalStateException("Unexpected value: " + matriz[i][j]);
-                    }
+                    TopicOfInterest topicOfInteresta= new TopicOfInterest(matriz[i][j]);
+                    topic.add(topicOfInteresta);
                 }
             }
 
@@ -168,13 +160,8 @@ public class Matriz implements  NetworkManager{
         if (revisar){
             for (int i = 1; i < colum; i++) {
                 if (matriz[j][i] != null) {
-                    switch (matriz[j][i]) {
-                        case "a" -> topic.add(topicOfInteresta);
-                        case "b" -> topic.add(topicOfInterestb);
-                        case "c" -> topic.add(topicOfInterestc);
-                        case "d" -> topic.add(topicOfInterestd);
-                        case "e" -> topic.add(topicOfIntereste);
-                    }
+                    TopicOfInterest topicOfInteresta= new TopicOfInterest(matriz[j][i]);
+                    topic.add(topicOfInteresta);
                 }
             }
 
@@ -186,19 +173,14 @@ public class Matriz implements  NetworkManager{
         Matriz matriz1=new Matriz();
         List<TopicOfInterest> lista = new ArrayList<>();
         List<String> stringList ;
+        TopicOfInterest topicOfInteresta= new TopicOfInterest("furbo");
+        lista.add(topicOfInteresta);lista.add(topicOfInteresta);lista.add(topicOfInteresta);lista.add(topicOfInteresta);lista.add(topicOfInteresta);lista.add(topicOfInteresta);lista.add(topicOfInteresta);lista.add(topicOfInteresta);
 
-        TopicOfInterest topicOfInteresta=new TopicOfInterest(TopicOfInterest.TOPIC.a);
-        TopicOfInterest topicOfInterestb=new TopicOfInterest(TopicOfInterest.TOPIC.b);
-        TopicOfInterest topicOfInterestc=new TopicOfInterest(TopicOfInterest.TOPIC.c);
-        TopicOfInterest topicOfInterestd=new TopicOfInterest(TopicOfInterest.TOPIC.d);
-        TopicOfInterest topicOfIntereste=new TopicOfInterest(TopicOfInterest.TOPIC.e);
-        lista.add(topicOfIntereste);
-        lista.add(topicOfInterestc);
+
         matriz1.addUser("jorge",lista);
-        matriz1.addUser("jorge",lista);
-        lista=matriz1.getInterest();
-        stringList=matriz1.getUsers();
-        System.out.println("topicOfIntereste = " + stringList);
+        lista=matriz1.getInterestUser("jorge");
+
         System.out.println("lista = " + lista);
+
     }
 }
