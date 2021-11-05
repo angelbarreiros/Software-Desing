@@ -171,13 +171,45 @@ public class Matriz implements  NetworkManager{
 
     public static void main(String[] args) {
         Matriz matriz1=new Matriz();
-        List<TopicOfInterest> lista = new ArrayList<>();
+            List<TopicOfInterest> lista = new ArrayList<>();
         List<String> stringList ;
         TopicOfInterest topicOfInteresta= new TopicOfInterest("furbo");
-        lista.add(topicOfInteresta);lista.add(topicOfInteresta);lista.add(topicOfInteresta);lista.add(topicOfInteresta);lista.add(topicOfInteresta);lista.add(topicOfInteresta);lista.add(topicOfInteresta);lista.add(topicOfInteresta);
+        TopicOfInterest topicOfInterestb= new TopicOfInterest("furbo2");
+        TopicOfInterest topicOfInterestc= new TopicOfInterest("furbo3");
+        TopicOfInterest topicOfInterestd= new TopicOfInterest("furbo4");
+        lista.add(topicOfInteresta);
+
 
 
         matriz1.addUser("jorge",lista);
+        matriz1.addInterest("jorge",topicOfInterestb);
+        matriz1.addInterest("jorge",topicOfInterestc);
+        matriz1.addInterest("jorge",topicOfInterestd);
+        matriz1.addInterest("jorge",topicOfInterestb);
+        matriz1.addInterest("jorge",topicOfInterestc);
+        matriz1.addInterest("jorge",topicOfInterestd);matriz1.addInterest("jorge",topicOfInterestb);
+        matriz1.addInterest("jorge",topicOfInterestc);
+        matriz1.addInterest("jorge",topicOfInterestd);matriz1.addInterest("jorge",topicOfInterestb);
+        matriz1.addInterest("jorge",topicOfInterestc);
+        matriz1.addInterest("jorge",topicOfInterestd);matriz1.addInterest("jorge",topicOfInterestb);
+        matriz1.addInterest("jorge",topicOfInterestc);
+        matriz1.addInterest("jorge",topicOfInterestd);matriz1.addInterest("jorge",topicOfInterestb);
+        matriz1.addInterest("jorge",topicOfInterestc);
+        matriz1.addInterest("jorge",topicOfInterestd);matriz1.addInterest("jorge",topicOfInterestb);
+        matriz1.addInterest("jorge",topicOfInterestc);
+        matriz1.addInterest("jorge",topicOfInterestd);matriz1.addInterest("jorge",topicOfInterestb);
+        matriz1.addInterest("jorge",topicOfInterestc);
+        matriz1.addInterest("jorge",topicOfInterestd);matriz1.addInterest("jorge",topicOfInterestb);
+        matriz1.addInterest("jorge",topicOfInterestc);
+        matriz1.addInterest("jorge",topicOfInterestd);matriz1.addInterest("jorge",topicOfInterestb);
+        matriz1.addInterest("jorge",topicOfInterestc);
+        matriz1.addInterest("jorge",topicOfInterestd);matriz1.addInterest("jorge",topicOfInterestb);
+        matriz1.addInterest("jorge",topicOfInterestc);
+        matriz1.addInterest("jorge",topicOfInterestd);matriz1.addInterest("jorge",topicOfInterestb);
+        matriz1.addInterest("jorge",topicOfInterestc);
+        matriz1.addInterest("jorge",topicOfInterestd);
+
+
         lista=matriz1.getInterestUser("jorge");
 
         System.out.println("lista = " + lista);
