@@ -106,7 +106,7 @@ public class Matriz implements  NetworkManager{
                 z++;
                 if (matriz[j][y]!=null){
                     if(matriz[j][y].equals(topicOfInterest.toString())){
-                        x=z;                                        //CAMBIE LA Z POR LA Y , A VER SI SIGUE FUNCIONANDO
+                        x=z-1;                                        //CAMBIE LA Z POR LA Y , A VER SI SIGUE FUNCIONANDO
                         revisar2=true;
                         break;
                     }

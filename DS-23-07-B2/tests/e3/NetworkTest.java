@@ -56,6 +56,9 @@ class NetworkTest {
         stringList=network.getUsers();
         assertEquals("jesus",stringList.get(0));
         assertEquals("angel",stringList.get(1));
+        network.removeInterest("jesus",topicc);
+        topicOfInterestList=network.getInterestUser("jesus");
+        assertEquals("[]",topicOfInterestList.toString());
 
 
     }

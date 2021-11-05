@@ -23,6 +23,9 @@ public class Network <T extends  NetworkManager>{
     public void addInterest(String user, TopicOfInterest topicofinterest){
         networkManager.addInterest(user,topicofinterest);
     }
+    public void removeInterest(String user, TopicOfInterest topicOfInterest){
+        networkManager.removeInterest(user,topicOfInterest);
+    }
     public void removeUser(String user){
         networkManager.removeUser(user);
     }
