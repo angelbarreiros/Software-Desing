@@ -43,6 +43,9 @@ public class Matriz implements  NetworkManager{
                     j=i;
                     break;
                 }
+                else{
+                    throw new IllegalArgumentException("No existe ese usuario");
+                }
 
             }
         }
@@ -52,6 +55,7 @@ public class Matriz implements  NetworkManager{
                 revisar =true;
                 break;
             }
+
             i++;
         }
         if(!revisar) matriz[j][i]=topicofinterest.toString();
@@ -168,5 +172,6 @@ public class Matriz implements  NetworkManager{
         }
         return topic;
     }
+
 
 }

@@ -14,8 +14,8 @@ public class Network <T extends  NetworkManager>{
     public NetworkManager getNetworkManager() {
         return networkManager;
     }
-    void addUser(String xd , List<TopicOfInterest> tp ){
-        networkManager.addUser(xd,tp);
+    void addUser(String user , List<TopicOfInterest> tp ){
+        networkManager.addUser(user,tp);
     }
     public List<String> getUsers(){
         return networkManager.getUsers();
@@ -58,31 +58,27 @@ public class Network <T extends  NetworkManager>{
         List<TopicOfInterest> lista2;
         List<String> lista3;
         lista3=getUsers();
-        for (int i=0;i<lista3.size();i++){
-            String s =lista3.get(i);
-            lista2=getInterestUser(s);
-                if (lista2.contains(topic)){
-                    lista4.add(s);
+        for (String s : lista3) {
+            lista2 = getInterestUser(s);
+            if (lista2.contains(topic)) {
+                lista4.add(s);
             }
         }
         return lista4;
     }
-    public static void main(String[] args) {
-        List<TopicOfInterest> topic = new ArrayList<>();
-        List<String> nombres = new ArrayList<>();
-        Network<NetworkManager> net = new Network<>();
-        TopicOfInterest topic1 = new TopicOfInterest("furbo");
-        TopicOfInterest topic2 = new TopicOfInterest("furbol");
-        Matriz mapa = new Matriz();
-        net.setNetworkManager(mapa);
-        net.addUser("pepe",topic);
-        net.addUser("jose",topic);
-        net.addInterest("jose",topic1);
-        net.addInterest("pepe",topic2);
-        nombres=net.common(topic1);
-        topic=net.compare("jose","pepe");
-        System.out.println("net.getUsers() = " + nombres);
+    public List<String> TotalList(){
+        List<String> lista4=new ArrayList<>();
+        List<TopicOfInterest> lista2;
+        List<String> lista3;
+        lista3=getUsers();
+        for (String s : lista3) {
+            if (s!=null){
+                lista4.add(s);
+                lista4.add(getInterestUser(s).toString());
+            }
 
 
+        }
+        return lista4;
     }
 }
