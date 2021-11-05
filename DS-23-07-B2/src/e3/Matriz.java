@@ -10,19 +10,22 @@ public class Matriz implements  NetworkManager{
 
     @Override
     public void addUser(String user, List<TopicOfInterest> topicOfInterest) {
+        if (topicOfInterest==null){
+            throw new IllegalArgumentException();
+        }
         int i=0, z = 0, y=0;
         boolean revisar=false;
         while(matriz[i][0]!=null){
             if (i==fila-1){
-
                 revisar=true;
                 break;
             }
             i++;
             z=i;
         }
-        if(!revisar){
+        if(!revisar){           //2 ifs para que no inserte en posiciones que no existen
             matriz[i][0]=user;
+
         }
         if(!revisar){
             for (TopicOfInterest ofInterest : topicOfInterest) {
@@ -35,20 +38,28 @@ public class Matriz implements  NetworkManager{
 
     @Override
     public void addInterest(String user, TopicOfInterest topicofinterest) {
-        boolean revisar=false;
+        if (topicofinterest==null){
+            throw  new IllegalArgumentException();
+        }
+        else if(user==null){
+            throw new IllegalArgumentException();
+        }
+        boolean revisar=false,revisar2=false;
         int j=0;
         for (int i=0;i<fila;i++){
             if (matriz[i][0]!=null){
                 if(matriz[i][0].equals(user)){
                     j=i;
+                    revisar2 = true;
                     break;
                 }
 
 
             }
-            else{
-                throw new IllegalArgumentException("No existe ese usuario");
-            }
+
+        }
+        if (!revisar2){
+            throw new IllegalArgumentException();
         }
         int i=0;
         while(matriz[j][i]!=null){
@@ -66,6 +77,9 @@ public class Matriz implements  NetworkManager{
 
     @Override
     public void removeUser(String user) {
+        if (user==null){
+            throw new IllegalArgumentException();
+        }
         int j=0;
         boolean revisar=false;
         for (int i=0;i<fila;i++){
@@ -87,6 +101,12 @@ public class Matriz implements  NetworkManager{
 
     @Override
     public void removeInterest(String user, TopicOfInterest topicOfInterest) {
+        if (user==null){
+            throw new IllegalArgumentException();
+        }
+        else if (topicOfInterest==null){
+            throw  new IllegalArgumentException();
+        }
         int j=0;
         int x=0;
         int z=1;
@@ -148,6 +168,9 @@ public class Matriz implements  NetworkManager{
 
     @Override
     public List<TopicOfInterest> getInterestUser(String user) {
+        if (user==null){
+            throw  new IllegalArgumentException();
+        }
         List<TopicOfInterest> topic=new ArrayList<>();
 
 

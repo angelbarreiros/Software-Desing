@@ -70,14 +70,18 @@ public class Network <T extends  NetworkManager>{
         return lista4;
     }
     public List<String> TotalList(){
+        String listavacia="[]";
         List<String> lista4=new ArrayList<>();
-        List<TopicOfInterest> lista2;
         List<String> lista3;
         lista3=getUsers();
         for (String s : lista3) {
             if (s!=null){
                 lista4.add(s);
-                lista4.add(getInterestUser(s).toString());
+                if(getInterestUser(s).toString()!=null && !listavacia.equals(getInterestUser(s).toString())){
+                    lista4.add(getInterestUser(s).toString());
+
+                }
+
             }
 
 
