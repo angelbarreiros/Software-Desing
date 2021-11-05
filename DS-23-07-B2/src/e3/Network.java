@@ -41,7 +41,7 @@ public class Network <T extends  NetworkManager>{
         }
 
         for (TopicOfInterest element : lista2) {
-            if (!lista1.contains(element)) {
+            if (lista1.contains(element)) {
                 lista3.add(element);
             }
         }

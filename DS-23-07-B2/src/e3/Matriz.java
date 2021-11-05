@@ -43,10 +43,11 @@ public class Matriz implements  NetworkManager{
                     j=i;
                     break;
                 }
-                else{
-                    throw new IllegalArgumentException("No existe ese usuario");
-                }
 
+
+            }
+            else{
+                throw new IllegalArgumentException("No existe ese usuario");
             }
         }
         int i=0;
