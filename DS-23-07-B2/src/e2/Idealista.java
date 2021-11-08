@@ -8,7 +8,11 @@ import java.util.Comparator;
 public class Idealista {
     private Comparator<Vivienda> comparator = null;
 
-    ArrayList<Vivienda> list = new ArrayList<>();
+   private final   ArrayList<Vivienda> list = new ArrayList<>();
+
+    public ArrayList<Vivienda> getList() {
+        return list;
+    }
 
     public void setComparator(Comparator<Vivienda> comparator) {
         this.comparator = comparator;

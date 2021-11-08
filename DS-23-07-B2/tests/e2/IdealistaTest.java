@@ -2,12 +2,14 @@ package e2;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class IdealistaTest {
-
+    List<Vivienda>lista=new ArrayList<>();
    @Test
     void testBasic() {
         Vivienda casa=new Vivienda(Vivienda.TIPO.COMPRAR,1,3,3,5,Boolean.FALSE,Boolean.FALSE,200,2000,15172,2000f,"Oleiros");
@@ -49,10 +51,12 @@ class IdealistaTest {
     }
     @Test
     void testContain(){
-        Idealista idealista=new Idealista();
+
+       Idealista idealista=new Idealista();
         Vivienda casa1=new Vivienda(Vivienda.TIPO.COMPRAR,1,3,3,5,Boolean.FALSE,Boolean.FALSE,200,2000,15172,2000f,"Oleiros");
         idealista.add(casa1);
-        assertTrue(idealista.list.contains(casa1));
+       lista=idealista.getList();
+        assertTrue(lista.contains(casa1));
 
     }
     @Test
@@ -74,9 +78,10 @@ class IdealistaTest {
         idealista.add(casa);
         idealista.add(piso);
         idealista.add(chalet);
-        assertEquals(casa,idealista.list.get(0));
-        assertEquals(piso,idealista.list.get(1));
-        assertEquals(chalet,idealista.list.get(2));
+        lista=idealista.getList();
+        assertEquals(casa,lista.get(0));
+        assertEquals(piso,lista.get(1));
+        assertEquals(chalet,lista.get(2));
 
     }
     @Test
@@ -88,10 +93,11 @@ class IdealistaTest {
         idealista.add(chalet);
         idealista.add(piso);
         idealista.add(casa);
-        Collections.sort(idealista.list,idealista.getComparator());
-        assertEquals(chalet,idealista.list.get(0));
-        assertEquals(piso,idealista.list.get(1));
-        assertEquals(casa,idealista.list.get(2));
+        lista=idealista.getList();
+        Collections.sort(lista,idealista.getComparator());
+        assertEquals(chalet,lista.get(0));
+        assertEquals(piso,lista.get(1));
+        assertEquals(casa,lista.get(2));
 
     }
     @Test
@@ -105,10 +111,11 @@ class IdealistaTest {
         idealista.add(piso);
         idealista.add(chalet);
         idealista.setComparator(total);
-        Collections.sort(idealista.list,idealista.getComparator());
-        assertEquals(piso,idealista.list.get(0));
-        assertEquals(casa,idealista.list.get(1));
-        assertEquals(chalet,idealista.list.get(2));
+        lista=idealista.getList();
+        Collections.sort(lista,idealista.getComparator());
+        assertEquals(piso,lista.get(0));
+        assertEquals(casa,lista.get(1));
+        assertEquals(chalet,lista.get(2));
 
     }
     @Test
@@ -122,10 +129,11 @@ class IdealistaTest {
         idealista.add(piso);
         idealista.add(chalet);
         idealista.setComparator(bath);
-        Collections.sort(idealista.list,idealista.getComparator());
-        assertEquals(piso,idealista.list.get(0));
-        assertEquals(casa,idealista.list.get(1));
-        assertEquals(chalet,idealista.list.get(2));
+        lista=idealista.getList();
+        Collections.sort(lista,idealista.getComparator());
+        assertEquals(piso,lista.get(0));
+        assertEquals(casa,lista.get(1));
+        assertEquals(chalet,lista.get(2));
 
     }
     @Test
@@ -139,10 +147,11 @@ class IdealistaTest {
         idealista.add(piso);
         idealista.add(chalet);
         idealista.setComparator(nGrage);
-        Collections.sort(idealista.list,idealista.getComparator());
-        assertEquals(piso,idealista.list.get(0));
-        assertEquals(casa,idealista.list.get(1));
-        assertEquals(chalet,idealista.list.get(2));
+        lista=idealista.getList();
+        Collections.sort(lista,idealista.getComparator());
+        assertEquals(piso,lista.get(0));
+        assertEquals(casa,lista.get(1));
+        assertEquals(chalet,lista.get(2));
 
     }
     @Test
@@ -156,10 +165,11 @@ class IdealistaTest {
         idealista.add(piso);
         idealista.add(chalet);
         idealista.setComparator(room);
-        Collections.sort(idealista.list,idealista.getComparator());
-        assertEquals(piso,idealista.list.get(0));
-        assertEquals(casa,idealista.list.get(1));
-        assertEquals(chalet,idealista.list.get(2));
+        lista=idealista.getList();
+        Collections.sort(lista,idealista.getComparator());
+        assertEquals(piso,lista.get(0));
+        assertEquals(casa,lista.get(1));
+        assertEquals(chalet,lista.get(2));
 
     }
     @Test
@@ -173,10 +183,11 @@ class IdealistaTest {
         idealista.add(piso);
         idealista.add(chalet);
         idealista.setComparator(ready);
-        Collections.sort(idealista.list,idealista.getComparator());
-        assertEquals(casa,idealista.list.get(0));
-        assertEquals(piso,idealista.list.get(1));
-        assertEquals(chalet,idealista.list.get(2));
+        lista=idealista.getList();
+        Collections.sort(lista,idealista.getComparator());
+        assertEquals(casa,lista.get(0));
+        assertEquals(piso,lista.get(1));
+        assertEquals(chalet,lista.get(2));
 
     }
     @Test
@@ -190,10 +201,11 @@ class IdealistaTest {
         idealista.add(piso);
         idealista.add(chalet);
         idealista.setComparator(elevator);
-        Collections.sort(idealista.list,idealista.getComparator());
-        assertEquals(casa,idealista.list.get(0));
-        assertEquals(piso,idealista.list.get(1));
-        assertEquals(chalet,idealista.list.get(2));
+        lista=idealista.getList();
+        Collections.sort(lista,idealista.getComparator());
+        assertEquals(casa,lista.get(0));
+        assertEquals(piso,lista.get(1));
+        assertEquals(chalet,lista.get(2));
 
     }
     @Test
@@ -207,10 +219,11 @@ class IdealistaTest {
         idealista.add(piso);
         idealista.add(chalet);
         idealista.setComparator(garage);
-        Collections.sort(idealista.list,idealista.getComparator());
-        assertEquals(piso,idealista.list.get(0));
-        assertEquals(casa,idealista.list.get(1));
-        assertEquals(chalet,idealista.list.get(2));
+        lista=idealista.getList();
+        Collections.sort(lista,idealista.getComparator());
+        assertEquals(piso,lista.get(0));
+        assertEquals(casa,lista.get(1));
+        assertEquals(chalet,lista.get(2));
 
     }
     @Test
@@ -224,10 +237,11 @@ class IdealistaTest {
         idealista.add(piso);
         idealista.add(casa);
         idealista.setComparator(prize);
-        Collections.sort(idealista.list,idealista.getComparator());
-        assertEquals(piso,idealista.list.get(0));
-        assertEquals(casa,idealista.list.get(1));
-        assertEquals(chalet,idealista.list.get(2));
+        lista=idealista.getList();
+        Collections.sort(lista,idealista.getComparator());
+        assertEquals(piso,lista.get(0));
+        assertEquals(casa,lista.get(1));
+        assertEquals(chalet,lista.get(2));
 
     }
     @Test
@@ -241,10 +255,11 @@ class IdealistaTest {
         idealista.add(piso);
         idealista.add(casa);
         idealista.setComparator(postal);
-        Collections.sort(idealista.list,idealista.getComparator());
-        assertEquals(chalet,idealista.list.get(0));
-        assertEquals(casa,idealista.list.get(1));
-        assertEquals(piso,idealista.list.get(2));
+        lista=idealista.getList();
+        Collections.sort(lista,idealista.getComparator());
+        assertEquals(chalet,lista.get(0));
+        assertEquals(casa,lista.get(1));
+        assertEquals(piso,lista.get(2));
 
     }
     @Test
@@ -258,15 +273,16 @@ class IdealistaTest {
         idealista.add(piso);
         idealista.add(casa);
         idealista.setComparator(location);
-        Collections.sort(idealista.list,idealista.getComparator());
-        assertEquals(chalet,idealista.list.get(0));
-        assertEquals(piso,idealista.list.get(1));
-        assertEquals(casa,idealista.list.get(2));
+        lista=idealista.getList();
+        Collections.sort(lista,idealista.getComparator());
+        assertEquals(chalet,lista.get(0));
+        assertEquals(piso,lista.get(1));
+        assertEquals(casa,lista.get(2));
 
     }
     @Test
     void testType(){
-        Idealista idealista =new Idealista();
+       Idealista idealista =new Idealista();
         CompareType type = new CompareType();
         Vivienda casa=new Vivienda(Vivienda.TIPO.COMPRAR,3,3,3,5,Boolean.FALSE,Boolean.FALSE,200,2000,15172,2000f,"Oleiros");
         Vivienda piso=new Vivienda(Vivienda.TIPO.COMPARTIR,2,1,1,3,Boolean.TRUE,Boolean.TRUE,150,800,15660,90f,"Cambre");
@@ -275,10 +291,11 @@ class IdealistaTest {
         idealista.add(piso);
         idealista.add(casa);
         idealista.setComparator(type);
-        Collections.sort(idealista.list,idealista.getComparator());
-        assertEquals(chalet,idealista.list.get(0));
-        assertEquals(piso,idealista.list.get(1));
-        assertEquals(casa,idealista.list.get(2));
+        lista=idealista.getList();
+        Collections.sort(lista,idealista.getComparator());
+        assertEquals(chalet,lista.get(0));
+        assertEquals(piso,lista.get(1));
+        assertEquals(casa,lista.get(2));
 
     }
     @Test
@@ -292,12 +309,14 @@ class IdealistaTest {
         idealista.add(piso);
         idealista.add(casa);
         idealista.setComparator(size);
-        Collections.sort(idealista.list,idealista.getComparator());
-        assertEquals(piso,idealista.list.get(0));
-        assertEquals(casa,idealista.list.get(1));
-        assertEquals(chalet,idealista.list.get(2));
+        lista=idealista.getList();
+        Collections.sort(lista,idealista.getComparator());
+        assertEquals(piso,lista.get(0));
+        assertEquals(casa,lista.get(1));
+        assertEquals(chalet,lista.get(2));
 
     }
+
 
 
 
