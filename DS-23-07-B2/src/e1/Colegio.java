@@ -9,16 +9,16 @@ public class Colegio  {
         StringBuilder sb = new StringBuilder();
         float total = 0;
         for (Personal p:arrayPersonal) {
-            sb.append(p.toString() + p.printHorrocruxes() + " ");
-            sb.append(p.Recompensa() + "\n");
+            sb.append(p.toString()).append(p.printHorrocruxes()).append(" ");
+            sb.append(p.Recompensa()).append("\n");
             total += p.Recompensa();
         }
         for (Residentes r:arrayResidentes) {
-            sb.append(r.toString() + r.printHorrocruxes() + " ");
-            sb.append(r.Recompensa() + " galeones\n");
+            sb.append(r.toString()).append(r.printHorrocruxes()).append(" ");
+            sb.append(r.Recompensa()).append(" galeones\n");
             total += r.Recompensa();
         }
-        sb.append("La recompensa total del Colegio Hogwarts es de " + total + " galeones\n");
+        sb.append("La recompensa total del Colegio Hogwarts es de ").append(total).append(" galeones\n");
         return sb.toString();
     }
 
@@ -26,11 +26,11 @@ public class Colegio  {
         StringBuilder sb = new StringBuilder();
         float total = 0;
         for (Personal p:arrayPersonal) {
-            sb.append(p.toString() + p.printHorrocruxes() + " ");
-            sb.append(p.Salario() + " galeones\n");
+            sb.append(p.toString()).append(p.printHorrocruxes()).append(" ");
+            sb.append(p.Salario()).append(" galeones\n");
             total += p.Salario();
         }
-        sb.append("El gasto de Hogwarts en personal es de " + total + " galeones\n");
+        sb.append("El gasto de Hogwarts en personal es de ").append(total).append(" galeones\n");
         return sb.toString();
     }
 }
