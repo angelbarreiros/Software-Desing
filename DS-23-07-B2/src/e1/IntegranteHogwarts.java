@@ -3,10 +3,10 @@ package e1;
 import java.util.ArrayList;
 
 public abstract class IntegranteHogwarts extends Colegio {
-    private String Nombre;
-    private String Apellidos;
-    private int edad;
-    private int  horrocruxes;
+    private final String Nombre;
+    private final String Apellidos;
+    private final int edad;
+    private final int  horrocruxes;
 
     public String getNombre() {
         return Nombre;
