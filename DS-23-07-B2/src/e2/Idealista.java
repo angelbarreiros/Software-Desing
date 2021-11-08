@@ -7,6 +7,7 @@ import java.util.Comparator;
 
 public class Idealista {
     private Comparator<Vivienda> comparator = null;
+
     ArrayList<Vivienda> list = new ArrayList<>();
 
     public void setComparator(Comparator<Vivienda> comparator) {

@@ -2,17 +2,11 @@ package e3;
 
 import java.util.Objects;
 
-public class TopicOfInterest {
-    String topic;
-
-
-    public TopicOfInterest(String topic) {
-        this.topic = topic;
-    }
+public record TopicOfInterest(String topic) {
 
     @Override
     public String toString() {
-        return  topic;
+        return topic;
     }
 
     @Override

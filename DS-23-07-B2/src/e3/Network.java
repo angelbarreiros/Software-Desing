@@ -4,7 +4,7 @@ package e3;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Network <T extends  NetworkManager>{
+public class Network {
     private NetworkManager networkManager =null;
 
     public void setNetworkManager(NetworkManager networkManager) {
@@ -14,7 +14,7 @@ public class Network <T extends  NetworkManager>{
     public NetworkManager getNetworkManager() {
         return networkManager;
     }
-    void addUser(String user , List<TopicOfInterest> tp ){
+    public void addUser(String user , List<TopicOfInterest> tp ){
         networkManager.addUser(user,tp);
     }
     public List<String> getUsers(){

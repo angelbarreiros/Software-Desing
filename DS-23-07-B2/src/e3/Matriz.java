@@ -3,8 +3,8 @@ package e3;
 import java.util.ArrayList;
 import java.util.List;
 public class Matriz implements  NetworkManager{
-    final int colum=1000;
-    final int fila=1000;
+    private final int colum=1000;
+    private final int fila=1000;
     private final String[][] matriz = new String[fila][colum];
 
 
@@ -126,7 +126,7 @@ public class Matriz implements  NetworkManager{
                 z++;
                 if (matriz[j][y]!=null){
                     if(matriz[j][y].equals(topicOfInterest.toString())){
-                        x=z-1;                                        //CAMBIE LA Z POR LA Y , A VER SI SIGUE FUNCIONANDO
+                        x=z-1;                                      
                         revisar2=true;
                         break;
                     }
