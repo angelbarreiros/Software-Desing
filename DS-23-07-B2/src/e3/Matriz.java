@@ -3,8 +3,8 @@ package e3;
 import java.util.ArrayList;
 import java.util.List;
 public class Matriz implements  NetworkManager{
-    private final int colum=1000;
-    private final int fila=1000;
+    private final int colum=100;
+    private final int fila=100;
     private final String[][] matriz = new String[fila][colum];
 
 
