@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
-
+    // LAS OPEREACIONES DE USUARIOS EN LOS DOS TEST SON LAS MISMAS PERO CADA TEST CONTIENE UNA IMPLEMENTACION DE NETWORKMANAGER DISTINTA (MAP O MATRIZ)
 class NetworkTest {
     @Test
     void Mapa(){
