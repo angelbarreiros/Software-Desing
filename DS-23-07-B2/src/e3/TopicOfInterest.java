@@ -17,4 +17,5 @@ public record TopicOfInterest(String topic) {
         return Objects.equals(topic, that.topic);
     }
 
+
 }

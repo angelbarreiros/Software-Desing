@@ -10,7 +10,6 @@ public class Network {
     public void setNetworkManager(NetworkManager networkManager) {
         this.networkManager = networkManager;
     }
-
     public NetworkManager getNetworkManager() {
         return networkManager;
     }
@@ -28,6 +27,12 @@ public class Network {
     }
     public void removeUser(String user){
         networkManager.removeUser(user);
+    }
+    public List<TopicOfInterest> getInterest(){
+        return  networkManager.getInterest();
+    }
+    public List<TopicOfInterest> getInterestUser(String user){
+        return  networkManager.getInterestUser(user);
     }
     public List<TopicOfInterest> compare(String a , String b){
         List<TopicOfInterest> lista1;
@@ -50,12 +55,8 @@ public class Network {
         }
         return  lista3;
     }
-    public List<TopicOfInterest> getInterest(){
-       return  networkManager.getInterest();
-    }
-    public List<TopicOfInterest> getInterestUser(String user){
-         return  networkManager.getInterestUser(user);
-    }
+
+
     public List<String> common (TopicOfInterest topic){
         List<String> lista4=new ArrayList<>();
         List<TopicOfInterest> lista2;

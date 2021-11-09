@@ -23,7 +23,7 @@ class NetworkTest {
         List<TopicOfInterest> topicOfInterestList1=new ArrayList<>();
         List<TopicOfInterest> topicOfInterestList2=new ArrayList<>();
         List<String> stringList;
-        final List<TopicOfInterest> topicOfInterestListnull=null;
+        final List<TopicOfInterest> topicOfInterestListnull=null; //lista nula para las Exceptions
         //creamos los diferentes tipos de intereses
         TopicOfInterest topica= new TopicOfInterest("deportes");
         TopicOfInterest topicb= new TopicOfInterest("musica");
@@ -99,7 +99,7 @@ class NetworkTest {
         //iniciamos la lista de intereses y la lista de string de los nombres
         List<TopicOfInterest> topicOfInterestList=new ArrayList<>();
         List<String> stringList;
-        final List<TopicOfInterest> topicOfInterestListnull=null;
+        final List<TopicOfInterest> topicOfInterestListnull=null; //lista nula para las Exceptions
         //creamos los diferentes tipos de intereses
         TopicOfInterest topica= new TopicOfInterest("deportes");
         TopicOfInterest topicb= new TopicOfInterest("musica");
