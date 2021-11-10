@@ -2,6 +2,7 @@ package e2;
 
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Comparator;
 
 
@@ -29,5 +30,8 @@ public class Idealista {
     @Override
     public String toString() {
         return list.toString();
+    }
+    public void sort(){
+        Collections.sort(list,this.getComparator());
     }
 }

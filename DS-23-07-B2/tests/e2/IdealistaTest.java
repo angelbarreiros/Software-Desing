@@ -94,7 +94,7 @@ class IdealistaTest {
         idealista.add(piso);
         idealista.add(casa);
         lista=idealista.getList();
-        Collections.sort(lista,idealista.getComparator());
+        idealista.sort();
         assertEquals(chalet,lista.get(0));
         assertEquals(piso,lista.get(1));
         assertEquals(casa,lista.get(2));
@@ -112,7 +112,7 @@ class IdealistaTest {
         idealista.add(chalet);
         idealista.setComparator(total);
         lista=idealista.getList();
-        Collections.sort(lista,idealista.getComparator());
+        idealista.sort();
         assertEquals(piso,lista.get(0));
         assertEquals(casa,lista.get(1));
         assertEquals(chalet,lista.get(2));
@@ -130,7 +130,7 @@ class IdealistaTest {
         idealista.add(chalet);
         idealista.setComparator(bath);
         lista=idealista.getList();
-        Collections.sort(lista,idealista.getComparator());
+        idealista.sort();
         assertEquals(piso,lista.get(0));
         assertEquals(casa,lista.get(1));
         assertEquals(chalet,lista.get(2));
@@ -148,7 +148,7 @@ class IdealistaTest {
         idealista.add(chalet);
         idealista.setComparator(nGrage);
         lista=idealista.getList();
-        Collections.sort(lista,idealista.getComparator());
+        idealista.sort();
         assertEquals(piso,lista.get(0));
         assertEquals(casa,lista.get(1));
         assertEquals(chalet,lista.get(2));
@@ -166,7 +166,7 @@ class IdealistaTest {
         idealista.add(chalet);
         idealista.setComparator(room);
         lista=idealista.getList();
-        Collections.sort(lista,idealista.getComparator());
+        idealista.sort();
         assertEquals(piso,lista.get(0));
         assertEquals(casa,lista.get(1));
         assertEquals(chalet,lista.get(2));
@@ -184,7 +184,7 @@ class IdealistaTest {
         idealista.add(chalet);
         idealista.setComparator(ready);
         lista=idealista.getList();
-        Collections.sort(lista,idealista.getComparator());
+        idealista.sort();
         assertEquals(casa,lista.get(0));
         assertEquals(piso,lista.get(1));
         assertEquals(chalet,lista.get(2));
@@ -202,7 +202,7 @@ class IdealistaTest {
         idealista.add(chalet);
         idealista.setComparator(elevator);
         lista=idealista.getList();
-        Collections.sort(lista,idealista.getComparator());
+        idealista.sort();
         assertEquals(casa,lista.get(0));
         assertEquals(piso,lista.get(1));
         assertEquals(chalet,lista.get(2));
@@ -220,7 +220,7 @@ class IdealistaTest {
         idealista.add(chalet);
         idealista.setComparator(garage);
         lista=idealista.getList();
-        Collections.sort(lista,idealista.getComparator());
+        idealista.sort();
         assertEquals(piso,lista.get(0));
         assertEquals(casa,lista.get(1));
         assertEquals(chalet,lista.get(2));
@@ -238,7 +238,7 @@ class IdealistaTest {
         idealista.add(casa);
         idealista.setComparator(prize);
         lista=idealista.getList();
-        Collections.sort(lista,idealista.getComparator());
+        idealista.sort();
         assertEquals(piso,lista.get(0));
         assertEquals(casa,lista.get(1));
         assertEquals(chalet,lista.get(2));
@@ -256,7 +256,7 @@ class IdealistaTest {
         idealista.add(casa);
         idealista.setComparator(postal);
         lista=idealista.getList();
-        Collections.sort(lista,idealista.getComparator());
+        idealista.sort();
         assertEquals(chalet,lista.get(0));
         assertEquals(casa,lista.get(1));
         assertEquals(piso,lista.get(2));
@@ -274,7 +274,7 @@ class IdealistaTest {
         idealista.add(casa);
         idealista.setComparator(location);
         lista=idealista.getList();
-        Collections.sort(lista,idealista.getComparator());
+        idealista.sort();
         assertEquals(chalet,lista.get(0));
         assertEquals(piso,lista.get(1));
         assertEquals(casa,lista.get(2));
@@ -292,7 +292,7 @@ class IdealistaTest {
         idealista.add(casa);
         idealista.setComparator(type);
         lista=idealista.getList();
-        Collections.sort(lista,idealista.getComparator());
+        idealista.sort();
         assertEquals(chalet,lista.get(0));
         assertEquals(piso,lista.get(1));
         assertEquals(casa,lista.get(2));
@@ -310,7 +310,7 @@ class IdealistaTest {
         idealista.add(casa);
         idealista.setComparator(size);
         lista=idealista.getList();
-        Collections.sort(lista,idealista.getComparator());
+        idealista.sort();
         assertEquals(piso,lista.get(0));
         assertEquals(casa,lista.get(1));
         assertEquals(chalet,lista.get(2));
