@@ -61,9 +61,9 @@ public class Network {
         List<String> lista4=new ArrayList<>();
         List<TopicOfInterest> lista2;
         List<String> lista3;
-        lista3=getUsers();
+        lista3=networkManager.getUsers();
         for (String s : lista3) {
-            lista2 = getInterestUser(s);
+            lista2 = networkManager.getInterestUser(s);
             if (lista2.contains(topic)) {
                 lista4.add(s);
             }
@@ -78,8 +78,8 @@ public class Network {
         for (String s : lista3) {
             if (s!=null){
                 lista4.add(s);
-                if(getInterestUser(s).toString()!=null && !listavacia.equals(getInterestUser(s).toString())){
-                    lista4.add(getInterestUser(s).toString());
+                if(networkManager.getUsers().toString()!=null && !listavacia.equals(getInterestUser(s).toString())){
+                    lista4.add(networkManager.getInterestUser(s).toString());
 
                 }
 
