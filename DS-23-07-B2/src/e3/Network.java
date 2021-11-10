@@ -74,11 +74,11 @@ public class Network {
         String listavacia="[]";
         List<String> lista4=new ArrayList<>();
         List<String> lista3;
-        lista3=getUsers();
+        lista3=networkManager.getUsers();
         for (String s : lista3) {
             if (s!=null){
                 lista4.add(s);
-                if(networkManager.getUsers().toString()!=null && !listavacia.equals(getInterestUser(s).toString())){
+                if(networkManager.getUsers().toString()!=null && !listavacia.equals(networkManager.getInterestUser(s).toString())){
                     lista4.add(networkManager.getInterestUser(s).toString());
 
                 }
