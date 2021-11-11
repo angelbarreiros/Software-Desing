@@ -31,6 +31,12 @@ class ColegioTest {
     }
 
     @Test
+    void TestErrores() {
+        assertThrows(IllegalArgumentException.class, () -> new Docente("Maria", "Lopez", -50, 7, Docente.asignatura.Herbologia));
+        assertThrows(IllegalArgumentException.class, () -> new Estudiantes("Jesus", "Ortega", 31, -4, Residentes.casa.Ravneclaw));
+    }
+
+    @Test
     void imprimirRecompensa() {
         String strRecompensa = """
                 Paquito 38 (Docente de Defensa, 16):  600.0

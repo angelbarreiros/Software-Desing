@@ -3,7 +3,7 @@ package e1;
 public abstract class Residentes extends IntegranteHogwarts {
 
     enum casa {
-        Gryffindor, Revneclaw, Hufflepuff, Slytherin
+        Gryffindor, Ravneclaw, Hufflepuff, Slytherin
     }
     private final casa Casa;
 

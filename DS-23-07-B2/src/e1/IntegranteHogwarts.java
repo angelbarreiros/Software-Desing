@@ -23,8 +23,14 @@ public abstract class IntegranteHogwarts extends Colegio {
     public IntegranteHogwarts(String nombre, String apellidos, int edad, int horrocruxes) {
         Nombre = nombre;
         Apellidos = apellidos;
-        this.edad = edad;
-        this.horrocruxes = horrocruxes;
+        if (edad < 0)
+            throw new IllegalArgumentException();
+        else
+            this.edad = edad;
+        if (horrocruxes < 0)
+            throw new IllegalArgumentException();
+        else
+            this.horrocruxes = horrocruxes;
     }
     public String printHorrocruxes() {
         return ", " + getHorrocruxes() + "): ";
