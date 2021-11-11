@@ -28,7 +28,7 @@ class ColegioTest {
         arrayResidentes.add(new Estudiantes("Joseluis", "Rodriguez Zapatero", 21, 6, Residentes.casa.Hufflepuff));
         arrayResidentes.add(new Fantasmas("Josemanuel", "Dieguez", 200, 8, Residentes.casa.Slytherin));
         arrayResidentes.add(new Fantasmas("Josemanuel", "Dieguez", 200, 8, Residentes.casa.Gryffindor));
- }
+    }
 
     @Test
     void imprimirRecompensa() {

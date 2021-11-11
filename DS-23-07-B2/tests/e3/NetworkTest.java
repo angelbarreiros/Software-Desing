@@ -84,7 +84,6 @@ class NetworkTest {
         assertThrows(IllegalArgumentException.class, () -> network.removeInterest("jesus",null));
         assertThrows(IllegalArgumentException.class, () -> network.getInterestUser(null));
 
-
     }
     @Test
     void Matriz(){

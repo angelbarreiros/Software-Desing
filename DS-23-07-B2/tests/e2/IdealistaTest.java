@@ -315,6 +315,7 @@ class IdealistaTest {
         assertEquals(casa,lista.get(1));
         assertEquals(chalet,lista.get(2));
 
+
     }
 
 
