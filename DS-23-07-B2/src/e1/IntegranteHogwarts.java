@@ -1,6 +1,6 @@
 package e1;
 
-import java.util.ArrayList;
+
 
 public abstract class IntegranteHogwarts extends Colegio {
     private final String Nombre;

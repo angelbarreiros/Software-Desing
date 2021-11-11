@@ -4,13 +4,14 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class ColegioTest {
 
-    private final ArrayList<Personal> arrayPersonal =new ArrayList<>();
-    private final  ArrayList<Residentes> arrayResidentes=new ArrayList<>();
+    private final List<Personal> arrayPersonal =new ArrayList<>();
+    private final  List<Residentes> arrayResidentes=new ArrayList<>();
 
     @BeforeEach
     void setUp() {

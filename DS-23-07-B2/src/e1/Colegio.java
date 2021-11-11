@@ -1,11 +1,12 @@
 package e1;
 
 
-import java.util.ArrayList;
+
+import java.util.List;
 
 public class Colegio  {
 
-    public static String imprimirRecompensa(ArrayList<Personal> arrayPersonal, ArrayList<Residentes> arrayResidentes) {
+    public static String imprimirRecompensa(List<Personal> arrayPersonal, List<Residentes> arrayResidentes) {
         StringBuilder sb = new StringBuilder();
         float total = 0;
         for (Personal p:arrayPersonal) {
@@ -22,7 +23,7 @@ public class Colegio  {
         return sb.toString();
     }
 
-    public static String imprimirSalarios(ArrayList<Personal> arrayPersonal) {
+    public static String imprimirSalarios(List<Personal> arrayPersonal) {
         StringBuilder sb = new StringBuilder();
         float total = 0;
         for (Personal p:arrayPersonal) {
