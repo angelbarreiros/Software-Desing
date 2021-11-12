@@ -2,10 +2,11 @@ package e3;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 
 public class Map implements NetworkManager{
-    private final HashMap<String, List<TopicOfInterest>> map = new HashMap<>();
+    private final LinkedHashMap<String, List<TopicOfInterest>> map = new LinkedHashMap<>();
     private final List<String> usuarios=new ArrayList<>();
     private final List<TopicOfInterest> topic =new ArrayList<>();
 
