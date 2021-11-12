@@ -13,6 +13,10 @@ public class Docente  extends  Personal{
 
     }
 
+    public asignatura getAsignatura() {
+        return Asignatura;
+    }
+
     public float Recompensa(){
         if (this.Asignatura==asignatura.Defensa){
             return  getHorrocruxes()*50*0.75f;
