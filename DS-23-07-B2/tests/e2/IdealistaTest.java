@@ -3,7 +3,6 @@ package e2;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -317,8 +316,18 @@ class IdealistaTest {
 
 
     }
-
-
+    @Test
+    void testIllegalArgument(){
+        assertThrows(IllegalArgumentException.class, () -> new Vivienda(Vivienda.TIPO.COMPRAR,-1,3,3,5,Boolean.FALSE,Boolean.FALSE,200,2000,15172,2000f,"Oleiros"));
+        assertThrows(IllegalArgumentException.class, () ->new Vivienda(Vivienda.TIPO.COMPRAR,3,-1,3,5,Boolean.FALSE,Boolean.FALSE,200,2000,15172,2000f,"Oleiros"));
+        assertThrows(IllegalArgumentException.class, () ->new Vivienda(Vivienda.TIPO.COMPRAR,3,3,-1,5,Boolean.FALSE,Boolean.FALSE,200,2000,15172,2000f,"Oleiros"));
+        assertThrows(IllegalArgumentException.class, () ->new Vivienda(Vivienda.TIPO.COMPRAR,3,3,3,-1,Boolean.FALSE,Boolean.FALSE,200,2000,15172,2000f,"Oleiros"));
+        assertThrows(IllegalArgumentException.class, () ->new Vivienda(Vivienda.TIPO.COMPRAR,3,3,3,5,Boolean.FALSE,Boolean.FALSE,-1,2000,15172,2000f,"Oleiros"));
+        assertThrows(IllegalArgumentException.class, () ->new Vivienda(Vivienda.TIPO.COMPRAR,3,3,3,5,Boolean.FALSE,Boolean.FALSE,200,-1,15172,2000f,"Oleiros"));
+        assertThrows(IllegalArgumentException.class, () ->new Vivienda(Vivienda.TIPO.COMPRAR,3,3,3,5,Boolean.FALSE,Boolean.FALSE,200,2000,0,2000f,"Oleiros"));
+        assertThrows(IllegalArgumentException.class, () ->new Vivienda(Vivienda.TIPO.COMPRAR,3,3,3,5,Boolean.FALSE,Boolean.FALSE,200,2000,15172,-1f,"Oleiros"));
+        assertThrows(IllegalArgumentException.class, () ->new Vivienda(Vivienda.TIPO.COMPRAR,3,3,3,5,Boolean.FALSE,Boolean.FALSE,200,2000,15172,2000f,null));
+   }
 
 
 

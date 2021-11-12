@@ -23,18 +23,24 @@ public class Vivienda  extends Idealista implements Comparable<Vivienda> {
 
     public Vivienda(TIPO tipo, int referenceNumber, int garageNumber, int bathNumbers, int roomsNumber, Boolean readyToTakeUp,
     Boolean elevator, int garagePrize, int monthPrize, int postalCode, float size, String location) {
-        this.type = tipo;
-        ReferenceNumber = referenceNumber;
-        GarageNumber = garageNumber;
-        BathNumbers = bathNumbers;
-        RoomsNumber = roomsNumber;
-        ReadyToTakeUp = readyToTakeUp;
-        Elevator = elevator;
-        GaragePrize = garagePrize;
-        MonthPrize = monthPrize;
-        PostalCode = postalCode;
-        Size = size;
-        this.location = location;
+        if (referenceNumber<0 || garageNumber <0 || bathNumbers<0 || roomsNumber<0 || garagePrize <0 || monthPrize<0 || postalCode<1 || location==null
+                || size <0f){
+            throw new IllegalArgumentException();
+        }
+        else{
+            this.type = tipo;
+            ReferenceNumber = referenceNumber;
+            GarageNumber = garageNumber;
+            BathNumbers = bathNumbers;
+            RoomsNumber = roomsNumber;
+            ReadyToTakeUp = readyToTakeUp;
+            Elevator = elevator;
+            GaragePrize = garagePrize;
+            MonthPrize = monthPrize;
+            PostalCode = postalCode;
+            Size = size;
+            this.location = location;
+        }
     }
 
     public int getRoomsNumber() {
