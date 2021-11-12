@@ -24,7 +24,7 @@ public class Vivienda  extends Idealista implements Comparable<Vivienda> {
     public Vivienda(TIPO tipo, int referenceNumber, int garageNumber, int bathNumbers, int roomsNumber, Boolean readyToTakeUp,
     Boolean elevator, int garagePrize, int monthPrize, int postalCode, float size, String location) {
         if (referenceNumber<0 || garageNumber <0 || bathNumbers<0 || roomsNumber<0 || garagePrize <0 || monthPrize<0 || postalCode<1 || location==null
-                || size <0){
+                || size <0f){
             throw new IllegalArgumentException();
         }
         else{
