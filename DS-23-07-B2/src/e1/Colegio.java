@@ -2,11 +2,33 @@ package e1;
 
 
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Colegio  {
 
-    public static String imprimirRecompensa(List<Personal> arrayPersonal, List<Residentes> arrayResidentes) {
+    private static final List<Personal> arrayPersonal =new ArrayList<>();
+    private static final  List<Residentes> arrayResidentes=new ArrayList<>();
+
+    public static void addPersonal(Personal p){
+        if (p.getClass() == Docente.class){
+            for( Personal q: arrayPersonal){
+                if (q.getClass() == Docente.class){
+                    if(((Docente) p).getAsignatura() == ((Docente) q).getAsignatura()){
+                        throw new IllegalArgumentException();
+                    }
+                }
+            }
+        }
+
+        arrayPersonal.add(p);
+    }
+
+    public static void addResidentes(Residentes r){
+        arrayResidentes.add(r);
+    }
+
+    public static String imprimirRecompensa() {
         StringBuilder sb = new StringBuilder();
         float total = 0;
         for (Personal p:arrayPersonal) {
@@ -23,7 +45,7 @@ public class Colegio  {
         return sb.toString();
     }
 
-    public static String imprimirSalarios(List<Personal> arrayPersonal) {
+    public static String imprimirSalarios() {
         StringBuilder sb = new StringBuilder();
         float total = 0;
         for (Personal p:arrayPersonal) {
@@ -34,4 +56,5 @@ public class Colegio  {
         sb.append("El gasto de Hogwarts en personal es de ").append(total).append(" galeones\n");
         return sb.toString();
     }
+
 }
