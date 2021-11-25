@@ -4,70 +4,79 @@ import java.util.Date;
 import java.util.Objects;
 
 public class Ticket {
-    private int prize;
-    private String origin;
-    private String destiny;
-    private Date date;
+  private Dates date;
+  private Destination destination;
+  private Origin origin;
+  private Prize prize;
+  private int iter=0;
 
-    public Ticket(int prize, String origin, String destiny, Date date) {
-        this.prize = prize;
-        this.origin = origin;
-        this.destiny = destiny;
+    public int getIter() {
+        return iter;
+    }
+
+    public void setIter(int iter) {
+        this.iter = iter;
+    }
+
+    public Ticket(Dates date, Destination destination, Origin origin, Prize prize) {
         this.date = date;
-    }
-
-    public int getPrize() {
-        return prize;
-    }
-
-    public void setPrize(int prize) {
+        this.destination = destination;
+        this.origin = origin;
         this.prize = prize;
     }
 
-    public String getOrigin() {
-        return origin;
-    }
-
-    public void setOrigin(String origin) {
-        this.origin = origin;
-    }
-
-    public String getDestiny() {
-        return destiny;
-    }
-
-    public void setDestiny(String destiny) {
-        this.destiny = destiny;
-    }
-
-    public Date getDate() {
+    public Dates getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(Dates date) {
         this.date = date;
+    }
+
+    public Destination getDestination() {
+        return destination;
+    }
+
+    public void setDestination(Destination destination) {
+        this.destination = destination;
+    }
+
+    public Origin getOrigin() {
+        return origin;
+    }
+
+    public void setOrigin(Origin origin) {
+        this.origin = origin;
+    }
+
+    public Prize getPrize() {
+        return prize;
+    }
+
+    public void setPrize(Prize prize) {
+        this.prize = prize;
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Ticket bllete = (Ticket) o;
-        return prize == bllete.prize && Objects.equals(origin, bllete.origin) && Objects.equals(destiny, bllete.destiny) && Objects.equals(date, bllete.date);
+        Ticket ticket = (Ticket) o;
+        return Objects.equals(date, ticket.date) && Objects.equals(destination, ticket.destination) && Objects.equals(origin, ticket.origin) && Objects.equals(prize, ticket.prize);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(prize, origin, destiny, date);
+        return Objects.hash(date, destination, origin, prize);
     }
 
     @Override
     public String toString() {
-        return "Bllete{" +
-                "prize=" + prize +
-                ", origin='" + origin + '\'' +
-                ", destiny='" + destiny + '\'' +
-                ", date=" + date +
+        return "Ticket{" +
+                "date=" + date +
+                ", destination=" + destination +
+                ", origin=" + origin +
+                ", prize=" + prize +
                 '}';
     }
 }
