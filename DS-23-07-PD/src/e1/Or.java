@@ -7,13 +7,12 @@ import java.util.List;
 
 public class Or  extends Operations {
     public List<Ticket> logic (List<Ticket> list,Properties... P) {
-        List<Ticket> aux = new ArrayList<>();
+        List<Ticket> aux ;
         List<Ticket> aux2 = new ArrayList<>();
         for (int i = 0; i < P.length; i++) {
             aux = P[i].sort(list, P[i]);
             for (int j = 0; j < aux.size(); j++) {
-                if (aux2.contains(aux.get(j))) {
-                } else {
+                if (!(aux2.contains(aux.get(j)))) {
                     aux2.add(aux.get(j));
                 }
             }
@@ -55,9 +54,10 @@ public class Or  extends Operations {
         api.add(ticket3);
         And and=new And();
         Or or= new Or();
-        aux = api.sort(or,prize1,prize1,prize2,prize3);
+        api.sort(and,prize);
 
-        System.out.println("aux = " + aux);
+
+        System.out.println("aux = " + api);
 
     }
 }

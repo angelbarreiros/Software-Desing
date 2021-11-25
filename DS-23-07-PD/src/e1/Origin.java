@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-public class Origin extends Properties {
+public class Origin implements Properties {
      private String origen;
 
     public Origin(String origen) {

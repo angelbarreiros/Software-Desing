@@ -5,7 +5,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.Objects;
 
-public class Dates extends Properties {
+public class Dates implements Properties {
 
     private Date fecha;
 

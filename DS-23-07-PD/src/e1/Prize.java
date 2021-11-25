@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-public class Prize extends Properties{
+public class Prize implements Properties{
     private  int prize;
 
     public Prize(int prize) {
@@ -38,10 +38,12 @@ public class Prize extends Properties{
     }
 
     @Override
-    public List<Ticket> sort(List<Ticket> list ,Properties p) {
+    public List<Ticket> sort(List<Ticket> list, Properties p) {
+        Prize precio;
+        precio=(Prize)p;
         List<Ticket> lista1=new ArrayList<>();
         for (int i=0;i<list.size();i++){
-           if (list.get(i).getPrize()==p){
+           if (list.get(i).getPrize().getPrize()<=precio.getPrize()){
                lista1.add(list.get(i));
            }
        }
