@@ -1,13 +1,12 @@
 package e1;
 
-import java.util.Date;
 import java.util.Objects;
 
 public class Ticket {
-  private Dates date;
-  private Destination destination;
-  private Origin origin;
-  private Prize prize;
+  private final  Dates date;
+  private final Destination destination;
+  private final  Origin origin;
+  private final Prize prize;
   private int iter=0;
 
     public int getIter() {
@@ -29,33 +28,25 @@ public class Ticket {
         return date;
     }
 
-    public void setDate(Dates date) {
-        this.date = date;
-    }
+
 
     public Destination getDestination() {
         return destination;
     }
 
-    public void setDestination(Destination destination) {
-        this.destination = destination;
-    }
+
 
     public Origin getOrigin() {
         return origin;
     }
 
-    public void setOrigin(Origin origin) {
-        this.origin = origin;
-    }
+
 
     public Prize getPrize() {
         return prize;
     }
 
-    public void setPrize(Prize prize) {
-        this.prize = prize;
-    }
+
 
     @Override
     public boolean equals(Object o) {
@@ -72,11 +63,11 @@ public class Ticket {
 
     @Override
     public String toString() {
-        return "Ticket{" +
+        return "\nTicket{" +
                 "date=" + date +
                 ", destination=" + destination +
                 ", origin=" + origin +
                 ", prize=" + prize +
-                '}';
+                '}'+'\n';
     }
 }

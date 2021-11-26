@@ -29,8 +29,11 @@ public class API {
 
     @Override
     public String toString() {
-        return "API{" +
-                  list +
-                '}';
+        StringBuilder sb= new StringBuilder();
+        for (int i =0;i<list.size();i++){
+            sb.append(list.get(i));
+            sb.append("\n");
+        }
+        return sb.toString();
     }
 }

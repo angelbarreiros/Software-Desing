@@ -7,15 +7,8 @@ import java.util.Objects;
 
 public class Dates implements Properties {
 
-    private Date fecha;
+    private final Date fecha;
 
-    public Date getFecha() {
-        return fecha;
-    }
-
-    public void setFecha(Date fecha) {
-        this.fecha = fecha;
-    }
 
     public Dates(Date fecha) {
         this.fecha = fecha;

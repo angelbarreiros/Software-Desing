@@ -5,19 +5,12 @@ import java.util.List;
 import java.util.Objects;
 
 public class Origin implements Properties {
-     private String origen;
+     private final String origen;
 
     public Origin(String origen) {
         this.origen = origen;
     }
 
-    public void setOrigen(String origen) {
-        this.origen = origen;
-    }
-
-    public String getOrigen() {
-        return origen;
-    }
 
     @Override
     public boolean equals(Object o) {

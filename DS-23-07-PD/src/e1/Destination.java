@@ -5,19 +5,15 @@ import java.util.List;
 import java.util.Objects;
 
 public class Destination implements Properties {
-    private String destination;
+    private final String destination;
 
-    public String getDestination() {
-        return destination;
-    }
+
 
     public Destination(String destination) {
         this.destination = destination;
     }
 
-    public void setDestination(String destination) {
-        this.destination = destination;
-    }
+
 
     @Override
     public boolean equals(Object o) {

@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Objects;
 
 public class Prize implements Properties{
-    private  int prize;
+    private final  int prize;
 
     public Prize(int prize) {
         this.prize = prize;
@@ -15,9 +15,6 @@ public class Prize implements Properties{
         return prize;
     }
 
-    public void setPrize(int prize) {
-        this.prize = prize;
-    }
 
     @Override
     public boolean equals(Object o) {

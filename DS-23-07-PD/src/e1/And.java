@@ -3,13 +3,12 @@ package e1;
 import java.util.ArrayList;
 import java.util.List;
 
-public class And  extends Operations {
+public class And  implements Operations {
     @Override
     public List<Ticket> logic(List<Ticket> list, Properties... P) {
         List<Ticket> aux;
         List<Ticket> aux2=new ArrayList<>();
         List<Ticket> aux3=new ArrayList<>();
-        int k=0;
 
         for (int i=0;i<P.length;i++) {
             aux = P[i].sort(list, P[i]);
