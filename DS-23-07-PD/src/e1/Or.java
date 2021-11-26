@@ -8,6 +8,9 @@ import java.util.List;
 public class Or  implements Operations {
     public List<Ticket> logic (List<Ticket> list,Properties... P) {
         List<Ticket> aux ;
+        if (P.length==1){
+            return P[0].sort(list,P[0]);
+        }
         List<Ticket> aux2 = new ArrayList<>();
         for (int i = 0; i < P.length; i++) {
             aux = P[i].sort(list, P[i]);

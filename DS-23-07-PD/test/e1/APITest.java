@@ -43,9 +43,28 @@ class APITest {
         And and=new And();
         Or or= new Or();
         api.sort(or,origin,origin1);
-        api.sort(and,prize);
+        assertEquals(ticket,api.getList().get(0));
+        assertEquals(ticket1,api.getList().get(1));
+        api.sort(and,origin,destination);
+        assertEquals(ticket,api.getList().get(0));
+        api.sort(and,origin1,destination1);
+        assertEquals(api.toString(),"");
         api.reset();
+        assertEquals(ticket,api.getList().get(0));
+        assertEquals(ticket1,api.getList().get(1));
+        assertEquals(ticket2,api.getList().get(2));
+        assertEquals(ticket3,api.getList().get(3));
         api.remove(ticket);
-        System.out.println("api.toString() = " + api.toString());
+        api.sort(or,origin,origin1);
+        assertNotEquals(ticket,api.getList().get(0));
+        assertEquals(ticket1,api.getList().get(0));
+        api.reset();
+        api.sort(and,prize,origin1);
+        assertEquals(ticket1,api.getList().get(0));
+        api.sort(and,dates1,origin1);
+        assertEquals(ticket1,api.getList().get(0));
+
+       
+
     }
 }

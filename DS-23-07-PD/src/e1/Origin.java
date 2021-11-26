@@ -34,7 +34,7 @@ public class Origin implements Properties {
     public List<Ticket> sort(List<Ticket> list, Properties P) {
         List<Ticket> lista1=new ArrayList<>();
         for (int i=0;i<list.size();i++){
-            if (list.get(i).getOrigin()==P){
+            if (list.get(i).getOrigin().equals(P)){
                 lista1.add(list.get(i));
             }
         }

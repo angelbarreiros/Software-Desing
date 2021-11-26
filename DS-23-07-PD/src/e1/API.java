@@ -15,7 +15,11 @@ public class API {
         renuve.remove(t);
     }
 
-    public void setList(List<Ticket> list) {
+    public List<Ticket> getList() {
+        return list;
+    }
+
+    private  void setList(List<Ticket> list) {
         this.list = list;
     }
     public void reset (){

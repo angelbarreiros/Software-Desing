@@ -16,13 +16,7 @@ public class Prize implements Properties{
     }
 
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Prize prize1 = (Prize) o;
-        return prize == prize1.prize;
-    }
+
 
     @Override
     public int hashCode() {
