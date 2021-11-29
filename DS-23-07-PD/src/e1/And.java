@@ -12,15 +12,13 @@ public class And  implements Operations {
         if (P.length==1){
             return P[0].sort(list,P[0]);
         }
-        for (int i=0;i<list.size();i++){
-            list.get(i).setIter(0);
-        }
+
         for (int i=0;i<P.length;i++) {
             aux = P[i].sort(list, P[i]);
             for (int j=0;j<aux.size();j++){
                 if (aux2.contains(aux.get(j))){
-                     aux.get(j).setIter(aux.get(j).getIter()+1);
-                    if (aux.get(j).getIter()==(P.length)-1){
+                     aux.get(j).getIter().setIter(aux.get(j).getIter().getIter()+1);
+                    if (aux.get(j).getIter().getIter()==(P.length)-1){
                         aux3.add(aux.get(j));
                     }
                 }
@@ -29,9 +27,11 @@ public class And  implements Operations {
                 }
             }
         }
+        for (int i=0;i<list.size();i++){
+            list.get(i).getIter().reset();
+        }
+        return aux3;
 
-
-      return aux3;
     }
 
 }

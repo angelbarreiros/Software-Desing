@@ -7,21 +7,20 @@ public class Ticket {
   private final Destination destination;
   private final  Origin origin;
   private final Prize prize;
-  private int iter=0;
+  private final Iter iter;
 
-    public int getIter() {
+    public Iter getIter() {
         return iter;
     }
 
-    public void setIter(int iter) {
-        this.iter = iter;
-    }
 
     public Ticket(Dates date, Destination destination, Origin origin, Prize prize) {
         this.date = date;
         this.destination = destination;
         this.origin = origin;
         this.prize = prize;
+        this.iter=new Iter();
+
     }
 
     public Dates getDate() {
