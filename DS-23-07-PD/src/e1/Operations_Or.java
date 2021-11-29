@@ -5,7 +5,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
-public class Or  implements Operations {
+public class Operations_Or implements Operations {
     public List<Ticket> logic (List<Ticket> list,Properties... P) {
         List<Ticket> aux ;
         if (P.length==1){

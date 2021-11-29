@@ -4,12 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-public class Destination implements Properties {
+public class Properties_Destination implements Properties {
     private final String destination;
 
 
 
-    public Destination(String destination) {
+    public Properties_Destination(String destination) {
         this.destination = destination;
     }
 
@@ -19,7 +19,7 @@ public class Destination implements Properties {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Destination that = (Destination) o;
+        Properties_Destination that = (Properties_Destination) o;
         return Objects.equals(destination, that.destination);
     }
 

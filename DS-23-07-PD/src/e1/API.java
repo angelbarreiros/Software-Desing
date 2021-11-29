@@ -6,6 +6,7 @@ import java.util.List;
 public class API {
     private  List<Ticket> list=new ArrayList<>();
     private final List<Ticket> renuve=new ArrayList<>();
+
     public void add (Ticket t){
         list.add(t);
         renuve.add(t);
@@ -26,9 +27,8 @@ public class API {
         setList(renuve);
     }
 
-    public List<Ticket> sort(Operations O, Properties... P){
+    public void sort(Operations O, Properties... P){
             setList(O.logic(list,P));
-        return list;
     }
 
     @Override

@@ -1,6 +1,6 @@
 package e1;
 
-public class Iter {
+public class Ticket_Iter {
     int iter=0;
 
     public int getIter() {

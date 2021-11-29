@@ -3,7 +3,7 @@ package e1;
 import java.util.ArrayList;
 import java.util.List;
 
-public class And  implements Operations {
+public class Operations_And implements Operations {
     @Override
     public List<Ticket> logic(List<Ticket> list, Properties... P) {
         List<Ticket> aux;

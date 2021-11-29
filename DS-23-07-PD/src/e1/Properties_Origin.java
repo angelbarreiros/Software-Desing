@@ -4,10 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-public class Origin implements Properties {
+public class Properties_Origin implements Properties {
      private final String origen;
 
-    public Origin(String origen) {
+    public Properties_Origin(String origen) {
         this.origen = origen;
     }
 
@@ -16,7 +16,7 @@ public class Origin implements Properties {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Origin origin = (Origin) o;
+        Properties_Origin origin = (Properties_Origin) o;
         return Objects.equals(origen, origin.origen);
     }
 

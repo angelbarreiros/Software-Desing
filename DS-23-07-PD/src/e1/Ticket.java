@@ -3,45 +3,45 @@ package e1;
 import java.util.Objects;
 
 public class Ticket {
-  private final  Dates date;
-  private final Destination destination;
-  private final  Origin origin;
-  private final Prize prize;
-  private final Iter iter;
+  private final Properties_Dates date;
+  private final Properties_Destination destination;
+  private final Properties_Origin origin;
+  private final Properties_Prize prize;
+  private final Ticket_Iter iter;
 
-    public Iter getIter() {
+    public Ticket_Iter getIter() {
         return iter;
     }
 
 
-    public Ticket(Dates date, Destination destination, Origin origin, Prize prize) {
+    public Ticket(Properties_Dates date, Properties_Destination destination, Properties_Origin origin, Properties_Prize prize) {
         this.date = date;
         this.destination = destination;
         this.origin = origin;
         this.prize = prize;
-        this.iter=new Iter();
+        this.iter=new Ticket_Iter();
 
     }
 
-    public Dates getDate() {
+    public Properties_Dates getDate() {
         return date;
     }
 
 
 
-    public Destination getDestination() {
+    public Properties_Destination getDestination() {
         return destination;
     }
 
 
 
-    public Origin getOrigin() {
+    public Properties_Origin getOrigin() {
         return origin;
     }
 
 
 
-    public Prize getPrize() {
+    public Properties_Prize getPrize() {
         return prize;
     }
 

@@ -5,12 +5,12 @@ import java.util.Date;
 import java.util.List;
 import java.util.Objects;
 
-public class Dates implements Properties {
+public class Properties_Dates implements Properties {
 
     private final Date fecha;
 
 
-    public Dates(Date fecha) {
+    public Properties_Dates(Date fecha) {
         this.fecha = fecha;
     }
 
@@ -18,7 +18,7 @@ public class Dates implements Properties {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Dates dates = (Dates) o;
+        Properties_Dates dates = (Properties_Dates) o;
         return Objects.equals(fecha, dates.fecha);
     }
 
