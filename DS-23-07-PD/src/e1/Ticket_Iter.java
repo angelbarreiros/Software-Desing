@@ -1,16 +1,14 @@
 package e1;
 
 public class Ticket_Iter {
-    int iter=0;
-
-    public int getIter() {
-        return iter;
+    int iter;
+    public int getIter(){
+        return this.iter;
     }
-
-    public void setIter(int iter) {
-        this.iter = iter;
+    public void sumar(){
+        iter++;
     }
     public void reset(){
-        this.setIter(0);
+        iter=0;
     }
 }

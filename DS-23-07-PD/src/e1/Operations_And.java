@@ -9,15 +9,18 @@ public class Operations_And implements Operations {
         List<Ticket> aux;
         List<Ticket> aux2=new ArrayList<>();
         List<Ticket> aux3=new ArrayList<>();
+
         if (P.length==1){
             return P[0].sort(list,P[0]);
         }
-
+        for (int i=0;i<list.size();i++){
+            list.get(i).getIter().reset();
+        }
         for (int i=0;i<P.length;i++) {
             aux = P[i].sort(list, P[i]);
             for (int j=0;j<aux.size();j++){
                 if (aux2.contains(aux.get(j))){
-                     aux.get(j).getIter().setIter(aux.get(j).getIter().getIter()+1);
+                     aux.get(j).getIter().sumar();
                     if (aux.get(j).getIter().getIter()==(P.length)-1){
                         aux3.add(aux.get(j));
                     }
@@ -27,9 +30,7 @@ public class Operations_And implements Operations {
                 }
             }
         }
-        for (int i=0;i<list.size();i++){
-            list.get(i).getIter().reset();
-        }
+
         return aux3;
 
     }

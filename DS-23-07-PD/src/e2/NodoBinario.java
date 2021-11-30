@@ -48,8 +48,8 @@ public class NodoBinario {
         this.nododrch = nododrch;
     }
     private void restarhijos(NodoBinario n){
-        n.getNododrch().setPeso(n.getNododrch().getPeso()-1);
-        n.getNodoizq().setPeso(n.getNodoizq().getPeso()-1);
+        n.getNododrch().setPeso((n.getNododrch().getPeso())-1);
+        n.getNodoizq().setPeso((n.getNodoizq().getPeso())-1);
     }
 
     public List<NodoBinario> restar(NodoBinario n,List<NodoBinario> L) {
@@ -83,7 +83,7 @@ public class NodoBinario {
     @Override
     public String toString() {
         return "NodoBinario{" +
-                "name=" + name ;
+                "name=" + name + "peso="+peso ;
     }
 }
 
