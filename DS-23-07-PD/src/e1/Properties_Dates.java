@@ -1,5 +1,6 @@
 package e1;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -7,10 +8,10 @@ import java.util.Objects;
 
 public class Properties_Dates implements Properties {
 
-    private final Date fecha;
+    private final LocalDateTime fecha;
 
 
-    public Properties_Dates(Date fecha) {
+    public Properties_Dates(LocalDateTime fecha) {
         this.fecha = fecha;
     }
 
@@ -30,13 +31,13 @@ public class Properties_Dates implements Properties {
     @Override
     public String toString() {
         return ""+fecha;
-    }
+    }	o
 
     @Override
     public List<Ticket> sort(List<Ticket> list, Properties P) {
         List<Ticket> lista1=new ArrayList<>();
         for (int i=0;i<list.size();i++){
-            if (list.get(i).getDate()==P){
+            if (list.get(i).getDate().equals(P)){
                 lista1.add(list.get(i));
             }
         }

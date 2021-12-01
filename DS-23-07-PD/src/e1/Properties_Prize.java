@@ -15,9 +15,6 @@ public class Properties_Prize implements Properties{
         return prize;
     }
 
-
-
-
     @Override
     public int hashCode() {
         return Objects.hash(prize);
@@ -30,11 +27,11 @@ public class Properties_Prize implements Properties{
 
     @Override
     public List<Ticket> sort(List<Ticket> list, Properties p) {
-        Properties_Prize precio;
-        precio=(Properties_Prize)p;
+        Properties_Prize prize;
+        prize=(Properties_Prize)p;
         List<Ticket> lista1=new ArrayList<>();
         for (int i=0;i<list.size();i++){
-           if (list.get(i).getPrize().getPrize()<=precio.getPrize()){
+           if (list.get(i).getPrize().getPrize()<= prize.getPrize()){
                lista1.add(list.get(i));
            }
        }

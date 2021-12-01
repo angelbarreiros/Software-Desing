@@ -2,6 +2,10 @@ package e1;
 
 import org.junit.jupiter.api.Test;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.Month;
+import java.time.temporal.Temporal;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -11,10 +15,11 @@ class APITest {
     @Test
     public void ApiTest(){
         API api= new API();
-        Date date = new Date(120, Calendar.JULY,12,14,30);
-        Date date1 = new Date(121, Calendar.JULY,12,14,20);
-        Date date2 = new Date(122, Calendar.JULY,12,14,10);
-        Date date3 = new Date(123, Calendar.JULY,12,14,0);
+        LocalDateTime date = LocalDateTime.of(2021, Month.DECEMBER,21,20,45);
+        LocalDateTime date1 = LocalDateTime.of(2022, Month.DECEMBER,21,20,45);
+        LocalDateTime date2 = LocalDateTime.of(2023, Month.DECEMBER,21,20,45);
+        LocalDateTime date3 = LocalDateTime.of(2024, Month.DECEMBER,21,20,45);
+
         Properties_Dates dates=new Properties_Dates(date);
         Properties_Dates dates1=new Properties_Dates(date1);
         Properties_Dates dates2=new Properties_Dates(date2);
@@ -70,6 +75,7 @@ class APITest {
         assertEquals(api.getList().get(1),ticket3);
         api.remove(ticket2);
         assertEquals(api.toString(),"\nTicket{date=Wed Jul 12 14:00:00 CEST 2023, destination=Coruña, origin=Coruña, prize=20}\n\n");
+
 
 
        
