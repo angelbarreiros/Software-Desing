@@ -11,20 +11,12 @@ public class Dpendency_Strong implements Dependency{
     public void ejecutar(Graph g,List<Character> list) {
         List<Character>lista2= new ArrayList<>();
 
-        List<Character> aux2;
-        Iterator<Character> it2 = g.getAntecesores().keySet().iterator();
+
         if (g.getPredecesores().size() == 0 && g.getAntecesores().size()==0 ){
             System.out.println("listafinal = " + list);
         }
         else{
-            while(it2.hasNext()){
-                Character clave = it2.next();
-                aux2 = g.getAntecesores().get(clave);
-                if (aux2.isEmpty()){
-                    lista2.add(clave);
-                }
-
-            }
+            lista2=filtro(g);
             if (lista2.size()!=0){
                 char c = lista2.get(0);
                 for (int i=0;i<lista2.size();i++){
@@ -79,6 +71,20 @@ public class Dpendency_Strong implements Dependency{
         }
 
         return g;
+    }
+    private List<Character> filtro(Graph g){
+        List<Character>lista= new ArrayList<>();
+        List<Character> aux2;
+        Iterator<Character> it2 = g.getAntecesores().keySet().iterator();
+        while(it2.hasNext()){
+            Character clave = it2.next();
+            aux2 = g.getAntecesores().get(clave);
+            if (aux2.isEmpty()){
+                lista.add(clave);
+            }
+
+        }
+        return lista;
     }
     
 
