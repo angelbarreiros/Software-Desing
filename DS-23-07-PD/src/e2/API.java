@@ -9,6 +9,7 @@ import java.util.List;
 public class API {
     private Dependency dependency;
     private final Graph graph=new Graph();
+    List<Character>lista=new ArrayList<>();
 
     public void setDependency(Dependency dependency) {
         this.dependency = dependency;
@@ -41,7 +42,7 @@ public class API {
     }
 
     public void work(){
-        dependency.ejecutar(this.graph);
+        dependency.ejecutar(this.graph,this.lista);
     }
 
     @Override

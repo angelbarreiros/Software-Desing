@@ -4,12 +4,12 @@ import java.util.*;
 
 public class Graph {
 
-    Map<Character,List<Character>> predecesores= new HashMap<>();
-    Map<Character,List<Character>> antecesores= new HashMap<>();
+    private Map<Character,List<Character>> predecesores= new HashMap<>();
+    private Map<Character,List<Character>> antecesores= new HashMap<>();
 
     public void add(char a, char b){
         List<Character> aux=new ArrayList<>();
-        List<Character> aux2=new ArrayList<>();
+
         List<Character> lista=predecesores.get(a);
         if (lista==null){
             aux.add(b);
@@ -30,8 +30,7 @@ public class Graph {
                 predecesores.put(a, lista);
             }
         }
-
-
+        List<Character> aux2=new ArrayList<>();
 
         List<Character> lista2 = antecesores.get(b);
         if (lista2==null){
@@ -53,13 +52,28 @@ public class Graph {
                 antecesores.put(b,lista2);
             }
         }
+        List<Character> lista3 = antecesores.get(a);
+        List<Character> aux3=new ArrayList<>();
+        if (lista3==null){
+            antecesores.put(a,aux3);
+        }
 
+    }
 
+    public Map<Character, List<Character>> getPredecesores() {
+        return predecesores;
+    }
 
+    public void setPredecesores(Map<Character, List<Character>> predecesores) {
+        this.predecesores = predecesores;
     }
 
     public Map<Character, List<Character>> getAntecesores() {
         return antecesores;
+    }
+
+    public void setAntecesores(Map<Character, List<Character>> antecesores) {
+        this.antecesores = antecesores;
     }
 
     @Override
