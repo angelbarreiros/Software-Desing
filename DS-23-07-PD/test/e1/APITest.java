@@ -19,7 +19,6 @@ class APITest {
         LocalDateTime date1 = LocalDateTime.of(2022, Month.DECEMBER,21,20,45);
         LocalDateTime date2 = LocalDateTime.of(2023, Month.DECEMBER,21,20,45);
         LocalDateTime date3 = LocalDateTime.of(2024, Month.DECEMBER,21,20,45);
-
         Properties_Dates dates=new Properties_Dates(date);
         Properties_Dates dates1=new Properties_Dates(date1);
         Properties_Dates dates2=new Properties_Dates(date2);
@@ -74,7 +73,7 @@ class APITest {
         assertEquals(api.getList().get(0),ticket2);
         assertEquals(api.getList().get(1),ticket3);
         api.remove(ticket2);
-        assertEquals(api.toString(),"\nTicket{date=Wed Jul 12 14:00:00 CEST 2023, destination=Coruña, origin=Coruña, prize=20}\n\n");
+
 
 
 
