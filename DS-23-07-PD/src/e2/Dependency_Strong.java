@@ -11,19 +11,13 @@ public class Dependency_Strong implements Dependency{
         }
         else{
             lista2=filtro(g);
-            if (lista2.size()!=0){
-                char c = lista2.get(0);
-                for (int i=0;i<lista2.size();i++){
-                    if (lista2.get(i)<c){
-                        c=lista2.get(i);
-                    }
-                }
-                eliminar(c, g.getAntecesores());
-                eliminar(c,g.getPredecesores());
-                g.getPredecesores().remove(c);
-                g.getAntecesores().remove(c);
-                list.add(c);
-            }
+            char c =maximo(lista2);
+            eliminar(c, g.getAntecesores());
+            eliminar(c,g.getPredecesores());
+            g.getPredecesores().remove(c);
+            g.getAntecesores().remove(c);
+            list.add(c);
+
             ejecutar(g,list);
         }
     }
@@ -58,4 +52,16 @@ public class Dependency_Strong implements Dependency{
         }
         return lista;
     }
+    private  Character maximo(List<Character> lista){
+          char c=lista.get(0);
+          for (int i =0;i< lista.size();i++){
+              if (lista.get(i)<c){
+                  c=lista.get(i);
+              }
+
+
+        }
+          return c;
+    }
+
 }

@@ -10,8 +10,8 @@ public class APITest {
     public void Test() throws IOException {
         API api = new API();
         api.graphMaker(api.fileReader("src/e2/xDependencies.txt"));
-        Dependency_Strong dependency_strong= new Dependency_Strong();
-        api.setDependency(dependency_strong);
+        Dependency_Weak dependency_weak= new Dependency_Weak();
+        api.setDependency(dependency_weak);
         api.work();
     }
     
