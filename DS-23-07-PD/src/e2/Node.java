@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Node {
     private char job;
-    private final List<Edges> edge;
+    private  List<Edges> edge;
 
     public Node(char job) {
         this.job = job;
@@ -23,10 +23,10 @@ public class Node {
         return edge;
     }
     public void addEdge(Edges edges) {
-        if (edges == null) {
-            edges = new ArrayList<>();
+        if (edge == null) {
+            edge = new ArrayList<>();
         }
-        edges.add(edges);
+        edge.add(edges);
     }
     @Override
     public String toString() {
