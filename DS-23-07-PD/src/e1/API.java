@@ -71,7 +71,7 @@ public class   API {
         api.add(ticket3);
         Operations_And and=new Operations_And();
         Operations_Or or= new Operations_Or();
-        api.sort(and,origin1,destination1);
+        api.sort(and,origin1,destination1,dates1,prize1);
         System.out.println("api = " + api);
     }
 
