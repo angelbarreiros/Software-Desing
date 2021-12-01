@@ -8,7 +8,7 @@ public class Operations_And implements Operations {
     public List<Ticket> logic(List<Ticket> list, Properties... P) {
         List<Ticket> aux = new ArrayList<>();
         List<Ticket> aux2 = new ArrayList<>();
-        int cnt, len, pos = 0;
+        int cnt, t2, pos = 0;
         for (Properties i:P) {
             aux.addAll(i.sort(list, i));
         }
@@ -16,8 +16,8 @@ public class Operations_And implements Operations {
         for (Ticket t1: aux){
             if(aux.size() > pos) {
                 cnt = 0;
-                for (Ticket t2: aux) {
-                    if (aux.get(pos) == t2) {
+                for (t2=pos; t2<aux.size(); t2++) {
+                    if (aux.get(pos) == aux.get(t2)) {
                         cnt++;
                     }
                 }
@@ -26,6 +26,7 @@ public class Operations_And implements Operations {
                 }else{pos ++;}
             }
         }
+
         return aux2;
 
         /*List<Ticket> aux;
