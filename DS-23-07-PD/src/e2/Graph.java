@@ -16,6 +16,9 @@ public class Graph {
         List<Character> lista2 = antecesores.get(b);
         lista2.add(a);
         antecesores.put(b,lista2);
+    }
 
+    public Map<Character, List<Character>> getAntecesores() {
+        return antecesores;
     }
 }

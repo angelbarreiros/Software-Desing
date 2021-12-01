@@ -6,7 +6,25 @@ import java.util.List;
 public class Operations_And implements Operations {
     @Override
     public List<Ticket> logic(List<Ticket> list, Properties... P) {
-        List<Ticket> aux;
+        List<Ticket> aux = new ArrayList<>();
+        boolean flag;
+        for (Properties p:P) {
+            aux.addAll(p.sort(list, p));
+        }
+        for (Ticket t1: aux){
+            flag = false;
+            for (Ticket t2: aux){
+                if (t1 == t2) {
+                    flag = true;
+                }
+            }
+            if (!flag){
+                aux.remove(t1);
+            }
+        }
+        return aux;
+
+        /*List<Ticket> aux;
         List<Ticket> aux2=new ArrayList<>();
         List<Ticket> aux3=new ArrayList<>();
 
@@ -32,7 +50,7 @@ public class Operations_And implements Operations {
         }
 
         return aux3;
-
+        */
     }
 
 }
