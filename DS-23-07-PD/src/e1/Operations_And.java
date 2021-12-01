@@ -14,7 +14,7 @@ public class Operations_And implements Operations {
         for (t1=0; t1 < aux.size(); t1++){
             cnt = 0;
             for (t2=0; t2 < aux.size(); t2++){
-                if (t1 == t2) {
+                if (aux.get(t1) == aux.get(t2)) {
                     cnt++;
                 }
             }
