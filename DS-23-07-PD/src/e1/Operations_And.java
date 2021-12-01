@@ -8,12 +8,13 @@ public class Operations_And implements Operations {
     public List<Ticket> logic(List<Ticket> list, Properties... P) {
         List<Ticket> aux = new ArrayList<>();
         boolean flag;
-        for (Properties p:P) {
-            aux.addAll(p.sort(list, p));
+        int i, t1, t2;
+        for (i = 0; i < P.length; i++) {
+            aux.addAll(P[i].sort(list, P[i]));
         }
-        for (Ticket t1: aux){
+        for (t1=0; t1 < aux.size(); t1++){
             flag = false;
-            for (Ticket t2: aux){
+            for (t2=0; t2 < aux.size(); t2++){
                 if (t1 == t2) {
                     flag = true;
                 }
