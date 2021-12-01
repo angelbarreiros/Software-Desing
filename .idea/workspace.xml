@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7ee14d67-d0fb-4d7d-b2f6-8c0bac8aaa3b" name="Changes" comment="" />
+    <list default="true" id="7ee14d67-d0fb-4d7d-b2f6-8c0bac8aaa3b" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/DS-23-07-B2/out/production/DS-23-07-B2/e2/Vivienda$TIPO.class" beforeDir="false" afterPath="$PROJECT_DIR$/DS-23-07-B2/out/production/DS-23-07-B2/e2/Vivienda$TIPO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DS-23-07-B2/out/production/DS-23-07-B2/e2/Vivienda.class" beforeDir="false" afterPath="$PROJECT_DIR$/DS-23-07-B2/out/production/DS-23-07-B2/e2/Vivienda.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DS-23-07-B2/out/test/DS-23-07-B2/e2/IdealistaTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/DS-23-07-B2/out/test/DS-23-07-B2/e2/IdealistaTest.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -20,7 +24,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/DS-23-07-B1" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/DS-23-07-B2" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -31,7 +35,22 @@
       <option name="presentableId" value="Default" />
       <updated>1634123971436</updated>
       <workItem from="1634127180594" duration="4000" />
+      <workItem from="1637149241970" duration="76000" />
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
