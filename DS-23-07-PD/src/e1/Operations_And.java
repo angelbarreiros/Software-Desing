@@ -7,18 +7,19 @@ public class Operations_And implements Operations {
     @Override
     public List<Ticket> logic(List<Ticket> list, Properties... P) {
         List<Ticket> aux = new ArrayList<>();
-        int i, t1, t2, cnt;
+        boolean flag;
+        int i, t1, t2;
         for (i = 0; i < P.length; i++) {
             aux.addAll(P[i].sort(list, P[i]));
         }
         for (t1=0; t1 < aux.size(); t1++){
-            cnt = 0;
+            flag = false;
             for (t2=0; t2 < aux.size(); t2++){
-                if (aux.get(t1) == aux.get(t2)) {
-                    cnt++;
+                if (t1 == t2) {
+                    flag = true;
                 }
             }
-            if (cnt < P.length){
+            if (!flag){
                 aux.remove(t1);
             }
         }
