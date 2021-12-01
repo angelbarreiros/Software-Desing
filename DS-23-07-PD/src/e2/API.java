@@ -9,6 +9,11 @@ import java.util.List;
 public class API {
     private Dependency dependency;
     private final Graph graph=new Graph();
+
+    public void setDependency(Dependency dependency) {
+        this.dependency = dependency;
+    }
+
     public String fileReader(String s) throws IOException {
         File archivo= new File (s);
         FileReader fr= new FileReader (archivo);

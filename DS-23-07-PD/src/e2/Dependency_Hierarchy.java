@@ -8,8 +8,4 @@ public class Dependency_Hierarchy implements Dependency{
 
     }
 
-    @Override
-    public void eliminar() {
-
-    }
 }
