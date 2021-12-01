@@ -1,21 +1,21 @@
 package e2;
 
-import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class Graph {
-    private List<Node> nodes;
-    public void addNode(Node node) {
-        if (nodes == null) {
-            nodes = new ArrayList<>();
-        }
-        nodes.add(node);
-    }
-    public List<Node> getNodes() {
-        return nodes;
-    }
-    @Override
-    public String toString() {
-        return "Graph [nodes=" + nodes + "]";
+
+    Map<Character, List<Character>> predecesores= new HashMap<>();
+    Map<Character,List<Character>> antecesores= new HashMap<>();
+
+    private void add(char a, char b){
+        List<Character> lista = predecesores.get(b);
+        lista.add(a);
+        predecesores.put(a, lista);
+        List<Character> lista2 = antecesores.get(a);
+        lista2.add(b);
+        antecesores.put(a,lista2);
+
     }
 }

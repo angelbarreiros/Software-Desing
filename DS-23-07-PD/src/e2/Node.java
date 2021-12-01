@@ -1,35 +1,15 @@
 package e2;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class Node {
-    private char job;
-    private  List<Edges> edge;
+    private Character job;
+    private Character[] lista;
 
-    public Node(char job) {
-        this.job = job;
-    }
-
-    public char getJob() {
-        return job;
-    }
-
-    public void setJob(char job) {
-        this.job = job;
-    }
-
-    public List<Edges> getEdge() {
-        return edge;
-    }
-    public void addEdge(Edges edges) {
-        if (edge == null) {
-            edge = new ArrayList<>();
-        }
-        edge.add(edges);
-    }
-    @Override
-    public String toString() {
-        return "\n \tNode [city=" + job + ", edges=" + edge + "]";
+    public Character[] getLista() {
+        return lista;
     }
 }
