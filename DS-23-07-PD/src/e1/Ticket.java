@@ -7,11 +7,9 @@ public class Ticket {
   private final Properties_Destination destination;
   private final Properties_Origin origin;
   private final Properties_Prize prize;
-  private final Ticket_Iter iter;
 
-    public Ticket_Iter getIter() {
-        return iter;
-    }
+
+
 
 
     public Ticket(Properties_Dates date, Properties_Destination destination, Properties_Origin origin, Properties_Prize prize) {
@@ -19,7 +17,7 @@ public class Ticket {
         this.destination = destination;
         this.origin = origin;
         this.prize = prize;
-        this.iter=new Ticket_Iter();
+
 
     }
 
