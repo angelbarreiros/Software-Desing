@@ -10,12 +10,12 @@ public class Graph {
     Map<Character,List<Character>> antecesores= new HashMap<>();
 
     private void add(char a, char b){
-        List<Character> lista = predecesores.get(b);
-        lista.add(a);
+        List<Character> lista = predecesores.get(a);
+        lista.add(b);
         predecesores.put(a, lista);
-        List<Character> lista2 = antecesores.get(a);
-        lista2.add(b);
-        antecesores.put(a,lista2);
+        List<Character> lista2 = antecesores.get(b);
+        lista2.add(a);
+        antecesores.put(b,lista2);
 
     }
 }
