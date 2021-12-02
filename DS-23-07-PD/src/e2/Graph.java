@@ -7,6 +7,7 @@ public class Graph {
     private Map<Character,List<Character>> predecesores= new HashMap<>();
     private Map<Character,List<Character>> antecesores= new HashMap<>();
 
+
     public void add(char a, char b){
         List<Character> aux=new ArrayList<>();
 
@@ -64,17 +65,13 @@ public class Graph {
         return predecesores;
     }
 
-    public void setPredecesores(Map<Character, List<Character>> predecesores) {
-        this.predecesores = predecesores;
-    }
+
 
     public Map<Character, List<Character>> getAntecesores() {
         return antecesores;
     }
 
-    public void setAntecesores(Map<Character, List<Character>> antecesores) {
-        this.antecesores = antecesores;
-    }
+
 
     @Override
     public String toString() {

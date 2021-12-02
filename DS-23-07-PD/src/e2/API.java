@@ -41,8 +41,18 @@ public class API {
 
     }
 
-    public void work(){
-        dependency.ejecutar(this.graph,this.lista);
+    public Graph getGraph() {
+        return graph;
+    }
+
+    private void reset (){
+        lista.clear();
+    }
+
+    public void work() throws IOException {
+        dependency.ejecutar(graph,lista);
+        reset();
+        graphMaker(fileReader("src/e2/xDependencies.txt"));
     }
 
     @Override

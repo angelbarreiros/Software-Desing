@@ -11,8 +11,12 @@ public class APITest {
         API api = new API();
         api.graphMaker(api.fileReader("src/e2/xDependencies.txt"));
         Dependency_Weak dependency_weak= new Dependency_Weak();
-        api.setDependency(dependency_weak);
+        Dependency_Strong dependency_strong= new Dependency_Strong();
+        Dependency_Hierarchy dependency_hierarchy=new Dependency_Hierarchy();
+        api.setDependency(dependency_hierarchy);
         api.work();
+
+
     }
     
 }
