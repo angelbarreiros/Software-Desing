@@ -7,6 +7,13 @@ public class Graph {
     private Map<Character,List<Character>> predecesores= new HashMap<>();
     private Map<Character,List<Character>> antecesores= new HashMap<>();
 
+    public void setPredecesores(Map<Character, List<Character>> predecesores) {
+        this.predecesores = predecesores;
+    }
+
+    public void setAntecesores(Map<Character, List<Character>> antecesores) {
+        this.antecesores = antecesores;
+    }
 
     public void add(char a, char b){
         List<Character> aux=new ArrayList<>();
@@ -57,6 +64,11 @@ public class Graph {
         List<Character> aux3=new ArrayList<>();
         if (lista3==null){
             antecesores.put(a,aux3);
+        }
+        List<Character> lista4 = predecesores.get(b);
+        List<Character> aux4=new ArrayList<>();
+        if (lista4==null){
+            predecesores.put(b,aux4);
         }
 
     }

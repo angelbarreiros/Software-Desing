@@ -8,15 +8,18 @@ import java.util.List;
 
 public class API {
     private Dependency dependency;
-    private Graph graph=new Graph();
-    private final Graph graphaux=new Graph();
+    private String aux;
 
+    private void setAux(String aux) {
+        this.aux = aux;
+    }
 
     public void setDependency(Dependency dependency) {
         this.dependency = dependency;
     }
 
     public String fileReader(String s) throws IOException {
+        this.setAux(aux);
         File archivo= new File (s);
         FileReader fr= new FileReader (archivo);
         BufferedReader br=new BufferedReader(fr);
@@ -27,8 +30,9 @@ public class API {
         }
         return builder.toString();
     }
-    public void graphMaker(String s){
+    public Graph graphMaker(String s){
         char c;
+        Graph graph=new Graph();
         List<Character> aux=new ArrayList<>();
         for (int i=0;i<s.length();i++){
             c=s.charAt(i);
@@ -38,29 +42,18 @@ public class API {
         }
         for (int i=0;i<aux.size();i=i+2){
             graph.add(aux.get(i),aux.get(i+1));
-            graphaux.add(aux.get(i),aux.get(i+1));
+
         }
-
-    }
-
-    public Graph getGraph() {
         return graph;
+
+    }
+    public void reset() throws IOException {
+        this.graphMaker(fileReader(this.aux));
     }
 
-
-
-    public void work()  {
+    public void work(Graph g) throws IOException {
         List<Character>lista=new ArrayList<>();
-        dependency.ejecutar(graph,lista);
-        lista.clear();
-        graph=graphaux;
-    }
+        dependency.ejecutar(g,lista);
 
-    @Override
-    public String toString() {
-        return "API{" +
-                "dependency=" + dependency +
-                ", graph=" + graph +
-                '}';
     }
 }
