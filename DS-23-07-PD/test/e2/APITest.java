@@ -13,7 +13,9 @@ public class APITest {
         Dependency_Weak dependency_weak= new Dependency_Weak();
         Dependency_Strong dependency_strong= new Dependency_Strong();
         Dependency_Hierarchy dependency_hierarchy=new Dependency_Hierarchy();
-        api.setDependency(dependency_hierarchy);
+        api.setDependency(dependency_weak);
+        api.work();
+        api.setDependency(dependency_strong);
         api.work();
 
 

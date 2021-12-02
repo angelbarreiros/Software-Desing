@@ -8,8 +8,9 @@ import java.util.List;
 
 public class API {
     private Dependency dependency;
-    private final Graph graph=new Graph();
-    List<Character>lista=new ArrayList<>();
+    private Graph graph=new Graph();
+    private final Graph graphaux=new Graph();
+
 
     public void setDependency(Dependency dependency) {
         this.dependency = dependency;
@@ -37,6 +38,7 @@ public class API {
         }
         for (int i=0;i<aux.size();i=i+2){
             graph.add(aux.get(i),aux.get(i+1));
+            graphaux.add(aux.get(i),aux.get(i+1));
         }
 
     }
@@ -45,14 +47,13 @@ public class API {
         return graph;
     }
 
-    private void reset (){
-        lista.clear();
-    }
 
-    public void work() throws IOException {
+
+    public void work()  {
+        List<Character>lista=new ArrayList<>();
         dependency.ejecutar(graph,lista);
-        reset();
-        graphMaker(fileReader("src/e2/xDependencies.txt"));
+        lista.clear();
+        graph=graphaux;
     }
 
     @Override
