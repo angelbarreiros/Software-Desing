@@ -55,7 +55,7 @@ public class Dependency_Strong implements Dependency{
         return lista;
     }
     private  Character max(List<Character> lista){
-          char c=lista.get(0);
+        char c=lista.get(0);
           for (int i =0;i< lista.size();i++){
               if (lista.get(i)<c){
                   c=lista.get(i);
