@@ -73,6 +73,7 @@ class APITest {
         assertEquals(api.getList().get(0),ticket2);
         assertEquals(api.getList().get(1),ticket3);
         api.remove(ticket2);
+        assertEquals(api.toString(),"\nTicket{date=2024-12-21T20:45, destination=Coruña, origin=Coruña, prize=20}\n\n");
 
 
 
