@@ -18,9 +18,11 @@ public class APITest {
         Dependency_Hierarchy2 Prueba= new Dependency_Hierarchy2();
         api.setDependency(dependency_hierarchy);
         api.work(graph);
+
         api.setDependency(dependency_strong);
         api.work(graph1);
-        api.setDependency(Prueba);
+
+        api.setDependency(dependency_weak);
         api.work(graph2);
 
 

@@ -16,8 +16,8 @@ public class Dependency_Hierarchy2 implements Dependency{
         }
         else{
             if (list.size()==0){
-                Map<Character,List<Character>> aux1= new HashMap<>();
-                Map<Character,List<Character>> aux2= new HashMap<>();
+                Map<Character,List<Character>> aux1;
+                Map<Character,List<Character>> aux2;
                 aux1=copy(g.getAntecesores());
                 aux2=copy(g.getPredecesores());
                 this.aux.setAntecesores(aux1);
@@ -37,6 +37,8 @@ public class Dependency_Hierarchy2 implements Dependency{
 
 
         }
+        g.getAntecesores().clear();
+        g.getPredecesores().clear();
     }
     private int  camino(char c, Map<Character,List<Character>> M){
         List<Character>aux;

@@ -20,6 +20,8 @@ public class Dependency_Strong implements Dependency{
 
             ejecutar(g,list);
         }
+        g.getAntecesores().clear();
+        g.getPredecesores().clear();
     }
 
     private void eliminar(char c , Map<Character,List<Character>> M){

@@ -4,14 +4,17 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class API {
     private Dependency dependency;
-    private String aux;
+    private String Aux;
+
 
     private void setAux(String aux) {
-        this.aux = aux;
+        this.Aux = aux;
     }
 
     public void setDependency(Dependency dependency) {
@@ -19,7 +22,7 @@ public class API {
     }
 
     public String fileReader(String s) throws IOException {
-        this.setAux(aux);
+        this.setAux(Aux);
         File archivo= new File (s);
         FileReader fr= new FileReader (archivo);
         BufferedReader br=new BufferedReader(fr);
@@ -32,7 +35,7 @@ public class API {
     }
     public Graph graphMaker(String s){
         char c;
-        Graph graph=new Graph();
+         Graph graph=new Graph();
         List<Character> aux=new ArrayList<>();
         for (int i=0;i<s.length();i++){
             c=s.charAt(i);
@@ -46,14 +49,20 @@ public class API {
         }
         return graph;
 
-    }
-    public void reset() throws IOException {
-        this.graphMaker(fileReader(this.aux));
-    }
 
+    }
     public void work(Graph g) throws IOException {
         List<Character>lista=new ArrayList<>();
         dependency.ejecutar(g,lista);
 
+    }
+    private static Map<Character, List<Character>> copy(Map<Character, List<Character>> original)
+    {
+        Map<Character, List<Character>> copy = new HashMap<Character, List<Character>>();
+        for (Map.Entry<Character, List<Character>> entry : original.entrySet())
+        {
+            copy.put(entry.getKey(), new ArrayList<>(entry.getValue()));
+        }
+        return copy;
     }
 }

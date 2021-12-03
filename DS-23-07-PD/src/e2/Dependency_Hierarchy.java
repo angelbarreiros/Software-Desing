@@ -31,6 +31,8 @@ public class Dependency_Hierarchy implements Dependency{
 
 
             }
+        g.getAntecesores().clear();
+        g.getPredecesores().clear();
         }
         private int  camino(char c, Map<Character,List<Character>> M){
             List<Character>aux;
