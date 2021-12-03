@@ -11,7 +11,7 @@ import java.util.Date;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class APITest {
+class API1Test {
     @Test
     public void ApiTest(){
         API api= new API();

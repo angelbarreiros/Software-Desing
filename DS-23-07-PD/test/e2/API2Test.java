@@ -5,9 +5,9 @@ import org.junit.jupiter.api.Test;
 import java.io.IOException;
 
 
-public class APITest {
+public class API2Test {
     @Test
-    public void Test() throws IOException {
+    public void ApiTest() throws IOException {
         API api = new API();
         Graph graph=api.graphMaker(api.fileReader("src/e2/Prueba1Dependencies.txt"));
         Dependency_Weak dependency_weak= new Dependency_Weak();
