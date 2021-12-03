@@ -6,7 +6,7 @@ import java.util.*;
 
 
 public class Dependency_Hierarchy implements Dependency{
-
+    private final Graph aux = new Graph();
 
 
     @Override
@@ -14,25 +14,34 @@ public class Dependency_Hierarchy implements Dependency{
 
 
             List<Character>lista2;
-            if (g.getPredecesores().size() == 0   ){
+            if (aux.getPredecesores().size() == 0 && list.size()!=0  ){
                 System.out.println("listafinal = " + list);
             }
             else{
+                if (list.size()==0){
+                    Map<Character,List<Character>> aux1;
+                    Map<Character,List<Character>> aux2;
+                    aux1=copy(g.getAntecesores());
+                    aux2=copy(g.getPredecesores());
+                    this.aux.setAntecesores(aux1);
+                    this.aux.setPredecesores(aux2);
 
-                lista2=filtro(g,list);
+                }
+                lista2=filtro(aux,list);
                 Character c =maximo(lista2,g.getAntecesores());
                 if (c!=null){
-                    eliminar(c,g.getPredecesores());
-                    g.getPredecesores().remove(c);
+                    eliminar(c,aux.getPredecesores());
+                    aux.getPredecesores().remove(c);
                     list.add(c);
                 }
-                ejecutar(g,list);
+                ejecutar(aux,list);
 
 
 
             }
-        g.getAntecesores().clear();
-        g.getPredecesores().clear();
+            aux.getAntecesores().clear();
+            aux.getAntecesores().clear();
+
         }
         private int  camino(char c, Map<Character,List<Character>> M){
             List<Character>aux;
@@ -116,4 +125,15 @@ public class Dependency_Hierarchy implements Dependency{
 
 
         }
+    private static Map<Character, List<Character>> copy(Map<Character, List<Character>> original)
+    {
+        Map<Character, List<Character>> copy = new HashMap<Character, List<Character>>();
+        for (Map.Entry<Character, List<Character>> entry : original.entrySet())
+        {
+            copy.put(entry.getKey(),
+                    // Or whatever List implementation you'd like here.
+                    new ArrayList<>(entry.getValue()));
+        }
+        return copy;
+    }
 }

@@ -11,6 +11,7 @@ import java.util.Map;
 public class API {
     private Dependency dependency;
     private String Aux;
+    private final Graph gaux = new Graph();
 
 
     private void setAux(String aux) {
@@ -47,9 +48,18 @@ public class API {
             graph.add(aux.get(i),aux.get(i+1));
 
         }
+        Map<Character,List<Character>> aux1;
+        Map<Character,List<Character>> aux2;
+        aux1=copy(graph.getAntecesores());
+        aux2=copy(graph.getPredecesores());
+        this.gaux.setAntecesores(aux1);
+        this.gaux.setPredecesores(aux2);
         return graph;
 
 
+    }
+    public Graph reset(){
+        return gaux;
     }
     public void work(Graph g) throws IOException {
         List<Character>lista=new ArrayList<>();
