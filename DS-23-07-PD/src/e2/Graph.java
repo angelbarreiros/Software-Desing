@@ -7,17 +7,20 @@ public class Graph {
     private Map<Character,List<Character>> predecesores= new HashMap<>();
     private Map<Character,List<Character>> antecesores= new HashMap<>();
 
+    public Map<Character, List<Character>> getPredecesores() {
+        return predecesores;
+    }
+    public Map<Character, List<Character>> getAntecesores() {
+        return antecesores;
+    }
     public void setPredecesores(Map<Character, List<Character>> predecesores) {
         this.predecesores = predecesores;
     }
-
     public void setAntecesores(Map<Character, List<Character>> antecesores) {
         this.antecesores = antecesores;
     }
-
     public void add(char a, char b){
         List<Character> aux=new ArrayList<>();
-
         List<Character> lista=predecesores.get(a);
         if (lista==null){
             aux.add(b);
@@ -71,25 +74,5 @@ public class Graph {
             predecesores.put(b,aux4);
         }
 
-    }
-
-    public Map<Character, List<Character>> getPredecesores() {
-        return predecesores;
-    }
-
-
-
-    public Map<Character, List<Character>> getAntecesores() {
-        return antecesores;
-    }
-
-
-
-    @Override
-    public String toString() {
-        return "Graph{" +
-                "predecesores=" + predecesores +
-                ", antecesores=" + antecesores +
-                '}';
     }
 }

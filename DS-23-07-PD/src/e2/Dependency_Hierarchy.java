@@ -1,17 +1,13 @@
 package e2;
 
-import java.io.IOException;
 import java.util.*;
 
 
 
 public class Dependency_Hierarchy implements Dependency{
     private final Graph aux = new Graph();
-
-
     @Override
-        public void ejecutar(Graph g,List<Character> list) {
-
+        public void execute(Graph g, List<Character> list) {
 
             List<Character>lista2;
             if (aux.getPredecesores().size() == 0 && list.size()!=0  ){
@@ -19,41 +15,29 @@ public class Dependency_Hierarchy implements Dependency{
             }
             else{
                 if (list.size()==0){
-                    Map<Character,List<Character>> aux1;
-                    Map<Character,List<Character>> aux2;
-                    aux1=copy(g.getAntecesores());
-                    aux2=copy(g.getPredecesores());
-                    this.aux.setAntecesores(aux1);
-                    this.aux.setPredecesores(aux2);
-
+                    graphcopy(g);
                 }
-                lista2=filtro(aux,list);
-                Character c =maximo(lista2,g.getAntecesores());
+                lista2= avaliables(aux,list);
+                Character c = max(lista2,g.getAntecesores());
                 if (c!=null){
-                    eliminar(c,aux.getPredecesores());
+                    delete(c,aux.getPredecesores());
                     aux.getPredecesores().remove(c);
                     list.add(c);
                 }
-                ejecutar(aux,list);
-
-
-
+                execute(aux,list);
             }
-            aux.getAntecesores().clear();
-            aux.getAntecesores().clear();
-
         }
-        private int  camino(char c, Map<Character,List<Character>> M){
+        private int path(char c, Map<Character,List<Character>> M){
             List<Character>aux;
             if (M.get(c)!=null){
                 aux=M.get(c);
                 int contador=0;
                 if (aux.size()==1){
-                    contador = 1+camino(aux.get(0),M);
+                    contador = 1+ path(aux.get(0),M);
                 }
                 else {
                     for (int i=0;i<aux.size();i++){
-                        contador=1+(Integer.min(camino(aux.get(i),M),contador));
+                        contador=1+(Integer.min(path(aux.get(i),M),contador));
                     }
                 }
                 return contador;
@@ -64,7 +48,7 @@ public class Dependency_Hierarchy implements Dependency{
             
         }
 
-        private void eliminar(char c , Map<Character,List<Character>> M){
+        private void delete(char c , Map<Character,List<Character>> M){
             Iterator<Character> it2 = M.keySet().iterator();
             List<Character> aux2;
             while(it2.hasNext()){
@@ -80,7 +64,7 @@ public class Dependency_Hierarchy implements Dependency{
                 }
             }
         }
-        private List<Character> filtro(Graph g,List<Character> list) {
+        private List<Character> avaliables(Graph g, List<Character> list) {
             List<Character> lista = new ArrayList<>();
             List<Character> aux2;
             Iterator<Character> it2 = g.getAntecesores().keySet().iterator();
@@ -103,15 +87,15 @@ public class Dependency_Hierarchy implements Dependency{
             }
         return lista;
         }
-        private  Character maximo(List<Character> lista, Map<Character,List<Character>> M){
+        private  Character max(List<Character> lista, Map<Character,List<Character>> M){
 
         if (lista.size()!=0){
-            int max=camino(lista.get(0),M);
+            int max= path(lista.get(0),M);
             char c = lista.get(0);
                 
                 for (int i=0;i<lista.size();i++){
-                     if (camino(lista.get(i),M)< max){
-                        max=camino(lista.get(i),M);
+                     if (path(lista.get(i),M)< max){
+                        max= path(lista.get(i),M);
                          c=lista.get(i);
                     }
 
@@ -127,13 +111,19 @@ public class Dependency_Hierarchy implements Dependency{
         }
     private static Map<Character, List<Character>> copy(Map<Character, List<Character>> original)
     {
-        Map<Character, List<Character>> copy = new HashMap<Character, List<Character>>();
+        Map<Character, List<Character>> copy = new HashMap<>();
         for (Map.Entry<Character, List<Character>> entry : original.entrySet())
         {
-            copy.put(entry.getKey(),
-                    // Or whatever List implementation you'd like here.
-                    new ArrayList<>(entry.getValue()));
+            copy.put(entry.getKey(), new ArrayList<>(entry.getValue()));
         }
         return copy;
+    }
+    private void graphcopy(Graph g){
+        Map<Character,List<Character>> aux1;
+        Map<Character,List<Character>> aux2;
+        aux1=copy(g.getAntecesores());
+        aux2=copy(g.getPredecesores());
+        this.aux.setAntecesores(aux1);
+        this.aux.setPredecesores(aux2);
     }
 }
