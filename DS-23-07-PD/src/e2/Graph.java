@@ -3,10 +3,10 @@ package e2;
 import java.util.*;
 
 public class Graph {
-
+    //Atributos
     private Map<Character,List<Character>> predecesores= new HashMap<>();
     private Map<Character,List<Character>> antecesores= new HashMap<>();
-
+    //Funciones
     public Map<Character, List<Character>> getPredecesores() {
         return predecesores;
     }
@@ -74,5 +74,81 @@ public class Graph {
             predecesores.put(b,aux4);
         }
 
+    }
+    public void deleteAntecesores(char c ){
+        Iterator<Character> it2 = antecesores.keySet().iterator();
+        List<Character> aux2;
+        while(it2.hasNext()){
+            Character clave = it2.next();
+            aux2 = antecesores.get(clave);
+            if (aux2!=null){
+                for (int i=0;i<aux2.size();i++){
+                    if (aux2.get(i).equals(c)){
+                        aux2.remove(aux2.get(i));
+                        antecesores.replace(clave,aux2);
+                    }
+                }
+            }
+        }
+    }
+    public void deletePredecesores(char c ){
+        Iterator<Character> it2 = predecesores.keySet().iterator();
+        List<Character> aux2;
+        while(it2.hasNext()){
+            Character clave = it2.next();
+            aux2 = predecesores.get(clave);
+            if (aux2!=null){
+                for (int i=0;i<aux2.size();i++){
+                    if (aux2.get(i).equals(c)){
+                        aux2.remove(aux2.get(i));
+                        predecesores.replace(clave,aux2);
+                    }
+                }
+            }
+        }
+    }
+    public  Map<Character, List<Character>> copyAntecesores() {
+        Map<Character, List<Character>> copy = new HashMap<>();
+        for (Map.Entry<Character, List<Character>> entry : antecesores.entrySet())
+        {
+            copy.put(entry.getKey(), new ArrayList<>(entry.getValue()));
+        }
+        return copy;
+    }
+    public Map<Character, List<Character>> copyPredecesores() {
+        Map<Character, List<Character>> copy = new HashMap<>();
+        for (Map.Entry<Character, List<Character>> entry : predecesores.entrySet())
+        {
+            copy.put(entry.getKey(), new ArrayList<>(entry.getValue()));
+        }
+        return copy;
+    }
+    public int pathFromAntecesores(char c){
+        List<Character>aux;
+        if (antecesores.get(c)!=null){
+            aux=antecesores.get(c);
+            int contador=0;
+            if (aux.size()==1){
+                contador = 1+ pathFromAntecesores(aux.get(0));
+            }
+            else {
+                for (int i=0;i<aux.size();i++){
+                    contador=1+(Integer.min(pathFromAntecesores(aux.get(i)),contador));
+                }
+            }
+            return contador;
+        }
+        else {
+            return 0;
+        }
+
+    }
+    public void graphcopy(Graph g){
+        Map<Character,List<Character>> aux1;
+        Map<Character,List<Character>> aux2;
+        aux1=g.copyAntecesores();
+        aux2=g.copyPredecesores();
+        this.setAntecesores(aux1);
+        this.setPredecesores(aux2);
     }
 }
