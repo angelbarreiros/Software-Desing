@@ -56,12 +56,12 @@ public class Dependency_Hierarchy implements Dependency{
         private  Character max(List<Character> lista, Graph g){
 
         if (lista.size()!=0){
-            int max= g.pathFromAntecesores(lista.get(0));
+            int max= g.nodePath(lista.get(0));
             char c = lista.get(0);
                 
                 for (int i=0;i<lista.size();i++){
-                     if (g.pathFromAntecesores(lista.get(i))< max){
-                        max= g.pathFromAntecesores(lista.get(i));
+                     if (g.nodePath(lista.get(i))< max){
+                        max= g.nodePath(lista.get(i));
                          c=lista.get(i);
                     }
 

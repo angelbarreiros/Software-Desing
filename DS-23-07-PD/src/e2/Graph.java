@@ -123,17 +123,17 @@ public class Graph {
         }
         return copy;
     }
-    public int pathFromAntecesores(char c){
+    public int nodePath(char c){
         List<Character>aux;
-        if (antecesores.get(c)!=null){
+        if (antecesores.get(c)!=null || antecesores.size()==0){
             aux=antecesores.get(c);
             int contador=0;
             if (aux.size()==1){
-                contador = 1+ pathFromAntecesores(aux.get(0));
+                contador = 1+ nodePath(aux.get(0));
             }
             else {
                 for (int i=0;i<aux.size();i++){
-                    contador=1+(Integer.min(pathFromAntecesores(aux.get(i)),contador));
+                    contador=1+(Integer.min(nodePath(aux.get(i)),contador));
                 }
             }
             return contador;

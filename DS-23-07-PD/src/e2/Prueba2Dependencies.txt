@@ -1,12 +1,8 @@
-C->A
-C->F
 A->B
-A->D
+A->C
+C->D
 B->E
-D->E
-F->E
-G->F
-G->H
-F->J
-H->J
+E->R
+E->R
+
 
