@@ -14,13 +14,20 @@ public class Dependency_Strong implements Dependency{
                 aux.graphcopy(g);
             }
             lista2= avaliables(aux);
-            char c = max(lista2);
-            aux.deletePredecesores(c);
-            aux.deleteAntecesores(c);
-            aux.getPredecesores().remove(c);
-            aux.getAntecesores().remove(c);
-            list.add(c);
-            execute(aux,list);
+            if (lista2.size()!=0) {
+                char c = max(lista2);
+                aux.deletePredecesores(c);
+                aux.deleteAntecesores(c);
+                aux.getPredecesores().remove(c);
+                aux.getAntecesores().remove(c);
+                list.add(c);
+                execute(aux, list);
+
+            }
+            else{
+                System.out.println("interrumpido ,existen nodos duplicados = " + list);
+            }
+
         }
     }
 
@@ -40,15 +47,20 @@ public class Dependency_Strong implements Dependency{
         return lista;
     }
     private  Character max(List<Character> lista){
-        char c=lista.get(0);
-          for (int i =0;i< lista.size();i++){
-              if (lista.get(i)<c){
-                  c=lista.get(i);
-              }
-
-
+        if (lista==null){
+            return null;
         }
-          return c;
+        else{
+            char c=lista.get(0);
+            for (int i =0;i< lista.size();i++){
+                if (lista.get(i)<c){
+                    c=lista.get(i);
+                }
+
+
+            }
+            return c;
+        }
     }
 
 
