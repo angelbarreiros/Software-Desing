@@ -2,19 +2,17 @@ package e1;
 
 import org.junit.jupiter.api.Test;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.Month;
-import java.time.temporal.Temporal;
-import java.util.Calendar;
-import java.util.Date;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class API1Test {
     @Test
     public void ApiTest(){
+        //Creacion de Api
         API api= new API();
+        //Creacion de atributos de los tickets
         LocalDateTime date = LocalDateTime.of(2021, Month.DECEMBER,21,20,45);
         LocalDateTime date1 = LocalDateTime.of(2022, Month.DECEMBER,21,20,45);
         LocalDateTime date2 = LocalDateTime.of(2023, Month.DECEMBER,21,20,45);
@@ -28,13 +26,14 @@ class API1Test {
         Properties_Prize prize2=new Properties_Prize(50);
         Properties_Prize prize3=new Properties_Prize(20);
         Properties_Origin origin=new Properties_Origin("Lugo");
-        Properties_Origin origin1=new Properties_Origin("Pontevedra");
+        Properties_Origin origin1=new Properties_Origin("A coruña");
         Properties_Origin origin2=new Properties_Origin("Vigo");
-        Properties_Origin origin3=new Properties_Origin("Coruña");
-        Properties_Destination destination= new Properties_Destination("Lugo");
+        Properties_Origin origin3=new Properties_Origin("A Coruña");
+        Properties_Destination destination= new Properties_Destination("A Coruña");
         Properties_Destination destination1= new Properties_Destination("Pontevedra");
-        Properties_Destination destination2= new Properties_Destination("Vigo");
-        Properties_Destination destination3= new Properties_Destination("Coruña");
+        Properties_Destination destination2= new Properties_Destination("A Coruña");
+        Properties_Destination destination3= new Properties_Destination("Lugo");
+        //Creacion de tickets
         Ticket ticket=new Ticket(dates,destination,origin,prize);
         Ticket ticket1=new Ticket(dates1,destination1,origin1,prize1);
         Ticket ticket2=new Ticket(dates2,destination2,origin2,prize2);
@@ -45,6 +44,7 @@ class API1Test {
         api.add(ticket3);
         Operations_And and=new Operations_And();
         Operations_Or or= new Operations_Or();
+        //Busqueda de tickets
         api.sort(or,origin,origin1);
         assertEquals(ticket,api.getList().get(0));
         assertEquals(ticket1,api.getList().get(1));
@@ -73,7 +73,7 @@ class API1Test {
         assertEquals(api.getList().get(0),ticket2);
         assertEquals(api.getList().get(1),ticket3);
         api.remove(ticket2);
-        assertEquals(api.toString(),"\nTicket{date=2024-12-21T20:45, destination=Coruña, origin=Coruña, prize=20}\n\n");
+        assertEquals(api.toString(),"\nTicket{date=2024-12-21T20:45, destination=Lugo, origin=A Coruña, prize=20}\n\n");
 
 
 
