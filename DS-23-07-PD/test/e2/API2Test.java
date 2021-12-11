@@ -19,6 +19,7 @@ public class API2Test {
         api.work(graph);
         api.setDependency(dependency_hierarchy);
         api.work(graph);
+
     }
     
 }

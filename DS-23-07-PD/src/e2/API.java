@@ -45,6 +45,7 @@ public class API {
             graph.add(aux.get(i),aux.get(i+1));
 
         }
+        aux.clear();
         return graph;
 
     }
