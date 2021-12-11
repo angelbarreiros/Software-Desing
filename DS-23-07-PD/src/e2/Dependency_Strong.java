@@ -15,7 +15,7 @@ public class Dependency_Strong implements Dependency{
             }
             lista2= avaliables(aux);
             if (lista2.size()!=0) {
-                char c = max(lista2);
+                Character c = max(lista2);
                 aux.deletePredecesores(c);
                 aux.deleteAntecesores(c);
                 aux.getPredecesores().remove(c);
@@ -51,7 +51,7 @@ public class Dependency_Strong implements Dependency{
             return null;
         }
         else{
-            char c=lista.get(0);
+            Character c=lista.get(0);
             for (int i =0;i< lista.size();i++){
                 if (lista.get(i)<c){
                     c=lista.get(i);
