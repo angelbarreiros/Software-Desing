@@ -14,7 +14,7 @@ public class API {
         this.dependency = dependency;
     }
 
-    public Graph fileReader(String s) throws IOException {
+    public Graph GraphMaker(String s) throws IOException {
         File archivo= new File (s);
         FileReader fr= new FileReader (archivo);
         BufferedReader br=new BufferedReader(fr);
@@ -23,7 +23,7 @@ public class API {
         while((linea=br.readLine())!=null){
             builder.append(linea);
         }
-        return graphMaker(builder.toString());
+        return grahpBuilder(builder.toString());
 
     }
     public void work(Graph g)  {
@@ -31,7 +31,7 @@ public class API {
         dependency.execute(g,lista);
 
     }
-    private Graph graphMaker(String s){
+    private Graph grahpBuilder(String s){
         char c;
         Graph graph=new Graph();
         List<Character> aux=new ArrayList<>();
