@@ -9,7 +9,7 @@ public class API2Test {
     @Test
     public void ApiTest() throws IOException {
         API api = new API();
-        Graph graph=api.GraphMaker("src/e2/Prueba2Dependencies.txt");
+        Graph graph=api.GraphMaker("test/e2/Prueba1Dependencies.txt");
         Dependency_Weak dependency_weak= new Dependency_Weak();
         Dependency_Strong dependency_strong= new Dependency_Strong();
         Dependency_Hierarchy dependency_hierarchy=new Dependency_Hierarchy();
