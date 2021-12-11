@@ -15,7 +15,7 @@ public class Dependency_Weak implements Dependency {
              aux.graphcopy(g);
             }
             lista2= avaliables(aux,list);
-            char c = max(lista2);
+            Character c = max(lista2);
             aux.deletePredecesores(c);
             aux.getPredecesores().remove(c);
             aux.getAntecesores().remove(c);
@@ -46,7 +46,7 @@ public class Dependency_Weak implements Dependency {
         return lista;
     }
     private  Character max(List<Character> lista){
-        char c=lista.get(0);
+        Character c=lista.get(0);
         for (int i =0;i< lista.size();i++){
             if (lista.get(i)<c){
                 c=lista.get(i);
@@ -55,6 +55,9 @@ public class Dependency_Weak implements Dependency {
 
         }
         return c;
+
+
+
     }
 
 

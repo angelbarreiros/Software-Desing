@@ -19,7 +19,7 @@ public class Graph {
     public void setAntecesores(Map<Character, List<Character>> antecesores) {
         this.antecesores = antecesores;
     }
-    public void add(char a, char b){
+    public void add(Character a, Character b){
         List<Character> aux=new ArrayList<>();
         List<Character> lista=predecesores.get(a);
         if (lista==null){
@@ -75,7 +75,7 @@ public class Graph {
         }
 
     }
-    public void deleteAntecesores(char c ){
+    public void deleteAntecesores(Character c ){
         Iterator<Character> it2 = antecesores.keySet().iterator();
         List<Character> aux2;
         while(it2.hasNext()){
@@ -91,7 +91,7 @@ public class Graph {
             }
         }
     }
-    public void deletePredecesores(char c ){
+    public void deletePredecesores(Character c ){
         Iterator<Character> it2 = predecesores.keySet().iterator();
         List<Character> aux2;
         while(it2.hasNext()){
@@ -123,7 +123,7 @@ public class Graph {
         }
         return copy;
     }
-    public int nodePath(char c){
+    public int nodePath(Character c){
         List<Character>aux;
         if (antecesores.get(c)!=null || antecesores.size()==0){
             aux=antecesores.get(c);
