@@ -5,7 +5,6 @@ import java.util.List;
 public class   API {
     private List<Ticket> list = new ArrayList<>();
     private final List<Ticket> renuve = new ArrayList<>();
-
     public void add(Ticket t) {
         list.add(t);
         renuve.add(t);
@@ -29,6 +28,9 @@ public class   API {
     }
 
     public void sort(Operations O, Properties... P) {
+        if(O==null){
+            throw new IllegalArgumentException();
+        }
         setList(O.logic(list, P));
     }
 

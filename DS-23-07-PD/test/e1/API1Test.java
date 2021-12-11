@@ -38,10 +38,12 @@ class API1Test {
         Ticket ticket1=new Ticket(dates1,destination1,origin1,prize1);
         Ticket ticket2=new Ticket(dates2,destination2,origin2,prize2);
         Ticket ticket3=new Ticket(dates3,destination3,origin3,prize3);
+        //Añadir a la lista
         api.add(ticket);
         api.add(ticket1);
         api.add(ticket2);
         api.add(ticket3);
+        //Creacion de Operaciones
         Operations_And and=new Operations_And();
         Operations_Or or= new Operations_Or();
         //Busqueda de tickets

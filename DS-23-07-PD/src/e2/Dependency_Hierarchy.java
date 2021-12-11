@@ -64,14 +64,12 @@ public class Dependency_Hierarchy implements Dependency{
                         max= g.nodePath(lista.get(i));
                          c=lista.get(i);
                     }
-
-
                 }
                 return c;
-            }
-            else{
-                return null;
-            }
+        }
+        else{
+            return null;
+        }
 
 
         }
