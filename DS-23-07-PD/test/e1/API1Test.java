@@ -54,6 +54,7 @@ class API1Test {
         assertEquals(ticket,api.getList().get(0));
         api.sort(and,origin1,destination1);
         assertEquals(api.toString(),"");
+
         api.reset();
         assertEquals(ticket,api.getList().get(0));
         assertEquals(ticket1,api.getList().get(1));
@@ -90,6 +91,7 @@ class API1Test {
         //equals
         assertEquals(ticket1,ticket4);
         assertNotEquals(ticket1,ticket2);
+        api.reset();
 
        
 

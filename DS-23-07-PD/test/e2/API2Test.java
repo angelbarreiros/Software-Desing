@@ -1,8 +1,11 @@
 package e2;
 
+
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
 public class API2Test {
@@ -15,18 +18,14 @@ public class API2Test {
         Dependency_Hierarchy dependency_hierarchy=new Dependency_Hierarchy();
         api.setDependency(dependency_strong);
         api.work(graph);
+        assertEquals("[C, A, B, D, G, F, E, H, J]",api.work(graph).toString());
         api.setDependency(dependency_weak);
         api.work(graph);
+        assertEquals("[C, A, B, D, E, F, G, H, J]",api.work(graph).toString());
         api.setDependency(dependency_hierarchy);
         api.work(graph);
+        assertEquals("[C, G, A, F, H, B, D, E, J]",api.work(graph).toString());
 
-        Graph graph2=api.GraphMaker("test/e2/Prueba2Dependencies.txt");
-        api.setDependency(dependency_strong);
-        api.work(graph2);
-        api.setDependency(dependency_weak);
-        api.work(graph2);
-        api.setDependency(dependency_hierarchy);
-        api.work(graph2);
 
 
     }

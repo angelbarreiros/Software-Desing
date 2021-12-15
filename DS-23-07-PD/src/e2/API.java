@@ -26,9 +26,9 @@ public class API {
         return grahpBuilder(builder.toString());
 
     }
-    public void work(Graph g)  {
+    public List<Character> work(Graph g)  {
         List<Character>lista=new ArrayList<>();
-        dependency.execute(g,lista);
+         return dependency.execute(g,lista);
 
     }
     private Graph grahpBuilder(String s){

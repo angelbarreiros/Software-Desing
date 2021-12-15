@@ -8,11 +8,11 @@ public class Dependency_Hierarchy implements Dependency {
     private final Graph aux = new Graph();
 
     @Override
-    public void execute(Graph g, List<Character> list) {
+    public List<Character> execute(Graph g, List<Character> list) {
 
         List<Character> lista2;
         if (aux.getPredecesores().size() == 0 && list.size() != 0) {
-            System.out.println("listafinal = " + list);
+            return list;
         } else {
             if (list.size() == 0) {
                 aux.graphcopy(g);
@@ -25,7 +25,7 @@ public class Dependency_Hierarchy implements Dependency {
                 list.add(c);
             }
             execute(aux, list);
-        }
+        }return list;
     }
 
 
