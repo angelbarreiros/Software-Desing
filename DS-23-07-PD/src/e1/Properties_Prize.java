@@ -27,11 +27,10 @@ public class Properties_Prize implements Properties{
 
     @Override
     public List<Ticket> sort(List<Ticket> list) {
-        Properties_Prize prize;
-        prize=(Properties_Prize)this;
+
         List<Ticket> lista1=new ArrayList<>();
         for (int i=0;i<list.size();i++){
-           if (list.get(i).getPrize().getPrize()<= prize.getPrize()){
+           if (list.get(i).getPrize().getPrize()<= this.getPrize()){
                lista1.add(list.get(i));
            }
        }

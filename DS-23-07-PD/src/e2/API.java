@@ -9,7 +9,7 @@ import java.util.List;
 
 
 public class API {
-    private Dependency dependency=null;
+    private  Dependency dependency=null;
     public void setDependency(Dependency dependency) {
         this.dependency = dependency;
     }

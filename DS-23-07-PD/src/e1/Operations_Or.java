@@ -18,7 +18,6 @@ public class Operations_Or implements Operations {
                     aux2.add(aux.get(j));
                 }
             }
-
         }
         return aux2;
     }
