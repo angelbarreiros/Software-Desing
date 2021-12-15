@@ -15,7 +15,7 @@ public class Dependency_Strong implements Dependency{
             }
             lista2= avaliables(aux,list);
             if (lista2.size()!=0) {
-                Character c = max(lista2);
+                Character c = max(lista2,aux);
                 aux.deletePredecesores(c);
                 aux.deleteAntecesores(c);
                 aux.getPredecesores().remove(c);
@@ -31,8 +31,8 @@ public class Dependency_Strong implements Dependency{
         }
     }
 
-
-    private List<Character> avaliables(Graph g, List <Character> list){
+    @Override
+    public List<Character> avaliables(Graph g, List <Character> list){
         List<Character>lista= new ArrayList<>();
         List<Character> aux2;
         Iterator<Character> it2 = g.getAntecesores().keySet().iterator();
@@ -46,9 +46,8 @@ public class Dependency_Strong implements Dependency{
         }
         return lista;
     }
-    private  Character max(List<Character> lista){
-
-
+    @Override
+    public  Character max(List<Character> lista,Graph g){
             Character c=lista.get(0);
             for (int i =0;i< lista.size();i++){
                 if (lista.get(i)<c){

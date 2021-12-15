@@ -29,8 +29,8 @@ public class Dependency_Hierarchy implements Dependency{
         }
 
 
-
-        private List<Character> avaliables(Graph g, List<Character> list) {
+    @Override
+        public List<Character> avaliables(Graph g, List<Character> list) {
             List<Character> lista = new ArrayList<>();
             List<Character> aux2;
             Iterator<Character> it2 = g.getAntecesores().keySet().iterator();
@@ -53,8 +53,8 @@ public class Dependency_Hierarchy implements Dependency{
             }
         return lista;
         }
-        private  Character max(List<Character> lista, Graph g){
-
+    @Override
+        public  Character max(List<Character> lista, Graph g){
         if (lista.size()!=0){
             int max= g.nodePath(lista.get(0));
             Character c = lista.get(0);
