@@ -40,8 +40,9 @@ public class   API {
         StringBuilder sb = new StringBuilder();
         for (Ticket ticket : list) {
             sb.append(ticket);
-            sb.append("\n");
+
         }
+
         return sb.toString();
     }
 }
