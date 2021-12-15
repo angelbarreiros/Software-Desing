@@ -34,10 +34,10 @@ public class Properties_Destination implements Properties {
     }
 
     @Override
-    public List<Ticket> sort(List<Ticket> list, Properties P) {
+    public List<Ticket> sort(List<Ticket> list) {
         List<Ticket> lista1=new ArrayList<>();
         for (int i=0;i<list.size();i++){
-            if (list.get(i).getDestination().equals(P)){
+            if (list.get(i).getDestination().equals(this)){
                 lista1.add(list.get(i));
             }
         }

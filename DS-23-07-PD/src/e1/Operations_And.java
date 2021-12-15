@@ -9,7 +9,7 @@ public class Operations_And implements Operations {
         List<Ticket> aux = new ArrayList<>();
         int cnt, t2, pos = 0;
         for (Properties i : P) {
-            aux.addAll(i.sort(list, i));
+            aux.addAll(i.sort(list));
         }
         List<Ticket> aux2 = new ArrayList<>(aux);
         for (Ticket t1 : aux) {

@@ -31,10 +31,10 @@ public class Properties_Origin implements Properties {
     }
 
     @Override
-    public List<Ticket> sort(List<Ticket> list, Properties P) {
+    public List<Ticket> sort(List<Ticket> list) {
         List<Ticket> lista1=new ArrayList<>();
         for (int i=0;i<list.size();i++){
-            if (list.get(i).getOrigin().equals(P)){
+            if (list.get(i).getOrigin().equals(this)){
                 lista1.add(list.get(i));
             }
         }
