@@ -47,12 +47,12 @@ class API1Test {
         Operations_And and=new Operations_And();
         Operations_Or or= new Operations_Or();
         //Busqueda de tickets
-        api.sort(or,origin,origin1);
+        api.filter(or,origin,origin1);
         assertEquals(ticket,api.getList().get(0));
         assertEquals(ticket1,api.getList().get(1));
-        api.sort(and,origin,destination);
+        api.filter(and,origin,destination);
         assertEquals(ticket,api.getList().get(0));
-        api.sort(and,origin1,destination1);
+        api.filter(and,origin1,destination1);
         assertEquals(api.toString(),"");
 
         api.reset();
@@ -61,30 +61,30 @@ class API1Test {
         assertEquals(ticket2,api.getList().get(2));
         assertEquals(ticket3,api.getList().get(3));
         api.remove(ticket);
-        api.sort(or,origin,origin1);
+        api.filter(or,origin,origin1);
         assertNotEquals(ticket,api.getList().get(0));
         assertEquals(ticket1,api.getList().get(0));
         api.reset();
-        api.sort(and,prize,origin1);
+        api.filter(and,prize,origin1);
         assertEquals(ticket1,api.getList().get(0));
-        api.sort(and,dates1,origin1);
+        api.filter(and,dates1,origin1);
         assertEquals(ticket1,api.getList().get(0));
         api.reset();
         api.remove(ticket1);
         assertEquals(api.getList().get(0),ticket2);
-        api.sort(or,prize2,destination2);
+        api.filter(or,prize2,destination2);
         assertEquals(api.getList().get(0),ticket2);
         assertEquals(api.getList().get(1),ticket3);
         api.remove(ticket2);
         assertEquals(api.toString(),"\nTicket{date=2024-12-21T20:45, destination=Lugo, origin=A Coruña, prize=20}\n");
         api.reset();
-        api.sort(and,origin3);
+        api.filter(and,origin3);
         assertEquals(ticket3,api.getList().get(0));
         api.reset();
-        api.sort(or,origin3);
+        api.filter(or,origin3);
         assertEquals(ticket3,api.getList().get(0));
         //errores
-        assertThrows(IllegalArgumentException.class, () ->api.sort(null,prize,prize2));
+        assertThrows(IllegalArgumentException.class, () ->api.filter(null,prize,prize2));
         //hashcode
         Ticket ticket4= new Ticket(dates1,destination1,origin1,prize1);
         assertEquals(ticket1.hashCode(),ticket4.hashCode());

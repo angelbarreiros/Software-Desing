@@ -28,7 +28,7 @@ public class   API {
         this.list = list;
     }
 
-    public void sort(Operations O, Properties... P) {
+    public void filter(Operations O, Properties... P) {
         if(O==null){
             throw new IllegalArgumentException();
         }
