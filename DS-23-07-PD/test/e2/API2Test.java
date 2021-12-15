@@ -20,6 +20,15 @@ public class API2Test {
         api.setDependency(dependency_hierarchy);
         api.work(graph);
 
+        Graph graph2=api.GraphMaker("test/e2/Prueba2Dependencies.txt");
+        api.setDependency(dependency_strong);
+        api.work(graph2);
+        api.setDependency(dependency_weak);
+        api.work(graph2);
+        api.setDependency(dependency_hierarchy);
+        api.work(graph2);
+
+
     }
     
 }

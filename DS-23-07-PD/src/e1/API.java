@@ -20,7 +20,8 @@ public class   API {
     }
 
     public void reset() {
-        setList(renuve);
+        list.clear();
+        list.addAll(renuve);
     }
 
     private void setList(List<Ticket> list) {
