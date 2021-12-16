@@ -32,6 +32,11 @@ public class   API {
         if(O==null){
             throw new IllegalArgumentException();
         }
+        for (Properties properties : P) {
+            if (properties == null) {
+                throw new IllegalArgumentException();
+            }
+        }
         setList(O.logic(list, P));
     }
 

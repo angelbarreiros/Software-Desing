@@ -10,6 +10,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class API1Test {
     @Test
     public void ApiTest(){
+        
         //Creacion de Api
         API api= new API();
         //Creacion de atributos de los tickets
@@ -85,6 +86,8 @@ class API1Test {
         assertEquals(ticket3,api.getList().get(0));
         //errores
         assertThrows(IllegalArgumentException.class, () ->api.filter(null,prize,prize2));
+        assertThrows(IllegalArgumentException.class, () ->api.filter(or, (Properties) null));
+        assertThrows(IllegalArgumentException.class, () ->api.filter(or,null,prize,origin1));
         //hashcode
         Ticket ticket4= new Ticket(dates1,destination1,origin1,prize1);
         assertEquals(ticket1.hashCode(),ticket4.hashCode());
