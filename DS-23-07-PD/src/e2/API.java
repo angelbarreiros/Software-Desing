@@ -11,6 +11,9 @@ import java.util.List;
 public class API {
     private  Dependency dependency=null;
     public void setDependency(Dependency dependency) {
+        if (dependency==null){
+            throw  new IllegalArgumentException();
+        }
         this.dependency = dependency;
     }
 
@@ -28,7 +31,10 @@ public class API {
     }
     public List<Character> work(Graph g)  {
         List<Character>lista=new ArrayList<>();
-         return dependency.execute(g,lista);
+        if (g==null){
+            throw  new IllegalArgumentException();
+        }
+        return dependency.execute(g,lista);
 
     }
     private Graph grahpBuilder(String s){

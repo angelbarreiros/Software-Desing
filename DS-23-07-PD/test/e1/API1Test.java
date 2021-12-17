@@ -60,30 +60,43 @@ class API1Test {
         assertEquals(api.toString(),"");
         //reseteamos la lista, es decir seria como volver atrás en la página de renfe
         api.reset();
+        //tras el reseteo la lista deberia quedar igual
         assertEquals(ticket,api.getList().get(0));
         assertEquals(ticket1,api.getList().get(1));
         assertEquals(ticket2,api.getList().get(2));
         assertEquals(ticket3,api.getList().get(3));
+        //eliminamos un billete de la lista
         api.remove(ticket);
+        //ya no existe el billete ticket asi que del or solo devolvera el ticket relacionado con el origin1
         api.filter(or,origin,origin1);
         assertNotEquals(ticket,api.getList().get(0));
         assertEquals(ticket1,api.getList().get(0));
+        //reseteamos la lista
         api.reset();
+        //buscamos todos los billetes con un precio menor que prize y que tengan un origen1, solo existe 1
         api.filter(and,prize,origin1);
         assertEquals(ticket1,api.getList().get(0));
+        //buscamos una fecha en concreto , solo existe 1 billete, y lo comprobamos
         api.filter(and,dates1,origin1);
         assertEquals(ticket1,api.getList().get(0));
+        //reseteamos la lista
         api.reset();
+        //eliminamos otro ticket
         api.remove(ticket1);
+        //como ya no existen ni el ticket1 ni el ticket entonces solo quedan ticket2 y ticket 3
         assertEquals(api.getList().get(0),ticket2);
         api.filter(or,prize2,destination2);
         assertEquals(api.getList().get(0),ticket2);
         assertEquals(api.getList().get(1),ticket3);
+        //liminamos ticket 2
         api.remove(ticket2);
+        //comprobamos el tostring de la lista de billetes y el de ticket3
         assertEquals(api.toString(),"\nTicket{date=2024-12-21T20:45, destination=Lugo, origin=A Coruña, prize=20}\n");
         api.reset();
+        //comprobamos diferentes branches del algoritmo logic de cada implementacion
         api.filter(and,origin3);
         assertEquals(ticket3,api.getList().get(0));
+        //reseteamos para seguir comprobando
         api.reset();
         api.filter(or,origin3);
         assertEquals(ticket3,api.getList().get(0));

@@ -3,9 +3,11 @@ package e2;
 
 import org.junit.jupiter.api.Test;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 
 public class API2Test {
@@ -14,8 +16,7 @@ public class API2Test {
         //Creación de la API
         API api = new API();
         //Lectura de grafo de archivo
-        Graph graph=new Graph();
-        graph=api.graphMaker("test/e2/Prueba1Dependencies.txt");
+        Graph graph=api.graphMaker("test/e2/Prueba1Dependencies.txt");
         //Declaracion de dependecias
         Dependency_Weak dependency_weak= new Dependency_Weak();
         Dependency_Strong dependency_strong= new Dependency_Strong();
@@ -30,6 +31,12 @@ public class API2Test {
         api.setDependency(dependency_hierarchy);
         api.work(graph);
         assertEquals("[C, G, A, F, H, B, D, E, J]",api.work(graph).toString());
+
+        //errores
+        assertThrows(FileNotFoundException.class, () ->api.graphMaker("nada"));
+        assertThrows(IllegalArgumentException.class, () ->api.setDependency(null));
+        assertThrows(IllegalArgumentException.class, () ->api.work(null));
+
 
 
 

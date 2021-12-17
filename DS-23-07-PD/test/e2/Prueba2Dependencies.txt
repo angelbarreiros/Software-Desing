@@ -4,10 +4,11 @@ A->B
 A->D
 B->E
 D->E
+C->A
 F->E
 G->F
 G->H
 F->J
 H->J
-H->J
+
 
