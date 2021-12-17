@@ -14,7 +14,8 @@ public class API2Test {
         //Creación de la API
         API api = new API();
         //Lectura de grafo de archivo
-        Graph graph=api.graphMaker("test/e2/Prueba1Dependencies.txt");
+        Graph graph=new Graph();
+        graph=api.graphMaker("test/e2/Prueba1Dependencies.txt");
         //Declaracion de dependecias
         Dependency_Weak dependency_weak= new Dependency_Weak();
         Dependency_Strong dependency_strong= new Dependency_Strong();
