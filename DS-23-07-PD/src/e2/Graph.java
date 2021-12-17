@@ -107,7 +107,7 @@ public class Graph {
             }
         }
     }
-    public  Map<Character, List<Character>> copyAntecesores() {
+    private  Map<Character, List<Character>> copyAntecesores() {
         Map<Character, List<Character>> copy = new HashMap<>();
         for (Map.Entry<Character, List<Character>> entry : antecesores.entrySet())
         {
@@ -115,7 +115,7 @@ public class Graph {
         }
         return copy;
     }
-    public Map<Character, List<Character>> copyPredecesores() {
+    private Map<Character, List<Character>> copyPredecesores() {
         Map<Character, List<Character>> copy = new HashMap<>();
         for (Map.Entry<Character, List<Character>> entry : predecesores.entrySet())
         {
