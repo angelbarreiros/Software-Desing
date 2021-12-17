@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-public class Properties_Prize implements Properties{
+public final class Properties_Prize implements Properties{
     private final  int prize;
 
     public Properties_Prize(int prize) {

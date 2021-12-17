@@ -45,17 +45,20 @@ class API1Test {
         api.add(ticket2);
         api.add(ticket3);
         //Creacion de Operaciones
-        Operations_And and=new Operations_And();
-        Operations_Or or= new Operations_Or();
+        Operations_And and=Operations_And.getOperations_and();
+        Operations_Or or= Operations_Or.getOperations_or();
         //Busqueda de tickets
         api.filter(or,origin,origin1);
+        //Existen solo 2 tickets con esos origenes
         assertEquals(ticket,api.getList().get(0));
         assertEquals(ticket1,api.getList().get(1));
+        //SOlo existe 1 ticket
         api.filter(and,origin,destination);
         assertEquals(ticket,api.getList().get(0));
+        //ya no existe ningun ticket
         api.filter(and,origin1,destination1);
         assertEquals(api.toString(),"");
-
+        //reseteamos la lista, es decir seria como volver atrás en la página de renfe
         api.reset();
         assertEquals(ticket,api.getList().get(0));
         assertEquals(ticket1,api.getList().get(1));

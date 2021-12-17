@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-public class Properties_Destination implements Properties {
+public final class Properties_Destination implements Properties {
     private final String destination;
 
 

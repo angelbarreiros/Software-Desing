@@ -2,7 +2,7 @@ package e1;
 
 import java.util.Objects;
 
-public class Ticket {
+public final  class Ticket {
   private final Properties_Dates date;
   private final Properties_Destination destination;
   private final Properties_Origin origin;

@@ -4,6 +4,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Operations_And implements Operations {
+    private static final Operations_And operations_and=new Operations_And();
+
+    private Operations_And() {
+    }
+    public static Operations_And getOperations_and() {
+        return operations_and;
+    }
+
+
     @Override
     public List<Ticket> logic(List<Ticket> list, Properties... P) {
         List<Ticket> aux = new ArrayList<>();

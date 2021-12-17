@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-public class Properties_Origin implements Properties {
+public final class Properties_Origin implements Properties {
      private final String origen;
 
     public Properties_Origin(String origen) {

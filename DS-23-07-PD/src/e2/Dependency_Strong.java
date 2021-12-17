@@ -25,7 +25,7 @@ public class Dependency_Strong implements Dependency{
 
             }
             else{
-                System.out.println("Interrumpido :existen caminos duplicados en " + list.get(list.size()-1).toString());
+                throw new IllegalArgumentException("Interrumpido :existen caminos duplicados en " + list.get(list.size()-1).toString());
             }
 
         }

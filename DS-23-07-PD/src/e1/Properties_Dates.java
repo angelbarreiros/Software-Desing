@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-public class Properties_Dates implements Properties {
+public final  class Properties_Dates implements Properties {
 
     private final LocalDateTime fecha;
 
