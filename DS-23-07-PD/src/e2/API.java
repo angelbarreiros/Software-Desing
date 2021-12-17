@@ -14,7 +14,7 @@ public class API {
         this.dependency = dependency;
     }
 
-    public Graph GraphMaker(String s) throws IOException {
+    public Graph graphMaker(String s) throws IOException {
         File archivo= new File (s);
         FileReader fr= new FileReader (archivo);
         BufferedReader br=new BufferedReader(fr);
